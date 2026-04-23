@@ -195,22 +195,42 @@ img {
 
 .hero-copy h1 {
   margin: 0;
-  font-size: clamp(2.4rem, 5vw, 4.7rem);
-  max-width: 13ch;
+  font-size: clamp(1.9rem, 3.8vw, 3.35rem);
+  max-width: 17ch;
+  line-height: 1.1;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.title-label {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.28rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(23, 75, 79, 0.08);
+  color: var(--primary);
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.title-main {
+  display: block;
 }
 
 .hero-summary {
-  max-width: 60ch;
+  max-width: 56ch;
   color: var(--text-soft);
-  font-size: 1.15rem;
-  margin: 1.5rem 0 0;
+  font-size: 1.05rem;
+  margin: 1.1rem 0 0;
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
-  margin-top: 2rem;
+  margin-top: 1.7rem;
 }
 
 .button {
@@ -275,6 +295,10 @@ img {
   border-radius: var(--radius-md);
   background: var(--surface-muted);
   border: 1px dashed var(--line-strong);
+}
+
+.notice-card p:last-child {
+  margin-bottom: 0;
 }
 
 .notice-title {
@@ -515,6 +539,13 @@ img {
   font-size: 1.25rem;
 }
 
+.member-degree {
+  margin: 0.35rem 0 0;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
 .member-card p {
   margin: 0.6rem 0 0;
   color: var(--text-soft);
@@ -681,6 +712,7 @@ section[id] {
 
   .hero-copy h1 {
     max-width: 100%;
+    gap: 0.55rem;
   }
 }
 
