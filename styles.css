@@ -696,6 +696,37 @@ img {
   line-height: 1.7;
 }
 
+.evidence-of-life-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.evidence-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.evidence-item {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.9rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(24, 33, 38, 0.1);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.evidence-image {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.evidence-item figcaption {
+  margin-top: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
 .reference-list {
   margin-top: 1rem;
 }
@@ -737,7 +768,8 @@ section[id] {
   .persona-grid,
   .research-columns,
   .stakeholder-grid,
-  .must-have-grid {
+  .must-have-grid,
+  .evidence-gallery {
     grid-template-columns: 1fr;
   }
 
