@@ -390,21 +390,195 @@
           <p>This section should show how ideas were generated, compared, and translated into an early prototype direction.</p>
         </div>
 
-        <div class="card-grid three-up">
-          <article class="content-card">
-            <h3>Crazy Eights</h3>
-            <p class="status-chip">Coming soon</p>
-            <p>Placeholder for sketch-based ideation outputs and fast concept generation material.</p>
+        <div class="ideation-layout">
+          <article class="content-card ideation-carousel-card ideation-primary-card">
+            <div class="ideation-card-heading">
+              <div>
+                <h3>Crazy Eights</h3>
+                <p class="section-intro">Eight fast concept sketches were explored to test different ways of supporting low-pressure family connection. The carousel below documents both promising directions and ideas that were intentionally set aside.</p>
+              </div>
+              <p class="status-chip">8 early concepts</p>
+            </div>
+
+            <div class="carousel-shell" data-carousel>
+              <div class="carousel-nav">
+                <button class="carousel-button" type="button" data-carousel-prev aria-label="Show previous Crazy Eights idea">
+                  <span aria-hidden="true">←</span>
+                </button>
+                <div class="carousel-progress" aria-live="polite">
+                  <span data-carousel-current>1</span>
+                  <span aria-hidden="true">/</span>
+                  <span data-carousel-total>8</span>
+                </div>
+                <button class="carousel-button" type="button" data-carousel-next aria-label="Show next Crazy Eights idea">
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+
+              <div class="carousel-track" data-carousel-track tabindex="0">
+                <article class="carousel-slide">
+                  <figure class="ideation-figure image-figure">
+                    <img class="process-image ideation-sketch-image" src="figure/crazy1.jpg" alt="Crazy Eight sketch for Emotion Jar concept">
+                  </figure>
+                  <div class="idea-panel">
+                    <div class="idea-heading">
+                      <h4><span aria-hidden="true">🫙</span> Emotion Jar</h4>
+                      <p class="idea-status idea-status-exploratory">Exploratory concept</p>
+                    </div>
+                    <p>Users can privately drop a mood ball each day to reflect their feelings over time, while the jar provides a gentle visual trace of emotional patterns.</p>
+                  </div>
+                </article>
+
+                <article class="carousel-slide">
+                  <figure class="ideation-figure image-figure">
+                    <img class="process-image ideation-sketch-image" src="figure/crazy2.png" alt="Crazy Eight sketch for Home-Based Lightweight Sharing concept">
+                  </figure>
+                  <div class="idea-panel">
+                    <div class="idea-heading">
+                      <h4><span aria-hidden="true">📸</span> Home-Based Lightweight Sharing</h4>
+                      <p class="idea-status idea-status-promising">Promising direction</p>
+                    </div>
+                    <p>Family members can post small daily moments, such as photos or short updates, while others respond through lightweight reactions or brief replies.</p>
+                  </div>
+                </article>
+
+                <article class="carousel-slide">
+                  <figure class="ideation-figure image-figure">
+                    <img class="process-image ideation-sketch-image" src="figure/crazy3.png" alt="Crazy Eight sketch for Shared Emotion Calendar concept">
+                  </figure>
+                  <div class="idea-panel">
+                    <div class="idea-heading">
+                      <h4><span aria-hidden="true">🎨</span> Shared Emotion Calendar</h4>
+                      <p class="idea-status idea-status-rejected">Rejected</p>
+                    </div>
+                    <p>A multi-person emotion calendar allows family members to log their daily moods using color, making long-term individual and collective emotional patterns visible over time.</p>
+                    <p class="idea-note"><strong>Why it was rejected:</strong> This concept made emotions too explicit. It risked creating a sense of monitoring, increasing pressure to explain one’s feelings, and discouraging honest self-reporting.</p>
+                  </div>
+                </article>
+
+                <article class="carousel-slide">
+                  <figure class="ideation-figure image-figure">
+                    <img class="process-image ideation-sketch-image" src="figure/crazy4.png" alt="Crazy Eight sketch for Family Tree Interaction Hub concept">
+                  </figure>
+                  <div class="idea-panel">
+                    <div class="idea-heading">
+                      <h4><span aria-hidden="true">🌳</span> Family Tree Interaction Hub</h4>
+                      <p class="idea-status idea-status-rejected">Rejected</p>
+                    </div>
+                    <p>A family tree interface acts as a shared home page where each member node supports messages, care reminders, or interaction prompts to encourage family contact.</p>
+                    <p class="idea-note"><strong>Why it was rejected:</strong> This concept risked turning communication into a task-like activity, increasing pressure and making the experience feel less lightweight and natural.</p>
+                  </div>
+                </article>
+
+                <article class="carousel-slide">
+                  <figure class="ideation-figure image-figure">
+                    <img class="process-image ideation-sketch-image" src="figure/crazy5.png" alt="Crazy Eight sketch for Direct Family Chat with AI Quick Replies concept">
+                  </figure>
+                  <div class="idea-panel">
+                    <div class="idea-heading">
+                      <h4><span aria-hidden="true">💬</span> Direct Family Chat with AI Quick Replies</h4>
+                      <p class="idea-status idea-status-rejected">Rejected</p>
+                    </div>
+                    <p>A standard family chat interface supported by AI-generated quick replies for faster everyday communication.</p>
+                    <p class="idea-note"><strong>Why it was rejected:</strong> This concept remained too close to existing chat applications and did not sufficiently reduce reply pressure.</p>
+                  </div>
+                </article>
+
+                <article class="carousel-slide">
+                  <figure class="ideation-figure image-figure">
+                    <img class="process-image ideation-sketch-image" src="figure/crazy6.png" alt="Crazy Eight sketch for Collaborative Family Journal concept">
+                  </figure>
+                  <div class="idea-panel">
+                    <div class="idea-heading">
+                      <h4><span aria-hidden="true">📔</span> Collaborative Family Journal</h4>
+                      <p class="idea-status idea-status-rejected">Rejected</p>
+                    </div>
+                    <p>A shared digital journal where family members co-create entries, memories, and reflections together over time.</p>
+                    <p class="idea-note"><strong>Why it was rejected:</strong> This idea required too much effort and time, making it unsuitable for lightweight everyday communication.</p>
+                  </div>
+                </article>
+
+                <article class="carousel-slide">
+                  <figure class="ideation-figure image-figure">
+                    <img class="process-image ideation-sketch-image" src="figure/crazy7.png" alt="Crazy Eight sketch for AI Family Persona Chat concept">
+                  </figure>
+                  <div class="idea-panel">
+                    <div class="idea-heading">
+                      <h4><span aria-hidden="true">🤖</span> AI Family Persona Chat</h4>
+                      <p class="idea-status idea-status-rejected">Rejected</p>
+                    </div>
+                    <p>Users can chat with an AI-generated version of a family member that imitates their tone and helps initiate conversation.</p>
+                    <p class="idea-note"><strong>Why it was rejected:</strong> This concept felt less authentic and raised clear privacy and trust concerns.</p>
+                  </div>
+                </article>
+
+                <article class="carousel-slide">
+                  <figure class="ideation-figure image-figure">
+                    <img class="process-image ideation-sketch-image" src="figure/crazy8.png" alt="Crazy Eight sketch for Shared Companion Mood Indicator concept">
+                  </figure>
+                  <div class="idea-panel">
+                    <div class="idea-heading">
+                      <h4><span aria-hidden="true">🐣</span> Shared Companion Mood Indicator</h4>
+                      <p class="idea-status idea-status-exploratory">Exploratory concept</p>
+                    </div>
+                    <p>A playful shared companion reflects the family’s recent emotional activity and interaction level, providing an ambient and indirect awareness cue.</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="carousel-dots" data-carousel-dots aria-label="Crazy Eights slide navigation"></div>
+            </div>
           </article>
-          <article class="content-card">
-            <h3>Design Alternatives</h3>
-            <p class="status-chip">TODO</p>
-            <p>Placeholder for comparing multiple concepts, including trade-offs, rejected options, and reasoning for the current direction.</p>
-          </article>
-          <article class="content-card">
-            <h3>Low-Fi Prototype</h3>
-            <p class="status-chip">Placeholder</p>
-            <p>Placeholder for low-fidelity wireframes, paper prototypes, or early structural mockups.</p>
+
+          <article class="content-card ideation-carousel-card">
+            <div class="ideation-card-heading">
+              <div>
+                <h3>Low-Fi Prototype</h3>
+                <p class="section-intro">This block is prepared to show how the selected ideation directions were translated into early screens, flows, and interaction structure.</p>
+              </div>
+              <p class="status-chip">Carousel ready</p>
+            </div>
+
+            <div class="carousel-shell" data-carousel>
+              <div class="carousel-nav">
+                <button class="carousel-button" type="button" data-carousel-prev aria-label="Show previous low-fidelity prototype slide">
+                  <span aria-hidden="true">←</span>
+                </button>
+                <div class="carousel-progress" aria-live="polite">
+                  <span data-carousel-current>1</span>
+                  <span aria-hidden="true">/</span>
+                  <span data-carousel-total>1</span>
+                </div>
+                <button class="carousel-button" type="button" data-carousel-next aria-label="Show next low-fidelity prototype slide">
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+
+              <div class="carousel-track" data-carousel-track tabindex="0">
+                <article class="carousel-slide">
+                  <div class="lowfi-placeholder-panel" aria-hidden="true">
+                    <div class="lowfi-placeholder-card">
+                      <span>Wireframes</span>
+                    </div>
+                    <div class="lowfi-placeholder-card">
+                      <span>Flows</span>
+                    </div>
+                    <div class="lowfi-placeholder-card">
+                      <span>Structure</span>
+                    </div>
+                  </div>
+                  <div class="idea-panel">
+                    <div class="idea-heading">
+                      <h4><span aria-hidden="true">🧩</span> Low-Fidelity Prototype Placeholder</h4>
+                      <p class="idea-status idea-status-pending">Preparing content</p>
+                    </div>
+                    <p>Low-fidelity prototype screens and interaction flows will be added here to show how selected ideas were translated into an early structure.</p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="carousel-dots" data-carousel-dots aria-label="Low-fidelity prototype slide navigation"></div>
+            </div>
           </article>
         </div>
       </div>
@@ -518,5 +692,75 @@
       <a href="#top">Back to top</a>
     </div>
   </footer>
+  <script>
+    document.querySelectorAll("[data-carousel]").forEach((carousel) => {
+      const track = carousel.querySelector("[data-carousel-track]");
+      const slides = Array.from(track.querySelectorAll(".carousel-slide"));
+      const dotsContainer = carousel.querySelector("[data-carousel-dots]");
+      const prevButton = carousel.querySelector("[data-carousel-prev]");
+      const nextButton = carousel.querySelector("[data-carousel-next]");
+      const currentLabel = carousel.querySelector("[data-carousel-current]");
+      const totalLabel = carousel.querySelector("[data-carousel-total]");
+
+      if (!track || slides.length === 0) {
+        return;
+      }
+
+      let activeIndex = 0;
+
+      if (totalLabel) {
+        totalLabel.textContent = String(slides.length);
+      }
+
+      const dots = slides.map((_, index) => {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "carousel-dot";
+        dot.setAttribute("aria-label", "Go to slide " + (index + 1));
+        dot.addEventListener("click", () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+        return dot;
+      });
+
+      function updateUi(index) {
+        activeIndex = index;
+
+        if (currentLabel) {
+          currentLabel.textContent = String(index + 1);
+        }
+
+        dots.forEach((dot, dotIndex) => {
+          const isActive = dotIndex === index;
+          dot.classList.toggle("is-active", isActive);
+          dot.setAttribute("aria-current", isActive ? "true" : "false");
+        });
+
+        const disableNav = slides.length <= 1;
+        prevButton.disabled = disableNav;
+        nextButton.disabled = disableNav;
+      }
+
+      function goToSlide(index) {
+        const boundedIndex = Math.max(0, Math.min(index, slides.length - 1));
+        slides[boundedIndex].scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+        updateUi(boundedIndex);
+      }
+
+      prevButton.addEventListener("click", () => {
+        goToSlide(activeIndex - 1);
+      });
+
+      nextButton.addEventListener("click", () => {
+        goToSlide(activeIndex + 1);
+      });
+
+      track.addEventListener("scroll", () => {
+        const index = Math.round(track.scrollLeft / track.clientWidth);
+        updateUi(index);
+      }, { passive: true });
+
+      updateUi(0);
+    });
+  </script>
 </body>
 </html>
