@@ -195,8 +195,8 @@ img {
 
 .hero-copy h1 {
   margin: 0;
-  font-size: clamp(2.8rem, 7vw, 5.4rem);
-  max-width: 10ch;
+  font-size: clamp(2.4rem, 5vw, 4.7rem);
+  max-width: 13ch;
 }
 
 .hero-summary {
@@ -390,6 +390,112 @@ img {
   margin-top: 1rem;
 }
 
+.research-gap-card,
+.stakeholder-card {
+  padding: clamp(1.3rem, 2.4vw, 1.8rem);
+}
+
+.split-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.split-heading .eyebrow {
+  color: var(--secondary);
+  margin: 0 0 0.35rem;
+}
+
+.split-heading h3 {
+  margin: 0;
+}
+
+.split-heading > p {
+  max-width: 34ch;
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.research-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.research-column {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+}
+
+.research-column h4,
+.gap-summary h4,
+.stakeholder-block h4 {
+  margin: 0;
+}
+
+.research-column h4 {
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+.source-card,
+.stakeholder-block,
+.gap-summary {
+  padding: 1rem;
+  border: 1px solid rgba(24, 33, 38, 0.1);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.source-card h5 {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.35;
+}
+
+.source-card p,
+.stakeholder-block p,
+.gap-summary p {
+  margin: 0.65rem 0 0;
+  color: var(--text-soft);
+}
+
+.source-link {
+  display: inline-flex;
+  max-width: 100%;
+  margin-top: 0.55rem;
+  padding: 0.4rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(23, 75, 79, 0.08);
+  color: var(--primary);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+
+.source-link:hover,
+.source-link:focus-visible {
+  background: rgba(23, 75, 79, 0.14);
+}
+
+.gap-summary {
+  margin-top: 1rem;
+  background: rgba(216, 231, 225, 0.58);
+}
+
+.stakeholder-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.stakeholder-block h4 {
+  font-size: 1.05rem;
+}
+
 .member-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -510,8 +616,19 @@ section[id] {
   .card-grid.two-up,
   .milestone-strip,
   .member-grid,
-  .persona-grid {
+  .persona-grid,
+  .research-columns,
+  .stakeholder-grid {
     grid-template-columns: 1fr;
+  }
+
+  .split-heading {
+    display: block;
+  }
+
+  .split-heading > p {
+    max-width: 100%;
+    margin-top: 0.65rem;
   }
 
   .header-inner,
