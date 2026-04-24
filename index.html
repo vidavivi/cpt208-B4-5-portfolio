@@ -78,7 +78,7 @@
 
           <div class="notice-card">
             <p class="notice-title">Current status</p>
-            <p>Week 8 project stage: the front-end prototype has been completed, the back-end is still in progress, and the portfolio is being updated to reflect the current design and implementation process.</p>
+            <p>Week 8 project stage: the front-end prototype has been completed, and the portfolio currently documents the design process, research grounding, and interface flows developed so far.</p>
           </div>
         </aside>
       </div>
@@ -165,7 +165,7 @@
         <div class="section-heading">
           <p class="eyebrow">Section 01</p>
           <h2>Motivation &amp; Research</h2>
-          <p>This section should document why the project matters, where the opportunity lies, and who the work is for, without inventing evidence before it exists.</p>
+          <p>This section explains the project motivation, research grounding, and target communication context that shaped Kinlight’s design direction.</p>
         </div>
 
         <div class="card-grid three-up">
@@ -177,12 +177,12 @@
           <article class="content-card">
             <h3>The Gap</h3>
             <p class="status-chip">Research gap</p>
-            <p>Across both research and products, the main gap is clear: there is still no widely adopted solution that combines low-pressure interaction, gentle mutual awareness, and easy conversation opening for parents and university students living apart in one simple mobile experience. Kinlight is designed to address this gap.</p>
+            <p>Across both research and products, the main gap is clear: existing tools tend to support messaging, safety awareness, or memory sharing separately, leaving limited support for combining low-pressure emotional awareness, lightweight reactions, and easier conversation opening in one parent-student communication experience. Kinlight is designed to address this gap.</p>
           </article>
           <article class="content-card">
-            <h3>The Stakeholders / Personas</h3>
+            <h3>Stakeholder Scope</h3>
             <p class="status-chip">Stakeholders</p>
-            <p>The project focuses on university students living away from home, parents living apart from their children, the parent-student relationship itself, and wider family members or future family contexts.</p>
+            <p>The project focuses on university students living away from home, parents living apart from their children, the parent-student relationship itself, and wider family members or future family contexts. The detailed student and parent personas are presented in the User Research &amp; Requirements section.</p>
           </article>
         </div>
 
@@ -243,7 +243,7 @@
 
           <div class="gap-summary">
             <h4>Gap summary</h4>
-            <p>Across both research and products, the main gap is clear: there is still no widely adopted solution that combines low-pressure interaction, gentle mutual awareness, and easy conversation opening for parents and university students living apart in one simple mobile experience. Kinlight is designed to address this gap.</p>
+            <p>Across both research and products, the main gap is clear: existing tools tend to support messaging, safety awareness, or memory sharing separately, leaving limited support for combining low-pressure emotional awareness, lightweight reactions, and easier conversation opening in one parent-student communication experience. Kinlight is designed to address this gap.</p>
           </div>
         </div>
 
@@ -282,8 +282,8 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Section 02</p>
-          <h2>User Requirements</h2>
-          <p>This section is for requirement definition and supporting process evidence. Keep unready content clearly marked.</p>
+          <h2>User Research &amp; Requirements</h2>
+          <p>This section translates user research insights into personas, journey-level pain points, and three playful design requirements.</p>
         </div>
 
         <article class="content-card wide-card journey-map-card">
@@ -329,6 +329,7 @@
         <div class="card-grid two-up requirements-support-grid">
           <article class="content-card playful-must-haves-card">
             <h3>3 Playful Must-Haves</h3>
+            <p class="section-intro">Based on interview findings and the journey map, we translated recurring communication pain points into three playful requirements.</p>
             <p class="section-intro">Core interaction qualities that keep Kinlight warm, low-pressure, and easy to return to across everyday family routines.</p>
             <div class="must-have-grid" aria-label="Playful Must-Haves">
               <article class="must-have-item">
@@ -349,9 +350,9 @@
             </div>
           </article>
           <article class="content-card evidence-of-life-card">
-            <h3>Evidence of Life</h3>
-            <p class="section-intro">This section presents visual evidence of our user research process. We conducted interview sessions with target users using Tencent Meeting, and the screenshots document both the live conversations and the AI-assisted meeting summaries used to capture key communication needs, pain points, and early design opportunities.</p>
-            <div class="evidence-gallery" aria-label="Evidence of Life research gallery">
+            <h3>User Research Evidence</h3>
+            <p class="section-intro">We conducted remote semi-structured interviews with target users. The screenshots document the interview sessions and our note-taking process. Any AI-assisted meeting summaries were used only as supporting notes and were checked against our own discussion records.</p>
+            <div class="evidence-gallery" aria-label="User Research Evidence gallery">
               <figure class="evidence-item image-figure">
                 <img
                   class="process-image evidence-image"
@@ -488,6 +489,24 @@
                                   <p>A playful shared companion reflects the family’s recent emotional activity and interaction level, providing an ambient and indirect awareness cue.</p>
                                 </div></article>
             </div>
+
+            <div class="card-grid two-up">
+              <article class="source-card">
+                <h4>Selection Criteria</h4>
+                <p>We selected ideas for the current prototype based on five criteria: low reply pressure, flexible timing, ease of conversation initiation, emotional privacy, and feasibility for front-end implementation.</p>
+              </article>
+              <article class="source-card">
+                <h4>Design Decision</h4>
+                <ul>
+                  <li><strong>Lightweight Sharing — Selected:</strong> Supports low-effort daily updates and quick emotional response.</li>
+                  <li><strong>Gentle Topics — Selected:</strong> Helps users start conversations without needing to think of a message from scratch.</li>
+                  <li><strong>Private Mood Jar — Selected:</strong> Supports emotional self-reflection while preserving privacy.</li>
+                  <li><strong>Shared Emotion Calendar — Not selected:</strong> Made emotions too explicit and could create monitoring pressure.</li>
+                  <li><strong>AI Family Persona Chat — Not selected:</strong> Raised authenticity, privacy, and trust concerns.</li>
+                  <li><strong>Collaborative Family Journal — Not selected:</strong> Required too much effort for lightweight everyday communication.</li>
+                </ul>
+              </article>
+            </div>
           </article>
 
           <article class="content-card ideation-carousel-card">
@@ -523,10 +542,10 @@
                   </figure>
                   <div class="idea-panel">
                     <div class="idea-heading">
-                      <h4><span aria-hidden="true">🧩</span> Low-Fi Screen 01</h4>
+                      <h4><span aria-hidden="true">🧩</span> Low-Fi Flow 01: Lightweight Sharing</h4>
                       <p class="idea-status idea-status-exploratory">Early structure</p>
                     </div>
-                    <p>This sketch explores the first-stage page structure and interaction layout for lightweight family sharing.</p>
+                    <p>This sketch explores how users can share small daily moments and receive lightweight responses without starting a demanding conversation.</p>
                   </div>
                 </article>
 
@@ -536,10 +555,10 @@
                   </figure>
                   <div class="idea-panel">
                     <div class="idea-heading">
-                      <h4><span aria-hidden="true">🗂️</span> Low-Fi Screen 02</h4>
+                      <h4><span aria-hidden="true">🗂️</span> Low-Fi Flow 02: Gentle Topic Invitation</h4>
                       <p class="idea-status idea-status-promising">Flow exploration</p>
                     </div>
-                    <p>This sketch tests how users move through key steps and how low-pressure interaction can be introduced through simple page flow.</p>
+                    <p>This sketch explores how topic prompts can lower the barrier to initiating family communication.</p>
                   </div>
                 </article>
 
@@ -549,10 +568,10 @@
                   </figure>
                   <div class="idea-panel">
                     <div class="idea-heading">
-                      <h4><span aria-hidden="true">📱</span> Low-Fi Screen 03</h4>
+                      <h4><span aria-hidden="true">📱</span> Low-Fi Flow 03: Private Mood Jar</h4>
                       <p class="idea-status idea-status-exploratory">Interaction detail</p>
                     </div>
-                    <p>This sketch focuses on interface details and helps communicate how the concept could work as a lightweight mobile experience.</p>
+                    <p>This sketch explores how private mood recording can support emotional reflection without turning feelings into direct family monitoring.</p>
                   </div>
                 </article>
               </div>
@@ -570,8 +589,8 @@
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Section 04</p>
-          <h2>Technical Implementation</h2>
-          <p>This section documents how the system is structured, where the high-fidelity prototype lives, and how work is divided across the team.</p>
+          <h2>Front-End Prototype</h2>
+          <p>This section presents the current high-fidelity front-end prototype and explains how the three core interaction flows are represented in the interface.</p>
         </div>
 
         <article class="content-card wide-card">
@@ -586,8 +605,7 @@
 
         <article class="content-card system-architecture-card">
           <h3>System Architecture</h3>
-          <p class="status-chip">In Progress</p>
-          <p>The system architecture is currently in progress and will be added in a later iteration.</p>
+          <p>This section will be completed in a later portfolio update.</p>
         </article>
       </div>
     </section>
@@ -597,34 +615,13 @@
         <div class="section-heading">
           <p class="eyebrow">Section 05</p>
           <h2>Evaluation &amp; Reflection</h2>
-          <p>This section should communicate how the work was assessed, how it changed, and what the team learned throughout the process.</p>
+          <p>This section will be completed after the next round of prototype testing and iteration.</p>
         </div>
 
-        <div class="card-grid two-up">
-          <article class="content-card">
-            <h3>Usability Testing</h3>
-            <p class="status-chip">Placeholder</p>
-            <p>TODO: Describe real testing activities, participants, methods, and outputs once completed.</p>
-          </article>
-          <article class="content-card">
-            <h3>Iterative Refinement</h3>
-            <p class="status-chip">Coming soon</p>
-            <p>Placeholder for how feedback informed updates between prototype iterations.</p>
-          </article>
-          <article class="content-card">
-            <h3>Final Reflection</h3>
-            <p>TODO: Summarise key learning points, what worked, what did not, and what would be improved in a next iteration.</p>
-          </article>
-          <article class="content-card">
-            <h3>Technical Reflection</h3>
-            <p class="status-chip">Required if AI coding is used</p>
-            <ul>
-              <li>TODO: Record prompts used for coding assistance or debugging.</li>
-              <li>TODO: Explain how outputs were verified against project requirements.</li>
-              <li>TODO: Reflect on accessibility, ethics, and quality risks in AI-assisted implementation.</li>
-            </ul>
-          </article>
-        </div>
+        <article class="content-card wide-card">
+          <h3>Evaluation &amp; Reflection</h3>
+          <p>This section will be completed after the next round of prototype testing and iteration.</p>
+        </article>
       </div>
     </section>
 
@@ -639,27 +636,15 @@
         <div class="card-grid three-up">
           <article class="content-card">
             <h3>References</h3>
-            <ol class="reference-list">
-              <li>Placeholder reference 1</li>
-              <li>Placeholder reference 2</li>
-              <li>Placeholder reference 3</li>
-            </ol>
+            <p>Academic references will be updated in the final portfolio version.</p>
           </article>
           <article class="content-card">
             <h3>Tools</h3>
-            <ol class="reference-list">
-              <li>Placeholder for GitHub Pages / development tools citation</li>
-              <li>Placeholder for design tool citation</li>
-              <li>Placeholder for video or editing tool citation</li>
-            </ol>
+            <p>GitHub Pages, Figma, and front-end development tools will be cited here in the final portfolio version.</p>
           </article>
           <article class="content-card">
             <h3>AI Citations</h3>
-            <ol class="reference-list">
-              <li>Placeholder for AI tool citation format required by the coursework.</li>
-              <li>Placeholder for generated asset acknowledgements.</li>
-              <li>Placeholder for coding-assistance disclosure and access date.</li>
-            </ol>
+            <p>AI-assisted visual generation, writing refinement, or coding assistance will be cited here according to the coursework AI disclosure requirements.</p>
           </article>
         </div>
       </div>
