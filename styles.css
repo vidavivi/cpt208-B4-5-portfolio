@@ -36,8 +36,8 @@ body {
     radial-gradient(circle at top left, rgba(127, 47, 51, 0.08), transparent 24rem),
     radial-gradient(circle at top right, rgba(23, 75, 79, 0.12), transparent 22rem),
     linear-gradient(180deg, #f8f5ef 0%, var(--bg) 100%);
-  line-height: 1.7;
-  font-size: 18px;
+  line-height: 1.65;
+  font-size: 16.5px;
 }
 
 body::before {
@@ -203,7 +203,7 @@ img {
 
 .hero-copy h1 {
   margin: 0;
-  font-size: clamp(1.9rem, 3.8vw, 3.35rem);
+  font-size: clamp(1.85rem, 3.5vw, 3.05rem);
   max-width: 17ch;
   line-height: 1.1;
   display: grid;
@@ -230,8 +230,8 @@ img {
 .hero-summary {
   max-width: 56ch;
   color: var(--text-soft);
-  font-size: 1.16rem;
-  line-height: 1.75;
+  font-size: 1.05rem;
+  line-height: 1.65;
   margin: 1.1rem 0 0;
 }
 
@@ -358,14 +358,14 @@ img {
 
 .section-heading h2 {
   margin: 0;
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(1.85rem, 3.4vw, 2.85rem);
 }
 
 .section-heading p {
   margin: 0.9rem 0 0;
   color: var(--text-soft);
-  font-size: 1.16rem;
-  line-height: 1.75;
+  font-size: 1.05rem;
+  line-height: 1.65;
 }
 
 .accent-section {
@@ -392,14 +392,14 @@ img {
 
 .content-card h3 {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .content-card p,
 .content-card li {
   color: var(--text-soft);
-  font-size: 1.12rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .content-card ul,
@@ -497,8 +497,8 @@ img {
 .gap-summary p {
   margin: 0.65rem 0 0;
   color: var(--text-soft);
-  font-size: 1.08rem;
-  line-height: 1.75;
+  font-size: 0.98rem;
+  line-height: 1.65;
 }
 
 .source-link {
@@ -905,8 +905,8 @@ img {
 
 .idea-panel p {
   margin: 0.75rem 0 0;
-  font-size: 1.16rem;
-  line-height: 1.8;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
 .idea-note {
@@ -914,8 +914,8 @@ img {
   border-radius: var(--radius-sm);
   background: rgba(24, 33, 38, 0.04);
   color: var(--text-soft);
-  font-size: 1.08rem;
-  line-height: 1.75;
+  font-size: 0.98rem;
+  line-height: 1.65;
 }
 
 .carousel-dots {
@@ -1311,4 +1311,3 @@ section[id] {
   margin-top: 0.9rem;
 }
 }
-
