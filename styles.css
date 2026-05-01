@@ -412,6 +412,103 @@ img {
   margin-top: 0.5rem;
 }
 
+.feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.feedback-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+  min-height: 100%;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.feedback-card-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.feedback-card-header .status-chip {
+  margin: 0;
+}
+
+.feedback-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 auto;
+  border-radius: var(--radius-md);
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.feedback-card h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.35rem;
+}
+
+.feedback-card p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.feedback-transition {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.25rem auto 0;
+  padding: 1.2rem 1.35rem;
+  max-width: 760px;
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.feedback-transition h3 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.15rem;
+}
+
+.feedback-transition p {
+  margin: 0.35rem 0 0;
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.feedback-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--secondary);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
 .status-chip {
   display: inline-flex;
   align-items: center;
@@ -1215,6 +1312,7 @@ section[id] {
   .research-columns,
   .stakeholder-grid,
   .must-have-grid,
+  .feedback-grid,
   .evidence-gallery,
   .lowfi-placeholder-panel,
   .lowfi-board {
@@ -1294,8 +1392,13 @@ section[id] {
   .hero-copy,
   .hero-panel,
   .content-card,
+  .feedback-card,
   .milestone-card {
     border-radius: 22px;
+  }
+
+  .feedback-transition {
+    align-items: flex-start;
   }
 
   .system-architecture-card {
