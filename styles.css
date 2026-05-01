@@ -529,6 +529,230 @@ img {
   font-weight: 800;
 }
 
+.round1-method-card,
+.user-feedback-card,
+.insight-card,
+.next-step-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.round1-method-card {
+  margin-top: 1.5rem;
+  padding: 1.4rem;
+}
+
+.round1-method-card h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.3rem;
+}
+
+.method-chip-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.method-chip {
+  display: block;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface-muted);
+  color: var(--text-soft);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.method-chip strong {
+  color: var(--primary);
+}
+
+.feedback-subsection-heading {
+  margin-top: 2rem;
+}
+
+.feedback-subsection-heading h3 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.45rem;
+}
+
+.user-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.user-feedback-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.2rem;
+}
+
+.user-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.user-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.1rem;
+  height: 3.1rem;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  border: 1px solid var(--line);
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.user-card-header h4 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.12rem;
+}
+
+.user-context {
+  margin: 0.25rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.feedback-box {
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
+.feedback-box.worked {
+  background: rgba(216, 231, 225, 0.62);
+}
+
+.feedback-box.concern {
+  background: rgba(244, 241, 234, 0.86);
+}
+
+.feedback-box.implication {
+  background: rgba(229, 232, 238, 0.76);
+}
+
+.feedback-box h5 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 0.95rem;
+}
+
+.feedback-box ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.55rem 0 0;
+  padding-left: 1.05rem;
+}
+
+.feedback-box li {
+  color: var(--text-soft);
+  font-size: 0.93rem;
+  line-height: 1.55;
+}
+
+.feedback-box li::marker {
+  color: var(--secondary);
+}
+
+.insight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.insight-card {
+  padding: 1.1rem;
+}
+
+.insight-card > span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--secondary);
+  font-weight: 800;
+}
+
+.insight-card h4 {
+  margin: 0.8rem 0 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.insight-card ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.7rem 0 0;
+  padding-left: 1.05rem;
+}
+
+.insight-card li {
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.insight-card li::marker {
+  color: var(--secondary);
+}
+
+.next-step-card {
+  margin: 1.4rem auto 0;
+  max-width: 900px;
+  padding: 1.35rem;
+  text-align: center;
+}
+
+.next-step-card h3 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+
+.next-step-card p {
+  margin: 0.75rem auto 0;
+  max-width: 760px;
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.next-step-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  margin-top: 1rem;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  color: var(--secondary);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
 .status-chip {
   display: inline-flex;
   align-items: center;
@@ -1333,10 +1557,16 @@ section[id] {
   .stakeholder-grid,
   .must-have-grid,
   .feedback-grid,
+  .method-chip-grid,
+  .user-feedback-grid,
   .evidence-gallery,
   .lowfi-placeholder-panel,
   .lowfi-board {
     grid-template-columns: 1fr;
+  }
+
+  .insight-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .crazy-grid {
@@ -1413,12 +1643,24 @@ section[id] {
   .hero-panel,
   .content-card,
   .feedback-card,
+  .round1-method-card,
+  .user-feedback-card,
+  .insight-card,
+  .next-step-card,
   .milestone-card {
     border-radius: 22px;
   }
 
   .feedback-transition {
     align-items: flex-start;
+  }
+
+  .user-card-header {
+    align-items: flex-start;
+  }
+
+  .insight-grid {
+    grid-template-columns: 1fr;
   }
 
   .system-architecture-card {
