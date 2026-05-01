@@ -33,6 +33,7 @@
         <a href="#technical">Implementation</a>
         <a href="#feedback">Feedback</a>
         <a href="#round1-feedback">User Feedback</a>
+        <a href="#product-benchmarking">Benchmarking</a>
         <a href="#evaluation">Reflection</a>
         <a href="#references">References</a>
       </nav>
@@ -959,10 +960,293 @@
       </div>
     </section>
 
-    <section class="content-section" id="evaluation">
+    <section class="content-section" id="product-benchmarking">
       <div class="container">
         <div class="section-heading">
           <p class="eyebrow">Section 07</p>
+          <h2>Product Benchmarking</h2>
+          <p>After Round 1, we reviewed existing products and research prototypes to understand how similar systems handle private sharing, conversation prompts, AI support, emotional companions, and family monitoring. This helped us identify what Kinlight should borrow, avoid, or redesign for parent-student communication.</p>
+        </div>
+
+        <article class="benchmarking-intro-card">
+          <h3>Why Benchmarking Was Needed</h3>
+          <p>Round 1 showed that Kinlight should not become only another family sharing feed. Users questioned whether lightweight sharing was different from WeChat Moments, whether AI-generated replies felt authentic, whether the virtual pet had a clear role, and whether negative pet feedback might create pressure. We therefore reviewed reference products and research work to identify design patterns that could inform the next iteration.</p>
+        </article>
+
+        <div class="feedback-subsection-heading">
+          <h3>Reference Products</h3>
+        </div>
+
+        <div class="benchmarking-grid">
+          <article class="benchmark-card">
+            <div class="benchmark-card-header">
+              <h4><a class="benchmark-link" href="https://help.family-album.com/hc/en-us/articles/360038267214-What-is-FamilyAlbum" target="_blank" rel="noopener noreferrer">FamilyAlbum</a></h4>
+              <span class="benchmark-category">Private family photo sharing</span>
+            </div>
+            <div class="benchmark-block">
+              <h5>What works</h5>
+              <ul>
+                <li>Supports private family photo and video sharing.</li>
+                <li>Automatically organises family memories by time.</li>
+                <li>Allows comments and family responses around shared photos.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Limitations for Kinlight</h5>
+              <ul>
+                <li>More suitable for family memory archiving than everyday emotional communication.</li>
+                <li>Does not directly solve awkward conversation opening.</li>
+                <li>Focuses on &ldquo;sharing memories&rdquo;, while Kinlight needs low-pressure ongoing connection.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Design takeaway</h5>
+              <ul>
+                <li>Photos can be a strong family connection medium, but Kinlight should turn daily photos into conversation openings rather than a passive family album.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="benchmark-card">
+            <div class="benchmark-card-header">
+              <h4><a class="benchmark-link" href="https://play.google.com/store/apps/details?hl=en_US&amp;id=com.locket.Locket" target="_blank" rel="noopener noreferrer">Locket Widget</a></h4>
+              <span class="benchmark-category">Ambient daily sharing</span>
+            </div>
+            <div class="benchmark-block">
+              <h5>What works</h5>
+              <ul>
+                <li>Provides lightweight ambient awareness through live photos on the home screen.</li>
+                <li>Makes small daily moments visible without requiring a full conversation.</li>
+                <li>Reduces interaction friction by placing updates directly in a familiar phone space.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Limitations for Kinlight</h5>
+              <ul>
+                <li>Designed mainly for friends rather than intergenerational family relationships.</li>
+                <li>The interaction can become casual image exchange without deeper emotional support.</li>
+                <li>Does not address AI prompts, emotional privacy, or family-specific tension.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Design takeaway</h5>
+              <ul>
+                <li>Kinlight can borrow low-friction daily glimpses, but should frame them as family-only emotional cues rather than another image feed.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="benchmark-card">
+            <div class="benchmark-card-header">
+              <h4><a class="benchmark-link" href="https://apps.apple.com/us/app/agap%C3%A9-feel-close-when-apart/id1507907556" target="_blank" rel="noopener noreferrer">Agap&eacute;</a></h4>
+              <span class="benchmark-category">Conversation prompts</span>
+            </div>
+            <div class="benchmark-block">
+              <h5>What works</h5>
+              <ul>
+                <li>Uses daily questions to spark meaningful conversations.</li>
+                <li>Helps people feel close when apart.</li>
+                <li>Shows that prompts can reduce the difficulty of starting a conversation.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Limitations for Kinlight</h5>
+              <ul>
+                <li>Mainly framed around relationship wellness and broad intimate relationships.</li>
+                <li>Some prompts may not fit parent-student communication.</li>
+                <li>Prompting alone may feel artificial if not grounded in users&rsquo; real context.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Design takeaway</h5>
+              <ul>
+                <li>AI or prompt support should act as a conversation starter, not as an automatic reply generator.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="benchmark-card">
+            <div class="benchmark-card-header">
+              <h4><a class="benchmark-link" href="https://play.google.com/store/apps/details?hl=en_US&amp;id=com.widgetable.theme.android" target="_blank" rel="noopener noreferrer">Widgetable</a></h4>
+              <span class="benchmark-category">Shared virtual pet</span>
+            </div>
+            <div class="benchmark-block">
+              <h5>What works</h5>
+              <ul>
+                <li>Uses shared virtual pets to support playful co-care.</li>
+                <li>Allows users to feed, play with, and raise pets together.</li>
+                <li>Includes mood-sharing and distance-based widgets for close relationships.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Limitations for Kinlight</h5>
+              <ul>
+                <li>Some interactions may feel too playful or couple/friend-oriented for parent-student relationships.</li>
+                <li>Shared pet care could become another task if over-designed.</li>
+                <li>Mood sharing may create pressure if privacy boundaries are unclear.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Design takeaway</h5>
+              <ul>
+                <li>Kinlight&rsquo;s pet should have caring interactions, but they must stay lightweight, optional, and emotionally safe.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="benchmark-card">
+            <div class="benchmark-card-header">
+              <h4><a class="benchmark-link" href="https://www.playkinderworld.com/game" target="_blank" rel="noopener noreferrer">Kinder World</a></h4>
+              <span class="benchmark-category">Gentle wellbeing companion</span>
+            </div>
+            <div class="benchmark-block">
+              <h5>What works</h5>
+              <ul>
+                <li>Uses caring for virtual plants as a gentle wellbeing metaphor.</li>
+                <li>Emphasises calm, low-intensity, and judgment-free interaction.</li>
+                <li>Avoids punishment-style feedback and supports emotional comfort.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Limitations for Kinlight</h5>
+              <ul>
+                <li>Focuses on individual self-care rather than family communication.</li>
+                <li>The plant metaphor does not directly support parent-child interaction.</li>
+                <li>Does not solve conversation initiation.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Design takeaway</h5>
+              <ul>
+                <li>Kinlight&rsquo;s pet should avoid negative or guilt-inducing feedback. It should provide supportive and repair-oriented cues.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="benchmark-card">
+            <div class="benchmark-card-header">
+              <h4><a class="benchmark-link" href="https://apps.apple.com/us/app/life360-stay-connected-safe/id384830320" target="_blank" rel="noopener noreferrer">Life360</a></h4>
+              <span class="benchmark-category">Family awareness and safety</span>
+            </div>
+            <div class="benchmark-block">
+              <h5>What works</h5>
+              <ul>
+                <li>Provides clear family awareness through location sharing and safety features.</li>
+                <li>Supports parents&rsquo; need for reassurance.</li>
+                <li>Has a strong family-oriented use case.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Limitations for Kinlight</h5>
+              <ul>
+                <li>Its logic is safety monitoring rather than emotional connection.</li>
+                <li>Location and status tracking can easily feel intrusive.</li>
+                <li>This direction conflicts with students&rsquo; need for autonomy and privacy.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Design takeaway</h5>
+              <ul>
+                <li>Kinlight should avoid surveillance-style family awareness. Its awareness should be soft, abstract, and consent-based.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="feedback-subsection-heading">
+          <h3>Research References</h3>
+        </div>
+
+        <div class="research-reference-grid">
+          <article class="benchmark-card">
+            <div class="benchmark-card-header">
+              <h4><a class="benchmark-link" href="https://dl.acm.org/doi/10.1145/3757582" target="_blank" rel="noopener noreferrer">DJ-Fam: Using Favorite Songs as a Catalyst for Fostering Communication between Parents and Young Adult Children Living Apart</a></h4>
+              <span class="benchmark-category">HCI research / parent-child communication</span>
+            </div>
+            <div class="benchmark-block">
+              <h5>What it shows</h5>
+              <ul>
+                <li>Parent-child communication can be supported by turning everyday media into conversation starters.</li>
+                <li>The value is not the media itself, but how it creates a natural reason to talk.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Design takeaway</h5>
+              <ul>
+                <li>Kinlight can treat photos, emotions, and pets as gentle communication triggers rather than standalone features.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="benchmark-card">
+            <div class="benchmark-card-header">
+              <h4><a class="benchmark-link" href="https://link.springer.com/article/10.1007/s10209-026-01317-8" target="_blank" rel="noopener noreferrer">Design practice: exploring how a virtual pet mobile application helps older adults establish social relationships</a></h4>
+              <span class="benchmark-category">Virtual pet / social connection</span>
+            </div>
+            <div class="benchmark-block">
+              <h5>What it shows</h5>
+              <ul>
+                <li>Virtual pets can support social connection when designed around user needs and low technical burden.</li>
+                <li>Daily virtual-pet interactions can help users develop responsibility, attachment, and expectations for growth or change.</li>
+              </ul>
+            </div>
+            <div class="benchmark-block">
+              <h5>Design takeaway</h5>
+              <ul>
+                <li>Kinlight&rsquo;s pet interaction should be simple, emotionally meaningful, and easy for parents to understand.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+
+        <div class="feedback-subsection-heading">
+          <h3>What Product Benchmarking Revealed</h3>
+        </div>
+
+        <div class="benchmark-synthesis-grid">
+          <article class="benchmark-insight-card">
+            <h4>Private sharing needs a stronger communication role</h4>
+            <ul>
+              <li>FamilyAlbum and Locket show that photos can create lightweight awareness.</li>
+              <li>Kinlight should avoid becoming another feed and instead turn shared moments into low-pressure conversation openings.</li>
+            </ul>
+          </article>
+          <article class="benchmark-insight-card">
+            <h4>Prompts should support authenticity</h4>
+            <ul>
+              <li>Agap&eacute; and DJ-Fam show that prompts can help people start meaningful conversations.</li>
+              <li>Kinlight should use AI to suggest directions or rewrite tone, not to replace genuine family expression.</li>
+            </ul>
+          </article>
+          <article class="benchmark-insight-card">
+            <h4>The pet should become an affective mediator</h4>
+            <ul>
+              <li>Widgetable shows that shared pet care can create playful emotional interaction.</li>
+              <li>Kinder World shows that caring metaphors should feel calm and non-judgmental.</li>
+              <li>Kinlight&rsquo;s pet should support care, reassurance, and repair rather than simply display family mood.</li>
+            </ul>
+          </article>
+          <article class="benchmark-insight-card">
+            <h4>Awareness must not become monitoring</h4>
+            <ul>
+              <li>Life360 shows the value of family awareness, but also highlights the risk of surveillance-style design.</li>
+              <li>Kinlight should use abstract, consent-based, and emotionally soft awareness.</li>
+            </ul>
+          </article>
+        </div>
+
+        <article class="benchmark-next-card">
+          <h3>Next Step: Five Revised Feature Directions</h3>
+          <p>These references helped us reframe Kinlight from a family sharing app into a low-pressure intergenerational communication system. The next step is to translate these lessons into five revised feature directions for Round 2 concept selection.</p>
+          <span class="benchmark-next-arrow" aria-hidden="true">↓</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" id="evaluation">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Section 08</p>
           <h2>Evaluation &amp; Reflection</h2>
           <p>This section will be completed after the next round of prototype testing and iteration.</p>
         </div>
@@ -977,7 +1261,7 @@
     <section class="content-section reference-section" id="references">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow">Section 08</p>
+          <p class="eyebrow">Section 09</p>
           <h2>References</h2>
           <p>Keep academic references, tools, and AI citations transparent and easy to update throughout the semester.</p>
         </div>

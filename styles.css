@@ -753,6 +753,191 @@ img {
   font-weight: 800;
 }
 
+.benchmarking-intro-card,
+.benchmark-card,
+.benchmark-insight-card,
+.benchmark-next-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.benchmarking-intro-card {
+  margin-top: 1.5rem;
+  padding: 1.4rem;
+}
+
+.benchmarking-intro-card h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.3rem;
+}
+
+.benchmarking-intro-card p {
+  margin: 0.75rem 0 0;
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.benchmarking-grid,
+.benchmark-synthesis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.benchmark-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.15rem;
+}
+
+.benchmark-card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.benchmark-card-header h4 {
+  margin: 0;
+  font-size: 1.16rem;
+  line-height: 1.35;
+}
+
+.benchmark-link {
+  color: var(--primary);
+  text-decoration-color: rgba(127, 47, 51, 0.45);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+.benchmark-link:hover,
+.benchmark-link:focus-visible {
+  color: var(--secondary);
+}
+
+.benchmark-category {
+  display: inline-flex;
+  max-width: 100%;
+  padding: 0.32rem 0.6rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.benchmark-block {
+  padding: 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.benchmark-block h5 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 0.94rem;
+}
+
+.benchmark-block ul {
+  display: grid;
+  gap: 0.42rem;
+  margin: 0.52rem 0 0;
+  padding-left: 1.05rem;
+}
+
+.benchmark-block li {
+  color: var(--text-soft);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.benchmark-block li::marker {
+  color: var(--secondary);
+}
+
+.research-reference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.benchmark-synthesis-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.benchmark-insight-card {
+  padding: 1.05rem;
+}
+
+.benchmark-insight-card h4 {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.04rem;
+  line-height: 1.35;
+}
+
+.benchmark-insight-card ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.7rem 0 0;
+  padding-left: 1.05rem;
+}
+
+.benchmark-insight-card li {
+  color: var(--text-soft);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.benchmark-insight-card li::marker {
+  color: var(--secondary);
+}
+
+.benchmark-next-card {
+  margin: 1.4rem auto 0;
+  max-width: 900px;
+  padding: 1.35rem;
+  text-align: center;
+}
+
+.benchmark-next-card h3 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+
+.benchmark-next-card p {
+  margin: 0.75rem auto 0;
+  max-width: 760px;
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.benchmark-next-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  margin-top: 1rem;
+  border-radius: 999px;
+  background: var(--surface-muted);
+  border: 1px solid var(--line);
+  color: var(--secondary);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
 .status-chip {
   display: inline-flex;
   align-items: center;
@@ -1559,13 +1744,16 @@ section[id] {
   .feedback-grid,
   .method-chip-grid,
   .user-feedback-grid,
+  .research-reference-grid,
   .evidence-gallery,
   .lowfi-placeholder-panel,
   .lowfi-board {
     grid-template-columns: 1fr;
   }
 
-  .insight-grid {
+  .insight-grid,
+  .benchmarking-grid,
+  .benchmark-synthesis-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1647,6 +1835,10 @@ section[id] {
   .user-feedback-card,
   .insight-card,
   .next-step-card,
+  .benchmarking-intro-card,
+  .benchmark-card,
+  .benchmark-insight-card,
+  .benchmark-next-card,
   .milestone-card {
     border-radius: 22px;
   }
@@ -1659,7 +1851,9 @@ section[id] {
     align-items: flex-start;
   }
 
-  .insight-grid {
+  .insight-grid,
+  .benchmarking-grid,
+  .benchmark-synthesis-grid {
     grid-template-columns: 1fr;
   }
 
