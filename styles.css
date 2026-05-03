@@ -852,6 +852,7 @@ img {
 }
 
 .round1-method-card,
+.feedback-matrix-card,
 .user-feedback-card,
 .insight-card,
 .next-step-card {
@@ -892,6 +893,119 @@ img {
 
 .method-chip strong {
   color: var(--primary);
+}
+
+.method-framing-card,
+.feedback-matrix-card {
+  margin-top: 1rem;
+}
+
+.method-framing-card h4,
+.decision-matrix-card h4,
+.feedback-matrix-card h3 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.method-framing-card p,
+.feedback-matrix-card p {
+  margin: 0.65rem 0 0;
+}
+
+.criteria-chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+
+.criteria-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--surface-muted);
+  color: var(--secondary);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.decision-matrix-card,
+.feedback-matrix-card {
+  padding: 1rem;
+}
+
+.decision-matrix-wrap,
+.feedback-matrix-wrap {
+  width: 100%;
+  margin-top: 0.9rem;
+  overflow-x: auto;
+}
+
+.decision-matrix,
+.feedback-matrix {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.decision-matrix th,
+.decision-matrix td,
+.feedback-matrix th,
+.feedback-matrix td {
+  padding: 0.85rem;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.decision-matrix th,
+.feedback-matrix th {
+  color: var(--primary);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(233, 240, 236, 0.62);
+}
+
+.decision-matrix tr:last-child td,
+.feedback-matrix tr:last-child td {
+  border-bottom: 0;
+}
+
+.decision-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.38rem 0.62rem;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.2;
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.decision-selected {
+  background: rgba(23, 75, 79, 0.1);
+  color: var(--primary);
+}
+
+.decision-rejected {
+  background: rgba(127, 47, 51, 0.1);
+  color: var(--secondary);
+}
+
+.decision-exploratory {
+  background: rgba(238, 243, 239, 0.95);
+  color: var(--text);
 }
 
 .feedback-subsection-heading {

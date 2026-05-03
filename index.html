@@ -715,6 +715,18 @@
               <p class="status-chip">8 early concepts</p>
             </div>
 
+            <article class="source-card method-framing-card">
+              <h4>Divergent Ideation &rarr; Convergent Selection</h4>
+              <p>We used Crazy Eights as a divergent ideation method to quickly explore different ways of supporting low-pressure intergenerational connection. The ideas were then compared using five criteria: low reply pressure, flexible timing, ease of conversation initiation, emotional privacy, and feasibility for a front-end web prototype.</p>
+              <div class="criteria-chip-grid" aria-label="Crazy Eights selection criteria">
+                <span class="criteria-chip">Low reply pressure</span>
+                <span class="criteria-chip">Flexible timing</span>
+                <span class="criteria-chip">Easy conversation initiation</span>
+                <span class="criteria-chip">Emotional privacy</span>
+                <span class="criteria-chip">Front-end feasibility</span>
+              </div>
+            </article>
+
             <div class="crazy-grid" aria-label="Crazy Eights concepts">
               <article class="source-card crazy-card"><figure class="ideation-figure image-figure">
                                   <img class="process-image ideation-sketch-image" src="figure/crazy1.jpg" alt="Crazy Eight sketch for Emotion Jar concept">
@@ -806,18 +818,74 @@
             <div class="card-grid two-up">
               <article class="source-card">
                 <h4>Selection Criteria</h4>
-                <p>We selected ideas for the current prototype based on five criteria: low reply pressure, flexible timing, ease of conversation initiation, emotional privacy, and feasibility for front-end implementation.</p>
+                <p>We compared the Crazy Eights concepts using five criteria: low reply pressure, flexible timing, ease of conversation initiation, emotional privacy, and feasibility for a front-end web prototype. These criteria helped us identify which concepts should move into the early prototype and which should be set aside.</p>
               </article>
-              <article class="source-card">
-                <h4>Design Decision</h4>
-                <ul>
-                  <li><strong>Lightweight Sharing — Selected:</strong> Supports low-effort daily updates and quick emotional response.</li>
-                  <li><strong>Gentle Topics — Selected:</strong> Helps users start conversations without needing to think of a message from scratch.</li>
-                  <li><strong>Private Mood Jar — Selected:</strong> Supports emotional self-reflection while preserving privacy.</li>
-                  <li><strong>Shared Emotion Calendar — Not selected:</strong> Made emotions too explicit and could create monitoring pressure.</li>
-                  <li><strong>AI Family Persona Chat — Not selected:</strong> Raised authenticity, privacy, and trust concerns.</li>
-                  <li><strong>Collaborative Family Journal — Not selected:</strong> Required too much effort for lightweight everyday communication.</li>
-                </ul>
+              <article class="source-card decision-matrix-card">
+                <h4>Design Alternatives Decision Matrix</h4>
+                <div class="decision-matrix-wrap">
+                  <table class="decision-matrix">
+                    <thead>
+                      <tr>
+                        <th scope="col">Alternative</th>
+                        <th scope="col">User need addressed</th>
+                        <th scope="col">Strength</th>
+                        <th scope="col">Concern / risk</th>
+                        <th scope="col">Decision</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Lightweight Sharing</td>
+                        <td>Low-effort everyday contact</td>
+                        <td>Easy to understand, feasible, and supports small daily updates</td>
+                        <td>Could feel too similar to WeChat Moments unless reframed as family-specific communication</td>
+                        <td><span class="decision-badge decision-selected">Selected / revised</span></td>
+                      </tr>
+                      <tr>
+                        <td>Gentle Topics</td>
+                        <td>Easier conversation opening</td>
+                        <td>Directly addresses the problem of not knowing what to say</td>
+                        <td>Prompts must feel contextual and authentic, not generic or artificial</td>
+                        <td><span class="decision-badge decision-selected">Selected / revised</span></td>
+                      </tr>
+                      <tr>
+                        <td>Private Mood Jar</td>
+                        <td>Private emotional reflection</td>
+                        <td>Supports mood awareness without requiring direct emotional disclosure</td>
+                        <td>Must avoid becoming family monitoring or explicit mood surveillance</td>
+                        <td><span class="decision-badge decision-selected">Selected / revised</span></td>
+                      </tr>
+                      <tr>
+                        <td>Shared Emotion Calendar</td>
+                        <td>Long-term emotional awareness</td>
+                        <td>Makes mood patterns visually clear</td>
+                        <td>Too explicit; may create monitoring pressure and reduce honest self-reporting</td>
+                        <td><span class="decision-badge decision-rejected">Rejected</span></td>
+                      </tr>
+                      <tr>
+                        <td>AI Family Persona Chat</td>
+                        <td>Conversation support</td>
+                        <td>Novel and potentially engaging AI interaction</td>
+                        <td>Raises authenticity, privacy, and trust concerns</td>
+                        <td><span class="decision-badge decision-rejected">Rejected</span></td>
+                      </tr>
+                      <tr>
+                        <td>Collaborative Family Journal</td>
+                        <td>Shared memory and reflection</td>
+                        <td>Can support deeper family storytelling</td>
+                        <td>Too effortful for lightweight everyday communication</td>
+                        <td><span class="decision-badge decision-rejected">Rejected</span></td>
+                      </tr>
+                      <tr>
+                        <td>Shared Companion Mood Indicator</td>
+                        <td>Ambient emotional awareness</td>
+                        <td>Playful and emotionally warm</td>
+                        <td>Role was initially unclear and could become negative if it simply mirrors bad family atmosphere</td>
+                        <td><span class="decision-badge decision-exploratory">Exploratory / revised</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </article>
             </div>
           </article>
@@ -987,6 +1055,53 @@
             <span class="method-chip"><strong>Method:</strong> Demo trial + think-aloud + short interview</span>
             <span class="method-chip"><strong>Tasks:</strong> Sharing, Gentle Topics, Mood Jar / Pet</span>
             <span class="method-chip"><strong>Focus:</strong> Communication value, AI authenticity, privacy, emotional comfort</span>
+          </div>
+        </article>
+
+        <article class="feedback-matrix-card">
+          <h3>Feedback-to-Design Implication Matrix</h3>
+          <div class="feedback-matrix-wrap">
+            <table class="feedback-matrix">
+              <thead>
+                <tr>
+                  <th scope="col">Finding</th>
+                  <th scope="col">Evidence from users</th>
+                  <th scope="col">Design implication</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sharing alone is not enough</td>
+                  <td>Several users compared Lightweight Sharing to WeChat Moments or a simple &ldquo;like&rdquo; system.</td>
+                  <td>Make sharing family-specific and conversation-oriented, rather than another passive feed.</td>
+                </tr>
+                <tr>
+                  <td>AI should guide, not replace expression</td>
+                  <td>Both students and parents were cautious about full AI-written family replies and preferred editable suggestions.</td>
+                  <td>Use AI for prompt directions, tone guidance, and rewrite support instead of automatic emotional replies.</td>
+                </tr>
+                <tr>
+                  <td>The pet&rsquo;s role is promising but unclear</td>
+                  <td>Users liked the pet&rsquo;s warmth but were unsure whether it represented the individual, the family, or the relationship.</td>
+                  <td>Define the pet as an affective mediator that supports care, reassurance, and repair.</td>
+                </tr>
+                <tr>
+                  <td>Negative emotional feedback may create pressure</td>
+                  <td>Students associated a sad pet with guilt; parents associated it with anxiety or self-blame.</td>
+                  <td>Avoid sad, punitive, or diagnostic pet states. Use supportive and repair-oriented cues.</td>
+                </tr>
+                <tr>
+                  <td>Privacy boundaries must be explicit</td>
+                  <td>Students did not want parents to see detailed mood records; parents needed to know what was private or shared.</td>
+                  <td>Keep detailed mood logs private and use only abstract, consent-based family awareness cues.</td>
+                </tr>
+                <tr>
+                  <td>Parent-side guidance is necessary</td>
+                  <td>Parents wanted to care but did not always know how to express concern without pressure.</td>
+                  <td>Add softer parent-facing wording, care suggestions, or gentle next-step guidance.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </article>
 
@@ -1540,45 +1655,9 @@
         </div>
         </details>
 
-        <div class="feedback-subsection-heading">
-          <h3>What Product Benchmarking Revealed</h3>
-        </div>
-
-        <div class="benchmark-synthesis-grid">
-          <article class="benchmark-insight-card">
-            <h4>Private sharing needs a stronger communication role</h4>
-            <ul>
-              <li>FamilyAlbum and Locket show that photos can create lightweight awareness.</li>
-              <li>Kinlight should avoid becoming another feed and instead turn shared moments into low-pressure conversation openings.</li>
-            </ul>
-          </article>
-          <article class="benchmark-insight-card">
-            <h4>Prompts should support authenticity</h4>
-            <ul>
-              <li>Agap&eacute; and DJ-Fam show that prompts can help people start meaningful conversations.</li>
-              <li>Kinlight should use AI to suggest directions or rewrite tone, not to replace genuine family expression.</li>
-            </ul>
-          </article>
-          <article class="benchmark-insight-card">
-            <h4>The pet should become an affective mediator</h4>
-            <ul>
-              <li>Widgetable shows that shared pet care can create playful emotional interaction.</li>
-              <li>Kinder World shows that caring metaphors should feel calm and non-judgmental.</li>
-              <li>Kinlight&rsquo;s pet should support care, reassurance, and repair rather than simply display family mood.</li>
-            </ul>
-          </article>
-          <article class="benchmark-insight-card">
-            <h4>Awareness must not become monitoring</h4>
-            <ul>
-              <li>Life360 shows the value of family awareness, but also highlights the risk of surveillance-style design.</li>
-              <li>Kinlight should use abstract, consent-based, and emotionally soft awareness.</li>
-            </ul>
-          </article>
-        </div>
-
         <article class="benchmark-next-card">
-          <h3>Next Step: Five Revised Feature Directions</h3>
-          <p>These references helped us reframe Kinlight from a family sharing app into a low-pressure intergenerational communication system. The next step is to translate these lessons into five revised feature directions for Round 2 concept selection.</p>
+          <h3>Next Step: Five Candidate Directions After Week 8</h3>
+          <p>These references helped us reframe Kinlight from a family sharing app into a low-pressure intergenerational communication system. The next step is to translate these lessons into five candidate directions for the next concept selection stage.</p>
           <span class="benchmark-next-arrow" aria-hidden="true">↓</span>
         </article>
       </div>
@@ -1588,8 +1667,8 @@
       <div class="container">
         <div class="section-heading">
           <p class="phase-label">Phase 2 / Week 8-10</p>
-          <h2>Revised Design Directions</h2>
-          <p>Based on the original three core functions, Week 8 tutor feedback, Round 1 user feedback, and product benchmarking, we reframed Kinlight into five revised feature directions. These directions are not final decisions yet; they will be used as concept candidates for Round 2 user selection.</p>
+          <h2>Five Candidate Directions After Week 8</h2>
+          <p>Based on the original three core functions, Week 8 tutor feedback, Round 1 user feedback, and product benchmarking, we reframed Kinlight into five candidate directions. These are not final functions yet. They will be used for the next selection stage, where the team will narrow them into three final functions for implementation.</p>
         </div>
 
         <article class="direction-source-card">
@@ -1622,7 +1701,7 @@
           </article>
           <span class="evolution-arrow" aria-hidden="true">→</span>
           <article class="evolution-stage">
-            <h3>5 Revised Directions</h3>
+            <h3>5 Candidate Directions</h3>
             <ul>
               <li><span aria-hidden="true">🐾</span> Shared Family Pet Album</li>
               <li><span aria-hidden="true">📅</span> Weekly Family Summary</li>
@@ -1792,8 +1871,8 @@
         </div>
 
         <article class="direction-next-card future-placeholder-card">
-          <h3>Next Step: From Five Revised Directions to Three Final Functions</h3>
-          <p>Our teammates are currently researching and developing the next-stage design direction. This section will be updated after the five revised directions are narrowed into three final functions and reflected in the prototype.</p>
+          <h3>Next Step: From Five Candidate Directions to Three Final Functions</h3>
+          <p>The five directions will be compared through the next selection stage based on user value, emotional safety, differentiation, feasibility, and fit with the three playful must-haves. The selected three functions will then be implemented in the final prototype.</p>
           <span class="direction-next-arrow" aria-hidden="true">↓</span>
         </article>
       </div>
