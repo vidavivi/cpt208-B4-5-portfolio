@@ -15,7 +15,7 @@
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 14px;
-  --container: 1180px;
+  --container: 1360px;
 }
 
 *,
@@ -162,8 +162,8 @@ img {
 
 .portfolio-shell {
   display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 1.6rem;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 1.4rem;
   align-items: start;
 }
 
@@ -1990,6 +1990,10 @@ img {
   margin-top: 1rem;
 }
 
+.card-grid.two-up.requirements-support-grid {
+  grid-template-columns: 1fr;
+}
+
 .insight-requirement-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2036,12 +2040,12 @@ img {
 
 .must-have-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
 }
 
 .must-have-item {
-  padding: 1.1rem;
+  padding: 1.2rem;
   border-radius: var(--radius-md);
   border: 1px solid rgba(24, 33, 38, 0.1);
   background:
@@ -2089,8 +2093,8 @@ img {
 
 .evidence-gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
 }
 
 .evidence-item {
