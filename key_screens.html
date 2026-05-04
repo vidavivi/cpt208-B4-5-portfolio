@@ -158,8 +158,8 @@
   }
   .ks-showcase {
     display: grid;
-    gap: 1.25rem;
-    padding: 1.25rem;
+    gap: 0.85rem;
+    padding: 1rem;
     border: 1px solid rgba(24, 33, 38, 0.12);
     border-radius: 28px;
     background: rgba(255, 255, 255, 0.78);
@@ -219,8 +219,8 @@
 
   .ks-layout {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-    gap: 1rem;
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+    gap: 0.85rem;
     align-items: stretch;
   }
 
@@ -232,9 +232,9 @@
   }
 
   .ks-gallery-card {
-    padding: 1rem;
+    padding: 0.8rem;
     display: grid;
-    gap: 0.9rem;
+    gap: 0.65rem;
   }
 
   .ks-gallery-shell {
@@ -263,7 +263,10 @@
   }
 
   .ks-shot img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    max-height: min(62vh, 640px);
+    margin: 0 auto;
     display: block;
     border-radius: 18px;
     border: 1px solid rgba(24, 33, 38, 0.1);
@@ -276,8 +279,8 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
     border: 1px solid rgba(24, 33, 38, 0.12);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.94);
@@ -318,43 +321,43 @@
   }
 
   .ks-info-card {
-    padding: 1.55rem 1.55rem 1.45rem;
+    padding: 1.05rem 1.1rem;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 244, 238, 0.96));
   }
 
   .ks-info-card h4 {
     margin: 0;
     color: #174b4f;
-    font-size: 1.7rem;
+    font-size: 1.35rem;
     line-height: 1.2;
     font-family: "Fraunces", Georgia, serif;
     letter-spacing: -0.025em;
   }
 
   .ks-info-card .ks-lead {
-    margin-top: 1.05rem;
+    margin-top: 0.7rem;
     color: #74628a;
-    font-size: 1.08rem;
-    line-height: 1.65;
+    font-size: 0.98rem;
+    line-height: 1.5;
     font-family: "Fraunces", Georgia, serif;
     font-style: italic;
   }
 
   .ks-info-card p {
-    margin: 1.05rem 0 0;
+    margin: 0.68rem 0 0;
     color: #4f5d66;
-    font-size: 1rem;
-    line-height: 1.65;
+    font-size: 0.94rem;
+    line-height: 1.5;
   }
 
   .ks-info-card .ks-note {
-    margin-top: 1.2rem;
-    padding: 1rem 1.08rem;
+    margin-top: 0.78rem;
+    padding: 0.75rem 0.85rem;
     border-radius: 18px;
     background: rgba(216, 231, 225, 0.46);
     color: #506068;
-    font-size: 0.98rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.45;
   }
 
   @media (max-width: 980px) {
@@ -384,23 +387,23 @@
 }
 
 .ks-flow-card {
-  margin-top: 1.25rem;
-  padding-top: 1.1rem;
+  margin-top: 0.85rem;
+  padding-top: 0.8rem;
   border-top: 1px solid rgba(24, 33, 38, 0.1);
 }
 
 .ks-flow-card h5 {
   margin: 0;
   color: #174b4f;
-  font-size: 1.08rem;
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.35;
   font-family: "Fraunces", Georgia, serif;
 }
 
 .ks-flow-card p {
-  margin: 0.75rem 0 0;
-  font-size: 0.96rem;
-  line-height: 1.6;
+  margin: 0.42rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.42;
 }
 
 
