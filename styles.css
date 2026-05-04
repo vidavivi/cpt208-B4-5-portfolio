@@ -937,6 +937,19 @@ img {
   padding: 1rem;
 }
 
+.alternatives-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.selection-criteria-card,
+.decision-matrix-card,
+.early-highfi-card {
+  width: 100%;
+}
+
 .decision-matrix-wrap,
 .feedback-matrix-wrap {
   width: 100%;
