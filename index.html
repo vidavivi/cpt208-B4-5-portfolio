@@ -15,6 +15,7 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="highfi-walkthrough.css">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -206,6 +207,7 @@
           <a href="#product-benchmarking">Phase 2: Benchmarking</a>
           <a href="#revised-directions">Phase 2: Revised Directions</a>
           <a href="#final-function-selection">Final Function Selection</a>
+          <a href="#interactive-highfi-walkthrough">Interactive High-Fi Walkthrough</a>
           <a href="#technical">Implementation</a>
           <a href="#evaluation">Evaluation &amp; Reflection</a>
           <a href="#references">References</a>
@@ -1956,6 +1958,103 @@
       </div>
     </section>
 
+    <section
+      class="content-section hf-section"
+      id="interactive-highfi-walkthrough"
+      data-hf-screenshot-base="portfolio-highfi-handoff/screenshots/"
+    >
+      <div class="container">
+        <div class="section-heading">
+          <p class="phase-label">Final Prototype / Guided Walkthrough</p>
+          <h2>Interactive High-Fi Walkthrough</h2>
+          <p>This walkthrough demonstrates the high-fidelity interface flow and interaction rationale using frontend capture states and mock interaction data.</p>
+        </div>
+
+        <article class="content-card wide-card hf-overview-card">
+          <div class="hf-overview-copy">
+            <p class="eyebrow">Walkthrough Scope</p>
+            <h3>Follow the Final High-Fi Journey</h3>
+            <p>This guided tour connects the three final functions in sequence, showing how small family updates move from <strong>sharing</strong>, to <strong>private mood control</strong>, to <strong>weekly reflection</strong>.</p>
+          </div>
+          <div class="hf-overview-sequence" aria-label="Walkthrough sequence">
+            <span class="hf-overview-sequence-label">Guided path</span>
+            <p><strong>Album 📸</strong> → <strong>Jar 🫙</strong> → <strong>Weekly Echo ✨</strong></p>
+          </div>
+        </article>
+
+        <div class="hf-walkthrough-shell">
+          <div class="hf-function-tabs" role="tablist" aria-label="High-fidelity walkthrough functions"></div>
+
+          <div class="hf-stage-grid">
+            <article class="content-card hf-phone-card">
+              <div class="hf-card-topline">
+                <p class="eyebrow">Guided Screen</p>
+                <p class="hf-step-progress" aria-live="polite"></p>
+              </div>
+
+              <div class="hf-phone-frame">
+                <div class="hf-phone-hardware" aria-hidden="true">
+                  <span class="hf-phone-speaker"></span>
+                </div>
+                <div class="hf-screen-shell">
+                  <img class="hf-screen-image" alt="">
+                  <div class="hf-overlay-layer">
+                    <button class="hf-hotspot-button" type="button">
+                      <span class="hf-hotspot-pulse" aria-hidden="true"></span>
+                      <span class="hf-hotspot-ring" aria-hidden="true"></span>
+                      <span class="hf-hotspot-glow" aria-hidden="true"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hf-screen-meta">
+                <p class="hf-screen-name"></p>
+                <p class="hf-screen-purpose"></p>
+              </div>
+            </article>
+
+            <article class="content-card hf-detail-card">
+              <div class="hf-card-topline">
+                <p class="eyebrow">Interaction Focus</p>
+                <p class="hf-function-name"></p>
+              </div>
+
+              <div class="hf-tooltip-card">
+                <div class="hf-tooltip-copy">
+                  <h3 class="hf-tooltip-title"></h3>
+                  <p class="hf-tooltip-body"></p>
+                </div>
+
+                <div class="hf-badge-group" aria-label="Design requirements supported"></div>
+
+                <div class="hf-action-card">
+                  <p class="hf-action-label">User action</p>
+                  <p class="hf-action-text"></p>
+                  <p class="hf-result-label">Design value</p>
+                  <p class="hf-result-text"></p>
+                </div>
+              </div>
+
+              <div class="hf-steprail-block">
+                <div class="hf-steprail-header">
+                  <h4>Walkthrough Steps</h4>
+                  <button class="button secondary hf-replay-button" type="button">Replay</button>
+                </div>
+                <div class="hf-steprail" aria-label="Walkthrough steps"></div>
+              </div>
+
+              <div class="hf-controls" aria-label="Walkthrough controls">
+                <button class="button secondary hf-prev-button" type="button">Previous step</button>
+                <button class="button primary hf-next-button" type="button">Next step</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
     <section class="content-section" id="technical">
       <div class="container">
         <div class="section-heading">
@@ -2105,6 +2204,7 @@
       <a href="#top">Back to top</a>
     </div>
   </footer>
+  <script src="highfi-walkthrough.js"></script>
   <script>
     document.querySelectorAll("[data-carousel]").forEach((carousel) => {
       const track = carousel.querySelector("[data-carousel-track]");
