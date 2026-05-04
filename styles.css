@@ -2818,3 +2818,59 @@ section[id] {
   margin-top: 0.9rem;
 }
 }
+
+.final-selection-transition-card {
+  margin-top: 1rem;
+  padding: clamp(1.3rem, 2.3vw, 1.7rem);
+}
+
+.final-selection-transition-card p {
+  margin: 0;
+}
+
+.final-selection-table-card {
+  padding: clamp(1.3rem, 2.3vw, 1.7rem);
+}
+
+.final-selection-heading {
+  margin-bottom: 0.9rem;
+}
+
+.final-selection-heading h3 {
+  margin: 0.2rem 0 0;
+}
+
+.final-selection-table-wrap {
+  margin-top: 0.75rem;
+}
+
+.final-selection-table {
+  min-width: 880px;
+}
+
+.final-selection-table th:nth-child(1),
+.final-selection-table td:nth-child(1) {
+  width: 16%;
+}
+
+.final-selection-table th:nth-child(2),
+.final-selection-table td:nth-child(2) {
+  width: 16%;
+}
+
+.final-selection-table th:nth-child(3),
+.final-selection-table td:nth-child(3) {
+  width: 24%;
+}
+
+.final-selection-table th:nth-child(4),
+.final-selection-table td:nth-child(4) {
+  width: 44%;
+}
+
+.final-selection-closing {
+  margin: 1rem 0 0;
+  color: var(--text-soft);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
