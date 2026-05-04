@@ -2106,15 +2106,35 @@ img {
   background: rgba(255, 255, 255, 0.72);
 }
 
-.evidence-image {
+.evidence-image-frame {
+  display: grid;
+  place-items: center;
+  width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.evidence-image {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  object-position: center;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
 }
 
 .evidence-item figcaption {
   margin-top: 0;
+  color: var(--text-soft);
   font-size: 0.95rem;
   line-height: 1.55;
+  font-weight: 600;
 }
 
 .ideation-layout {
@@ -2605,7 +2625,6 @@ section[id] {
   .user-feedback-grid,
   .research-reference-grid,
   .direction-source-chips,
-  .evidence-gallery,
   .lowfi-placeholder-panel,
   .lowfi-board {
     grid-template-columns: 1fr;
@@ -2720,6 +2739,10 @@ section[id] {
     .direction-next-card,
   .milestone-card {
     border-radius: 22px;
+  }
+
+  .evidence-gallery {
+    grid-template-columns: 1fr;
   }
 
   .feedback-transition {
