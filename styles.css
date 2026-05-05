@@ -2290,6 +2290,37 @@ img {
   font-weight: 600;
 }
 
+.ai-caption {
+  margin: 0.4rem 0 0;
+  color: rgba(24, 33, 38, 0.68);
+  font-size: 0.76rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.ai-reflection-card {
+  margin-top: 1rem;
+}
+
+.ai-use-table {
+  min-width: 900px;
+}
+
+.ai-note-stack {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.ai-note-stack p {
+  margin: 0;
+  padding: 0.95rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.56);
+  color: var(--text-soft);
+}
+
 .requirements-support-grid {
   margin-top: 1rem;
 }
