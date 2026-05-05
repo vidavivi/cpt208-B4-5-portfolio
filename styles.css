@@ -3222,6 +3222,59 @@ section[id] {
   margin: 0.2rem 0 0;
 }
 
+.final-selection-heading-secondary {
+  margin-top: 1.4rem;
+}
+
+.final-selection-subtitle {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.final-mapping-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.final-mapping-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(89, 126, 110, 0.16);
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(246, 248, 245, 0.96), rgba(234, 242, 237, 0.92));
+}
+
+.final-mapping-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(216, 231, 225, 0.88);
+  color: var(--text-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.final-mapping-item strong {
+  font-size: 0.98rem;
+  color: var(--text-main);
+}
+
+.final-mapping-arrow {
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 .final-selection-table-wrap {
   margin-top: 0.75rem;
 }
@@ -3237,17 +3290,52 @@ section[id] {
 
 .final-selection-table th:nth-child(2),
 .final-selection-table td:nth-child(2) {
-  width: 16%;
+  width: 28%;
 }
 
 .final-selection-table th:nth-child(3),
 .final-selection-table td:nth-child(3) {
-  width: 24%;
+  width: 28%;
 }
 
 .final-selection-table th:nth-child(4),
 .final-selection-table td:nth-child(4) {
-  width: 44%;
+  width: 28%;
+}
+
+.final-selection-table tbody th {
+  text-align: left;
+  vertical-align: top;
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.function-support-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.58rem;
+  border-radius: 999px;
+  border: 1px solid rgba(89, 126, 110, 0.16);
+  background: rgba(216, 231, 225, 0.5);
+  color: var(--text-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.function-support-badge.is-primary {
+  background: rgba(200, 225, 210, 0.9);
+  border-color: rgba(89, 126, 110, 0.28);
+  color: var(--accent);
+}
+
+.function-support-text {
+  display: block;
+  margin-top: 0.55rem;
+  color: var(--text-soft);
+  line-height: 1.55;
 }
 
 .final-selection-closing {
@@ -3255,4 +3343,10 @@ section[id] {
   color: var(--text-soft);
   font-size: 0.98rem;
   line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .final-mapping-strip {
+    grid-template-columns: 1fr;
+  }
 }
