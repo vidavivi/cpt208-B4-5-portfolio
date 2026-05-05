@@ -954,6 +954,53 @@ img {
   padding: 1rem;
 }
 
+.round1-summary-card {
+  margin-top: 1rem;
+}
+
+.round1-summary-heading {
+  margin-top: 0;
+}
+
+.round1-summary-heading p {
+  margin: 0.35rem 0 0;
+  color: var(--text-soft);
+}
+
+.round1-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.round1-summary-item {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(24, 33, 38, 0.1);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(233, 240, 236, 0.72));
+}
+
+.round1-summary-block {
+  display: grid;
+  gap: 0.28rem;
+}
+
+.round1-summary-block h4 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.round1-summary-block p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
 .alternatives-stack {
   display: grid;
   grid-template-columns: 1fr;
@@ -2352,6 +2399,72 @@ img {
   margin-top: 1.2rem;
 }
 
+.research-flow-block {
+  margin-bottom: 1.2rem;
+}
+
+.research-flow-heading {
+  margin-top: 0;
+}
+
+.research-flow-heading p {
+  margin: 0.35rem 0 0;
+  color: var(--text-soft);
+}
+
+.research-flow-strip {
+  display: grid;
+  grid-template-columns: repeat(9, minmax(0, auto));
+  gap: 0.7rem;
+  align-items: stretch;
+  margin-top: 1rem;
+}
+
+.research-flow-step {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 0.95rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(24, 33, 38, 0.1);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(233, 240, 236, 0.7));
+}
+
+.research-flow-step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 999px;
+  background: var(--primary-soft);
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.research-flow-step h4 {
+  margin: 0;
+  color: var(--primary);
+  font-size: 0.94rem;
+}
+
+.research-flow-step p {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.research-flow-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
 .mapping-card {
   display: grid;
   gap: 0.8rem;
@@ -3033,9 +3146,11 @@ section[id] {
   .gap-synthesis-grid,
   .stakeholder-grid,
   .insight-requirement-grid,
+  .research-flow-strip,
   .must-have-grid,
   .feedback-grid,
   .method-chip-grid,
+  .round1-summary-grid,
   .user-feedback-grid,
   .research-reference-grid,
   .direction-source-chips,
@@ -3058,6 +3173,10 @@ section[id] {
   .evolution-arrow {
     transform: rotate(90deg);
     justify-self: center;
+  }
+
+  .research-flow-arrow {
+    display: none;
   }
 
   .crazy-grid {
