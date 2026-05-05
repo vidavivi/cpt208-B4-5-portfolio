@@ -2928,11 +2928,45 @@ img {
 }
 
 .reference-list {
-  margin-top: 1rem;
+  margin: 0;
+  padding-left: 1.4rem;
 }
 
 .reference-section .content-card {
   background: rgba(255, 255, 255, 0.88);
+}
+
+.references-section {
+  margin-top: 1rem;
+  align-items: start;
+}
+
+.reference-group {
+  min-height: 100%;
+  padding: 1.35rem;
+}
+
+.reference-group h3 {
+  margin: 0 0 0.95rem;
+  color: var(--primary);
+}
+
+.reference-item {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.reference-item + .reference-item {
+  margin-top: 0.78rem;
+}
+
+.reference-item a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
 }
 
 .site-footer {
