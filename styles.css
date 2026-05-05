@@ -1801,6 +1801,154 @@ img {
   font-weight: 700;
 }
 
+.technical-overview-card,
+.architecture-diagram-card {
+  margin-top: 1rem;
+}
+
+.technical-split-heading {
+  margin-bottom: 1rem;
+}
+
+.technical-split-heading h3 {
+  color: var(--primary);
+}
+
+.technical-overview-card p:last-of-type,
+.architecture-diagram-card > p:last-of-type {
+  margin-bottom: 0;
+}
+
+.technical-overview-tags,
+.route-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.technical-tag,
+.route-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.42rem 0.78rem;
+  border-radius: 999px;
+  background: rgba(23, 75, 79, 0.1);
+  color: var(--primary);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.architecture-diagram {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  margin-top: 1.1rem;
+}
+
+.architecture-node {
+  width: min(100%, 900px);
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88) 0%, rgba(233, 240, 236, 0.45) 100%);
+  box-shadow: 0 14px 32px rgba(31, 44, 43, 0.08);
+}
+
+.architecture-node h4,
+.db-group h5 {
+  margin: 0;
+  color: var(--primary);
+}
+
+.architecture-node p,
+.db-group p {
+  margin: 0.5rem 0 0;
+}
+
+.architecture-arrow {
+  color: var(--secondary);
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.architecture-node-top {
+  max-width: 420px;
+  text-align: center;
+}
+
+.architecture-request-node,
+.architecture-route-node,
+.architecture-db-node {
+  width: min(100%, 980px);
+}
+
+.db-group-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+}
+
+.db-group {
+  padding: 0.9rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(24, 33, 38, 0.08);
+}
+
+.technical-grid {
+  align-items: stretch;
+}
+
+.technical-table-wrap {
+  margin-top: 0.9rem;
+}
+
+.technical-table {
+  min-width: 820px;
+}
+
+.data-handling-table {
+  min-width: 1080px;
+}
+
+.technical-meta-list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 1rem 0 0;
+}
+
+.technical-meta-list div {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.technical-meta-list dt {
+  margin: 0;
+  color: var(--secondary);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.technical-meta-list dd {
+  margin: 0.35rem 0 0;
+  color: var(--text-soft);
+}
+
+.technical-meta-list a {
+  color: var(--primary);
+  font-weight: 700;
+  word-break: break-word;
+}
+
 .direction-next-arrow {
   display: inline-flex;
   align-items: center;
@@ -2837,6 +2985,10 @@ section[id] {
 
   .split-heading {
     display: block;
+  }
+
+  .db-group-grid {
+    grid-template-columns: 1fr;
   }
 
   .split-heading > p {
