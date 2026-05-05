@@ -1615,119 +1615,138 @@ img {
   margin: 0.4rem 0 0;
 }
 
-.refinement-section-card {
+.ba-section {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(233, 240, 236, 0.5));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(233, 240, 236, 0.46));
 }
 
-.refinement-section-card > p {
-  max-width: 72ch;
+.ba-section > p {
+  max-width: 68ch;
 }
 
-.refinement-comparison-stack {
-  display: grid;
-  gap: 1.2rem;
-  margin-top: 1.25rem;
-}
-
-.refinement-comparison-card {
+.ba-stack {
   display: grid;
   gap: 1rem;
-  padding: 1.2rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.72);
+  margin-top: 1.15rem;
 }
 
-.refinement-card-header {
+.ba-card {
+  display: grid;
+  gap: 0.95rem;
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.68);
+  box-shadow: 0 12px 30px rgba(31, 44, 43, 0.06);
+}
+
+.ba-card-header {
   display: flex;
   align-items: center;
-  gap: 0.85rem;
+  gap: 0.8rem;
   flex-wrap: wrap;
 }
 
-.refinement-card-index {
+.ba-index {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.35rem;
+  height: 2.35rem;
   margin: 0;
   border-radius: 999px;
   background: rgba(127, 47, 51, 0.12);
   color: var(--secondary);
+  font-size: 0.95rem;
   font-weight: 800;
 }
 
-.refinement-comparison-card h4 {
+.ba-card h4 {
   margin: 0;
   color: var(--primary);
-  font-size: 1.22rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.28rem;
+  line-height: 1.15;
 }
 
-.refinement-image-grid {
+.ba-image-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
-.refinement-shot {
+.ba-image-card {
   margin: 0;
   display: grid;
-  gap: 0.75rem;
-  padding: 0.9rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: rgba(248, 245, 239, 0.7);
+  gap: 0.65rem;
 }
 
-.refinement-shot figcaption {
+.ba-image-card figcaption {
   color: var(--primary);
-  font-size: 0.92rem;
+  font-size: 0.9rem;
   font-weight: 700;
 }
 
-.refinement-shot img {
+.ba-image-frame {
+  display: grid;
+  place-items: center;
+  min-height: 360px;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: rgba(248, 245, 239, 0.84);
+}
+
+.ba-image {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  height: 100%;
+  max-height: 360px;
+  aspect-ratio: 414 / 769;
+  object-fit: contain;
+  object-position: center;
   border-radius: calc(var(--radius-md) - 6px);
-  border: 1px solid rgba(24, 33, 38, 0.08);
   background: #fff;
 }
 
-.refinement-detail-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.85rem;
-  margin: 0;
-}
-
-.refinement-detail-grid div {
-  min-height: 100%;
-  padding: 0.9rem 1rem;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.64);
-}
-
-.refinement-detail-grid dt {
+.ba-summary {
   margin: 0;
   color: var(--text);
-  font-size: 0.88rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.refinement-detail-grid dd {
-  margin: 0.5rem 0 0;
-  color: var(--text-soft);
   font-size: 0.98rem;
-  line-height: 1.62;
+  line-height: 1.55;
 }
 
-.requirement-pill {
+.ba-chip-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.ba-chip {
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(24, 33, 38, 0.08);
+  color: var(--text-soft);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.ba-chip strong {
+  color: var(--text);
+}
+
+.ba-requirement {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.94rem;
+}
+
+.ba-badge {
   display: inline-flex;
   align-items: center;
   padding: 0.38rem 0.72rem;
@@ -2776,8 +2795,8 @@ section[id] {
   .quick-jump-grid,
   .challenge-grid,
   .before-after-grid,
-  .refinement-image-grid,
-  .refinement-detail-grid,
+  .ba-image-grid,
+  .ba-chip-row,
   .milestone-strip,
   .member-grid,
   .persona-grid,
