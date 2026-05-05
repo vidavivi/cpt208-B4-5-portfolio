@@ -210,6 +210,7 @@
           <a href="#interactive-highfi-walkthrough">Interactive High-Fi Walkthrough</a>
           <a href="#technical">Implementation</a>
           <a href="#evaluation">Evaluation &amp; Reflection</a>
+          <a href="#before-after-refinement">Before / After Refinement</a>
           <a href="#references">References</a>
         </nav>
       </aside>
@@ -2118,7 +2119,7 @@
         <div class="section-heading">
           <p class="phase-label">Final Prototype / Evaluation / Reflection</p>
           <h2>Evaluation &amp; Reflection</h2>
-          <p>This section will be completed after the next round of prototype testing and iteration.</p>
+          <p>This section combines the refinement already completed before the final system with the remaining summative evaluation content that will be added later.</p>
         </div>
 
         <div class="card-grid two-up">
@@ -2126,24 +2127,139 @@
             <h3>Usability Testing</h3>
             <p>To be completed after the next round of prototype testing.</p>
           </article>
-          <article class="content-card future-placeholder-card">
+          <article class="content-card transition-card">
             <h3>Iterative Refinement</h3>
-            <p>This section will be updated once the five revised directions are narrowed into three final functions.</p>
+            <p>This portfolio already documents the transition from the Week 8 prototype to the final three-function system through before/after comparisons grounded in feedback and benchmarking.</p>
           </article>
         </div>
 
-        <article class="content-card wide-card">
-          <h3>Before / After Iteration</h3>
-          <p>Before/after screenshots will be added after the five revised directions are narrowed into three final functions and implemented in the prototype.</p>
-          <div class="before-after-grid">
-            <div class="before-after-placeholder">
-              <h4>Before</h4>
-              <p>Initial Week 8 prototype state</p>
-            </div>
-            <div class="before-after-placeholder">
-              <h4>After</h4>
-              <p>Final three-function iteration update</p>
-            </div>
+        <article class="content-card wide-card refinement-section-card" id="before-after-refinement">
+          <h3>Before / After: Iterative Refinement Toward the Final System</h3>
+          <p>Before the final evaluation, Kinlight had already gone through several design refinements based on Week 8 tutor feedback, demo-based user feedback, and product benchmarking. The comparisons below show how the early Week 8 prototype was revised into the final three-function system.</p>
+
+          <div class="refinement-comparison-stack">
+            <article class="refinement-comparison-card">
+              <div class="refinement-card-header">
+                <p class="refinement-card-index">01</p>
+                <h4>Lightweight Sharing → Album</h4>
+              </div>
+
+              <div class="refinement-image-grid">
+                <figure class="refinement-shot">
+                  <figcaption>Before: Week 8 Lightweight Sharing</figcaption>
+                  <img src="figure/home2.jpg" alt="Early Week 8 Lightweight Sharing prototype showing a social-feed-like family update screen.">
+                </figure>
+                <figure class="refinement-shot">
+                  <figcaption>After: Final Album</figcaption>
+                  <img src="portfolio-highfi-handoff/screenshots/function1_01_entry.png" alt="Final Album screen showing a family-specific album overview in the Kinlight high-fidelity walkthrough.">
+                </figure>
+              </div>
+
+              <dl class="refinement-detail-grid">
+                <div>
+                  <dt>Problem in Earlier Version</dt>
+                  <dd>Early Lightweight Sharing allowed users to post and react to family updates, but the flow still looked close to a general social feed.</dd>
+                </div>
+                <div>
+                  <dt>Feedback Evidence</dt>
+                  <dd>Week 8 feedback questioned whether this feature was sufficiently different from existing social media such as WeChat Moments. Round 1 users also compared it to a simple “like” system.</dd>
+                </div>
+                <div>
+                  <dt>Final Change</dt>
+                  <dd>We revised it into Album, a family-specific space with pet-carried notes, lightweight reactions, and recap cards.</dd>
+                </div>
+                <div>
+                  <dt>Design Rationale</dt>
+                  <dd>This change strengthens Low Reply Pressure because users can acknowledge family care without starting a full conversation.</dd>
+                </div>
+                <div>
+                  <dt>Requirement Supported</dt>
+                  <dd><span class="requirement-pill">Low Reply Pressure</span></dd>
+                </div>
+              </dl>
+            </article>
+
+            <article class="refinement-comparison-card">
+              <div class="refinement-card-header">
+                <p class="refinement-card-index">02</p>
+                <h4>Mood Jar / Pet → Jar</h4>
+              </div>
+
+              <div class="refinement-image-grid">
+                <figure class="refinement-shot">
+                  <figcaption>Before: Week 8 Mood Jar / Pet</figcaption>
+                  <img src="figure/mood1.jpg" alt="Early Week 8 Mood Jar prototype showing the jar and pet concept together.">
+                </figure>
+                <figure class="refinement-shot">
+                  <figcaption>After: Final Jar</figcaption>
+                  <img src="portfolio-highfi-handoff/screenshots/function2_02_interaction.png" alt="Final Jar interaction screen showing mood selection and graduated sharing controls.">
+                </figure>
+              </div>
+
+              <dl class="refinement-detail-grid">
+                <div>
+                  <dt>Problem in Earlier Version</dt>
+                  <dd>The early Mood Jar and pet concept made emotional atmosphere visible, but the boundary between private mood records and family-visible information was not clear enough.</dd>
+                </div>
+                <div>
+                  <dt>Feedback Evidence</dt>
+                  <dd>Tutor feedback warned that a sad or negative pet state might create guilt or anxiety. User feedback also showed concern about parents seeing detailed mood information.</dd>
+                </div>
+                <div>
+                  <dt>Final Change</dt>
+                  <dd>We revised it into Jar, where users can record moods privately and choose the sharing level before any information becomes visible to family members.</dd>
+                </div>
+                <div>
+                  <dt>Design Rationale</dt>
+                  <dd>This supports Flexible Timing and emotional safety because users control when and how much emotional information is shared.</dd>
+                </div>
+                <div>
+                  <dt>Requirement Supported</dt>
+                  <dd><span class="requirement-pill">Flexible Timing / Privacy Control</span></dd>
+                </div>
+              </dl>
+            </article>
+
+            <article class="refinement-comparison-card">
+              <div class="refinement-card-header">
+                <p class="refinement-card-index">03</p>
+                <h4>Gentle Topics → Weekly Echo</h4>
+              </div>
+
+              <div class="refinement-image-grid">
+                <figure class="refinement-shot">
+                  <figcaption>Before: Week 8 Gentle Topics</figcaption>
+                  <img src="figure/topic1.jpg" alt="Early Week 8 Gentle Topics prototype showing prompt cards for starting family conversations.">
+                </figure>
+                <figure class="refinement-shot">
+                  <figcaption>After: Final Weekly Echo</figcaption>
+                  <img src="portfolio-highfi-handoff/screenshots/function3_01_entry.png" alt="Final Weekly Echo screen showing a weekly recap board in the Kinlight high-fidelity walkthrough.">
+                </figure>
+              </div>
+
+              <dl class="refinement-detail-grid">
+                <div>
+                  <dt>Problem in Earlier Version</dt>
+                  <dd>Early Gentle Topics helped users start conversations, but topic cards could still feel generic and disconnected from real family memories.</dd>
+                </div>
+                <div>
+                  <dt>Feedback Evidence</dt>
+                  <dd>Feedback raised concerns that AI-generated or generic family replies may feel inauthentic. Benchmarking also showed that prompt-only systems may not be enough for sustained relationship maintenance.</dd>
+                </div>
+                <div>
+                  <dt>Final Change</dt>
+                  <dd>We revised it into Weekly Echo, which turns weekly interactions into a recap, unlocks a keepsake, and provides light prompt chips based on shared moments.</dd>
+                </div>
+                <div>
+                  <dt>Design Rationale</dt>
+                  <dd>This supports Easy to Start because conversation starts from shared family activity rather than from an abstract prompt.</dd>
+                </div>
+                <div>
+                  <dt>Requirement Supported</dt>
+                  <dd><span class="requirement-pill">Easy to Start</span></dd>
+                </div>
+              </dl>
+            </article>
           </div>
         </article>
 
