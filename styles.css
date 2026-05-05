@@ -1882,6 +1882,36 @@ img {
   margin-bottom: 0;
 }
 
+.web-quality-card {
+  margin-top: 1rem;
+}
+
+.web-quality-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.web-quality-item {
+  position: relative;
+  padding: 0.95rem 1rem 0.95rem 2.35rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(233, 240, 236, 0.68));
+  color: var(--text-soft);
+  line-height: 1.55;
+}
+
+.web-quality-item::before {
+  content: "✓";
+  position: absolute;
+  top: 0.95rem;
+  left: 0.95rem;
+  color: var(--primary);
+  font-weight: 800;
+}
+
 .technical-overview-tags,
 .route-chip-list {
   display: flex;
@@ -3162,7 +3192,8 @@ section[id] {
   .insight-grid,
   .benchmarking-grid,
   .benchmark-synthesis-grid,
-  .direction-grid {
+  .direction-grid,
+  .web-quality-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -3465,6 +3496,10 @@ section[id] {
 }
 
 @media (max-width: 900px) {
+  .web-quality-grid {
+    grid-template-columns: 1fr;
+  }
+
   .final-mapping-strip {
     grid-template-columns: 1fr;
   }
