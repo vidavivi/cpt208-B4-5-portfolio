@@ -621,6 +621,22 @@ img {
   font-size: 1.3rem;
 }
 
+.prototype-tag {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.55rem;
+  padding: 0.18rem 0.6rem;
+  border: 1px solid rgba(127, 47, 51, 0.18);
+  border-radius: 999px;
+  background: rgba(127, 47, 51, 0.08);
+  color: var(--secondary);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
 .content-card p,
 .content-card li {
   color: var(--text-soft);
@@ -3098,6 +3114,11 @@ section[id] {
 }
 
 @media (max-width: 640px) {
+  .prototype-tag {
+    margin-top: 0.45rem;
+    margin-left: 0;
+  }
+
   .hero-section,
   .content-section {
     padding: 3.5rem 0;
