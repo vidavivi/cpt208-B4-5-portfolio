@@ -647,6 +647,21 @@ img {
   line-height: 1.65;
 }
 
+.compact-summary-list {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+
+.compact-summary-list p {
+  margin: 0;
+}
+
+.compact-summary-list strong,
+.stakeholder-block strong {
+  color: var(--primary);
+}
+
 .content-card ul,
 .content-card ol {
   margin: 1rem 0 0;
@@ -2205,6 +2220,20 @@ img {
   margin-top: 0;
 }
 
+.research-comparison-wrap {
+  margin-top: 1rem;
+}
+
+.research-comparison-table {
+  min-width: 920px;
+}
+
+.research-comparison-table td:first-child {
+  min-width: 180px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
 .gap-summary {
   margin-top: 1rem;
   background: rgba(216, 231, 225, 0.58);
@@ -2253,6 +2282,15 @@ img {
 
 .stakeholder-block h4 {
   font-size: 1.05rem;
+}
+
+.stakeholder-block {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.stakeholder-block p {
+  margin: 0;
 }
 
 .member-grid {
