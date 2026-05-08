@@ -38,18 +38,12 @@
 
         <article class="ks-info-card">
           <h4>🌤️ Lightweight Sharing</h4>
-          <p class="ks-lead">A gentle way to say <em>“this is a little piece of my day.”</em></p>
-          <p>Users can share a <strong>photo</strong> or <strong>short video</strong> with only a few words, turning daily life into something soft, visible, and easy to send.</p>
-          <p>💬 Instead of asking for a full conversation, the screen invites <strong>quick replies</strong>, <strong>light reactions</strong>, and small moments of response that feel effortless but still warm.</p>
-          <p class="ks-note">✨ The experience is designed to feel <strong>casual</strong>, <strong>low-pressure</strong>, and <strong>emotionally close</strong> — more like leaving a trace of your day than starting a serious chat. Design rationale: this flow lowers the effort required to respond while still leaving a visible sign of care.</p>
-
-          <div class="ks-flow-card">
-            <h5>📱 Home UI Interaction</h5>
-            <p><strong>1.</strong> Tap <strong>Upload</strong> to post a new daily moment through a photo or short video.</p>
-            <p><strong>2.</strong> View a family member’s shared post directly in the feed.</p>
-            <p><strong>3.</strong> Choose a <strong>quick reply</strong> for low-effort interaction, or tap <strong>Add reply</strong> to type a short custom response.</p>
-            <p><strong>4.</strong> After replying, the interaction remains light and informal, helping communication continue without pressure.</p>
-          </div>
+          <p class="ks-lead">A low-effort way to share daily moments without starting a full conversation.</p>
+          <ul class="ks-points">
+            <li><strong>User action:</strong> Upload or view a small family moment, then respond with a quick reply or light reaction.</li>
+            <li><strong>Design value:</strong> Keeps acknowledgement visible but avoids forcing a long chat.</li>
+            <li><strong>Requirement supported:</strong> Low Reply Pressure.</li>
+          </ul>
         </article>
       </div>
     </div>
@@ -80,18 +74,12 @@
 
         <article class="ks-info-card">
           <h4>🌷 Gentle Topics</h4>
-          <p>The page offers <strong>gentle prompts</strong> that help family members start talking without the pressure of thinking of the perfect message.</p>
-          <p>💌 Users can <strong>send a topic card directly</strong>, open <strong>family invitations</strong> from the top reminder card, or choose <strong>who to invite</strong> through the invite action.</p>
-          <p class="ks-note">✨ Instead of forcing conversation, this feature creates a <strong>warm entry point</strong> — light enough for everyday use, but meaningful enough to support emotional connection. Design rationale: topic cards reduce the burden of initiating conversation from scratch.</p>
-
-          <div class="ks-flow-card">
-            <h5>💡 Connect UI Interaction</h5>
-            <p><strong>1.</strong> Browse the topic cards shown on the page and choose one that feels easy to share.</p>
-            <p><strong>2.</strong> Tap <strong>Send</strong> to turn the prompt into a conversation invitation.</p>
-            <p><strong>3.</strong> Tap the <strong>invite icon</strong> to choose which family member to send it to.</p>
-            <p><strong>4.</strong> Tap the <strong>notification card</strong> to review incoming invitations, then accept or decline them.</p>
-            <p><strong>5.</strong> Tap <strong>refresh</strong> to receive a new batch of gentle topics and keep the interaction feeling fresh.</p>
-          </div>
+          <p class="ks-lead">A prompt-based entry point for starting family conversations more easily.</p>
+          <ul class="ks-points">
+            <li><strong>User action:</strong> Browse, refresh, and send a topic card to a family member.</li>
+            <li><strong>Design value:</strong> Reduces the burden of thinking of what to say from scratch.</li>
+            <li><strong>Requirement supported:</strong> Easy to Start.</li>
+          </ul>
         </article>
       </div>
     </div>
@@ -125,18 +113,12 @@
 
         <article class="ks-info-card">
           <h4>🫙 Private Mood Jar</h4>
-          <p class="ks-lead">It acts as a gentle mirror of the family’s overall emotional atmosphere.</p>
-          <p>📅 Users record their daily mood by <strong>throwing a candy</strong> into the jar. Over time, the jar fills with coloured mood drops and the private calendar builds a gentle visual history of everyday emotional change.</p>
-          <p>🐾 The pet reflects only an <strong>abstract, non-specific family atmosphere</strong>, while each user’s detailed mood log remains <strong>private and visible only to themselves</strong>.</p>
-          <p class="ks-note">Design rationale: the private mood jar supports emotional self-reflection without turning emotion sharing into family monitoring.</p>
-          <div class="ks-flow-card">
-            <h5>💡 Mood Jar UI Interaction</h5>
-            <p><strong>1.</strong> View the pet’s current state as a soft, abstract reflection of the recent family atmosphere.</p>
-            <p><strong>2.</strong> Tap <strong>Throw a candy for today</strong> to start recording your mood.</p>
-            <p><strong>3.</strong> Choose one emotion from the mood popup and optionally add a short personal note.</p>
-            <p><strong>4.</strong> Open the <strong>private mood log</strong> to review your emotional calendar over time.</p>
-            <p><strong>5.</strong> Use the <strong>pet selection</strong> page to choose the companion you prefer.</p>
-          </div>
+          <p class="ks-lead">A private mood-reflection flow with limited, abstract family awareness.</p>
+          <ul class="ks-points">
+            <li><strong>User action:</strong> Record a mood by placing a mood item into the jar and review the private mood log.</li>
+            <li><strong>Design value:</strong> Supports self-reflection while avoiding direct family monitoring.</li>
+            <li><strong>Requirement supported:</strong> Flexible Timing and emotional privacy.</li>
+          </ul>
         </article>
       </div>
     </div>
@@ -350,16 +332,6 @@
     line-height: 1.5;
   }
 
-  .ks-info-card .ks-note {
-    margin-top: 0.78rem;
-    padding: 0.75rem 0.85rem;
-    border-radius: 18px;
-    background: rgba(216, 231, 225, 0.46);
-    color: #506068;
-    font-size: 0.9rem;
-    line-height: 1.45;
-  }
-
   @media (max-width: 980px) {
     .ks-header,
     .ks-layout {
@@ -386,24 +358,18 @@
   color: #7a5f84;
 }
 
-.ks-flow-card {
-  margin-top: 0.85rem;
-  padding-top: 0.8rem;
-  border-top: 1px solid rgba(24, 33, 38, 0.1);
+.ks-points {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.85rem 0 0;
+  padding-left: 1.1rem;
+  color: #4f5d66;
+  font-size: 0.92rem;
+  line-height: 1.48;
 }
 
-.ks-flow-card h5 {
-  margin: 0;
+.ks-points li::marker {
   color: #174b4f;
-  font-size: 1rem;
-  line-height: 1.35;
-  font-family: "Fraunces", Georgia, serif;
-}
-
-.ks-flow-card p {
-  margin: 0.42rem 0 0;
-  font-size: 0.88rem;
-  line-height: 1.42;
 }
 
 
