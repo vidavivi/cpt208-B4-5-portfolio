@@ -2546,6 +2546,13 @@ img {
   gap: 1rem;
 }
 
+.requirements-support-label {
+  margin: -0.35rem 0 0;
+  color: var(--secondary);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
 .section-intro {
   margin: 0;
   max-width: 60ch;
