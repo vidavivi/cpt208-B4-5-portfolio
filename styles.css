@@ -256,7 +256,7 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.9fr);
   gap: 1.5rem;
-  align-items: stretch;
+  align-items: start;
 }
 
 .hero-copy,
@@ -270,7 +270,7 @@ img {
 }
 
 .hero-copy {
-  padding: clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(1.8rem, 3vw, 2.7rem);
 }
 
 .hero-panel {
