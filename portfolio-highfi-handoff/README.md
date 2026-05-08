@@ -1,95 +1,44 @@
-# High-Fi Walkthrough Handoff Package
+# Portfolio High-Fi Handoff
 
-This package is a portfolio handoff for the final three high-fidelity frontend functions in the `208design` app. It is meant for a second Codex working in a separate portfolio project, where the implementation should use static screenshots, hotspot overlays, and guided-tour copy instead of live backend integration.
+This package regenerates the portfolio walkthrough from the current frontend-only implementation.
 
-## Frontend Pages Analysed
+The captures and step flow were produced from the local demo frontend with `VITE_DEMO_MODE=true`, so the package stays independent from backend setup and uses seeded interface states only.
 
-The app is a single root-shell frontend with bottom-tab state switching rather than separate URL routes. In `src/app/App.tsx` and `src/app/components/bottom-nav.tsx`, the tab order is:
+## Frontend Structure
 
-1. `Home`
-2. `Album`
-3. `Jar`
-4. `Echo`
-5. `Me`
+- Root shell: `src/app/App.tsx`
+- Bottom navigation: `src/app/components/bottom-nav.tsx`
+- Album / Connect: `src/app/pages/connect-page.tsx`
+- Jar: `src/app/pages/jar-page.tsx`
+- Weekly Echo: `src/app/pages/weekly-echo-page.tsx`
+- Jar calendar subcomponent: `src/app/components/mood-calendar.tsx`
 
-This package therefore treats the final three main functions as:
+## Navigation Model
 
-- Page 2: `Album`
-  Source component: `src/app/pages/connect-page.tsx`
-- Page 3: `Jar`
-  Source component: `src/app/pages/jar-page.tsx`
-- Page 4: `Weekly Echo`
-  Source component: `src/app/pages/weekly-echo-page.tsx`
+- These three functions are not standalone routes.
+- They are tab states inside the root app shell.
+- Current tab keys in `App.tsx` are `album`, `jar`, and `echo`.
+- Current visible bottom-nav labels are `Album`, `Jar`, and `Echo`.
 
-## What This Package Contains
+## Detectable Updates From The Current Frontend
 
-- `tour-manifest.json`
-  Structured data for function metadata, screenshots, walkthrough steps, tooltip content, hotspot positions, and requirement mapping.
-- `portfolio-copy.md`
-  Portfolio-ready explanatory wording and tooltip copy.
-- `screenshot-plan.md`
-  Capture instructions and the rationale for each screenshot.
-- `screenshots/`
-  Captured high-fidelity UI screenshots, if available.
+- `Connect` now survives mainly as the internal page/component name `ConnectPage`; the visible tab label is `Album`.
+- `Weekly Echo` is still the page heading, but the visible nav label is now `Echo`.
+- `Album / Connect` now has a clear two-stage flow: member overview, then per-member gallery detail.
+- `Album / Connect` detail now depends on overlay states such as the range dropdown, emoji reaction tray, upload sheet, draft confirm modal, and delete confirmation.
+- `Jar` now centers on a mood-candy jar with a private calendar popup, day editor, shared-status care popup, and candy-detail modal.
+- `Weekly Echo` now uses a three-board carousel (`summary`, `moments`, `keepsakes`) plus a separate keepsake reveal scene.
 
-## How The Portfolio Codex Should Use This Package
+## Manifest Compatibility
 
-1. Treat `tour-manifest.json` as the main implementation source.
-2. Build a screenshot-based walkthrough section rather than a live app embed.
-3. Render each function inside a phone mockup or a constrained portrait viewport.
-4. Use the screenshot filenames from `screenshots/`.
-5. Use percentage-based hotspot coordinates from the manifest so overlays remain responsive.
-6. Use the tooltip titles and body text from the manifest or `portfolio-copy.md`.
-7. Keep all interaction states mock-only. Taps should advance the walkthrough, not call APIs.
+- `tour-manifest.json` keeps flat function objects with `steps` arrays.
+- Each step keeps flat fields for `screenshot`, `target`, `hotspot`, `spotlight`, `title`, `body`, `requirementBadge`, `mockAction`, and `expectedEffect`.
+- Screenshot references stay filename-only so the existing portfolio implementation can keep its current screenshot path prefixing.
+- Added metadata such as `navLabel`, `tabKey`, `component`, and `entryFiles` is optional and can be ignored by the portfolio code if unnecessary.
 
-## Function Summaries
+## Screenshot Notes
 
-### Page 2: Album
+- All screenshots in this package were successfully captured.
+- No manual screenshot capture is currently required.
+- Captured viewport size is `599 x 769`.
 
-- Source file/component: `src/app/pages/connect-page.tsx` / `ConnectPage`
-- UI purpose: show a family photo-sharing flow where updates can carry short pet notes and receive lightweight reactions
-- Key UI elements:
-  family overview cards, member-specific gallery, range filter, summary card, reaction launcher, reaction badges, upload entry point
-- Key interaction states:
-  overview list, member detail, expanded summary, reaction selection, visible reaction feedback
-- Screenshots needed:
-  entry state, detail interaction state, visible reaction result, summary/feedback detail
-- Walkthrough focus:
-  how the user enters a member album, reacts without starting a chat, and reads a condensed recap of recent updates
-
-### Page 3: Jar
-
-- Source file/component: `src/app/pages/jar-page.tsx` / `JarPage`
-- UI purpose: record a daily mood quickly, control its visibility, and support gentle family care responses
-- Key UI elements:
-  pet bubble, quick-add button, weekly mood strip, mood editor modal, private/soft/full share controls, shared jar, shared-status card, family reaction buttons, private calendar
-- Key interaction states:
-  default jar view, mood editor modal, shared jar visibility state, family reaction feedback, private calendar section
-- Screenshots needed:
-  entry state, editor interaction state, shared-result state, family-feedback state
-- Walkthrough focus:
-  how private tracking becomes filtered family awareness through explicit sharing thresholds
-
-### Page 4: Weekly Echo
-
-- Source file/component: `src/app/pages/weekly-echo-page.tsx` / `WeeklyEchoPage`
-- UI purpose: turn small weekly traces into a recap, a keepsake board, and a reflective reward moment
-- Key UI elements:
-  blackboard carousel, recap metrics, keepsake board, reveal CTA, gift reveal state, pet reply chips
-- Key interaction states:
-  recap entry board, keepsake interaction board, weekly summary/reward view
-- Screenshots needed:
-  entry board, keepsake interaction board, summary/result board
-- Walkthrough focus:
-  how cumulative daily interactions are transformed into reflection and memory-making
-
-## Design Requirement Notes
-
-The repo does not define explicit `DR1`, `DR2`, `DR3`, or `DR4` labels in the visible frontend code or docs. The requirement matrix in this package is therefore inferred from the product logic and UI text.
-
-## Assumptions And Uncertainties
-
-- The three functions are tab states inside the root app shell, not standalone routes.
-- Page 2 is visually and functionally `Album`, although the file name is `connect-page.tsx`.
-- The portfolio build should not depend on backend calls, even when the original frontend attempts to fetch data.
-- Any screenshot that still requires manual capture is documented clearly in `screenshot-plan.md`.

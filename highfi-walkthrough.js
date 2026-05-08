@@ -1,192 +1,196 @@
-(function () {
-  const hfManifest = {
+(async function () {
+  const hfFallbackManifest = {
+    generatedAt: "2026-05-08",
     packageMeta: {
       screenshotBase: "portfolio-highfi-handoff/screenshots/"
     },
     functions: [
       {
-        functionId: "function1",
-        pageName: "Album",
-        displayLabel: "Album 📸",
-        functionTitle: "Album",
-        tabSummary: "Family sharing with quick reactions and recap support.",
-        uiPurpose: "Photo sharing, quick acknowledgement, and recap.",
-        tourSteps: [
+        id: "album-connect",
+        name: "Album / Connect",
+        description: "Family photo updates are entered through an album overview, then read and acknowledged inside a per-member gallery.",
+        steps: [
           {
-            stepId: "function1-step1",
-            screenshot: "function1_01_entry.png",
-            stateLabel: "Family overview",
-            stateHint: "Recent updates are easy to scan first.",
-            position: { x: "50%", y: "33%", width: "86%", height: "56%" },
-            tooltipTitle: "Open a family update",
-            tooltipBody: "Preview cards make recent family updates easy to scan.",
-            requirementBadges: ["Low Reply Pressure"],
-            suggestedAction: "Tap a family card.",
-            designValue: "The user can notice an update before deciding whether to respond."
+            id: "album-1",
+            screenshot: "album-overview.png",
+            target: "Grace member card",
+            hotspot: { x: 50, y: 24 },
+            spotlight: { x: 50, y: 24, w: 80, h: 28 },
+            title: "Open a family member's update stream",
+            body: "The Album tab now begins with member cards, so the walkthrough starts by choosing whose recent photo updates to open.",
+            requirementBadge: "Easy to Start",
+            mockAction: "Tap the Grace card from the Album overview.",
+            expectedEffect: "Grace's member-specific gallery opens as the next screen."
           },
           {
-            stepId: "function1-step2",
-            screenshot: "function1_02_interaction.png",
-            stateLabel: "Detail view",
-            stateHint: "The main photo becomes the interaction surface.",
-            position: { x: "79%", y: "62%", width: "18%", height: "14%" },
-            tooltipTitle: "React in one tap",
-            tooltipBody: "One-tap reactions let users respond without writing a full message.",
-            requirementBadges: ["Low Reply Pressure"],
-            suggestedAction: "Tap the reaction button on the photo.",
-            designValue: "Care can be acknowledged quickly without opening a longer chat."
+            id: "album-2",
+            screenshot: "album-grace-gallery.png",
+            target: "Latest shared photo card",
+            hotspot: { x: 50, y: 48 },
+            spotlight: { x: 50, y: 48, w: 76, h: 38 },
+            title: "Browse one shared moment without entering chat",
+            body: "The gallery keeps the photo, time, and note together so the update can be read as a lightweight family moment.",
+            requirementBadge: "Low Reply Pressure",
+            mockAction: "Scroll into the first photo card and read the attached note.",
+            expectedEffect: "The update feels readable without turning into an immediate conversation task."
           },
           {
-            stepId: "function1-step3",
-            screenshot: "function1_03_result.png",
-            stateLabel: "Reaction feedback",
-            stateHint: "The chosen response stays visible on screen.",
-            position: { x: "16%", y: "71%", width: "13%", height: "10%" },
-            tooltipTitle: "Keep the reply visible",
-            tooltipBody: "The chosen reaction stays visible after the tap.",
-            requirementBadges: ["Low Reply Pressure"],
-            suggestedAction: "Notice the visible reaction badge.",
-            designValue: "Both sides can see acknowledgement without extending the interaction."
+            id: "album-3",
+            screenshot: "album-range-menu.png",
+            target: "Time-range dropdown",
+            hotspot: { x: 53, y: 24 },
+            spotlight: { x: 55, y: 26, w: 38, h: 22 },
+            title: "Shift the gallery time window",
+            body: "A compact time filter lets users focus on today's, last week's, last month's, or last year's posts.",
+            requirementBadge: "Flexible Timing",
+            mockAction: "Open the Last Week dropdown to inspect the available time ranges.",
+            expectedEffect: "The range menu expands over the gallery and narrows the visible update set."
           },
           {
-            stepId: "function1-step4",
-            screenshot: "function1_04_feedback.png",
-            stateLabel: "Summary recap",
-            stateHint: "Several posts are condensed into one card.",
-            position: { x: "36%", y: "38%", width: "64%", height: "34%" },
-            tooltipTitle: "Read the recap card",
-            tooltipBody: "A recap card gathers several updates into one summary.",
-            requirementBadges: ["Low Reply Pressure"],
-            suggestedAction: "Read the recap card.",
-            designValue: "Small updates become easier to revisit as one family moment."
+            id: "album-4",
+            screenshot: "album-reaction-picker.png",
+            target: "Emoji reaction tray",
+            hotspot: { x: 58, y: 44 },
+            spotlight: { x: 58, y: 44, w: 42, h: 12 },
+            title: "Respond with a low-pressure reaction",
+            body: "Acknowledgement happens through a short emoji tray instead of a full message composer.",
+            requirementBadge: "Low Reply Pressure",
+            mockAction: "Tap the reaction button on the photo card to open the emoji tray.",
+            expectedEffect: "A quick reaction row appears above the card for light acknowledgement."
+          },
+          {
+            id: "album-5",
+            screenshot: "album-upload-sheet.png",
+            target: "Camera and Library chooser",
+            hotspot: { x: 50, y: 86 },
+            spotlight: { x: 50, y: 86, w: 76, h: 18 },
+            title: "Start a self-upload in one step",
+            body: "Opening your own album leads directly to a simple Camera-or-Library chooser instead of a heavier upload flow.",
+            requirementBadge: "Easy to Start",
+            mockAction: "Tap the camera icon in the top-right corner of the current user's gallery.",
+            expectedEffect: "A bottom sheet offers Camera and Library as the first upload choices."
           }
         ]
       },
       {
-        functionId: "function2",
-        pageName: "Jar",
-        displayLabel: "Jar 🫙",
-        functionTitle: "Jar",
-        tabSummary: "Private mood reflection with clear sharing control.",
-        uiPurpose: "Private check-ins, sharing control, and gentle family care.",
-        tourSteps: [
+        id: "jar",
+        name: "Jar",
+        description: "Jar now combines a private mood-recording flow with a shared-status care view and animated candy-drop feedback.",
+        steps: [
           {
-            stepId: "function2-step1",
-            screenshot: "function2_01_entry.png",
-            stateLabel: "Private entry",
-            stateHint: "Mood logging begins with one lightweight prompt.",
-            position: { x: "28%", y: "72%", width: "44%", height: "13%" },
-            tooltipTitle: "Start a quick check-in",
-            tooltipBody: "The jar starts with one simple mood entry prompt.",
-            requirementBadges: ["Flexible Timing"],
-            suggestedAction: "Tap the mood-bead entry row.",
-            designValue: "The check-in stays easy to repeat at the user’s own pace."
+            id: "jar-1",
+            screenshot: "jar-main.png",
+            target: "Today's plus button",
+            hotspot: { x: 18, y: 43 },
+            spotlight: { x: 18, y: 43, w: 14, h: 12 },
+            title: "Start today's mood check-in",
+            body: "The updated Jar flow begins from one plus action, framed as adding a mood candy rather than filling in a heavy diary entry.",
+            requirementBadge: "Easy to Start",
+            mockAction: "Tap the plus button beside the 'Add your own mood candy?' prompt.",
+            expectedEffect: "The day-level editor opens for a new mood candy entry."
           },
           {
-            stepId: "function2-step2",
-            screenshot: "function2_02_interaction.png",
-            stateLabel: "Mood picker",
-            stateHint: "The user chooses from a short visual set.",
-            position: { x: "42%", y: "43%", width: "68%", height: "48%" },
-            tooltipTitle: "Choose a mood bead",
-            tooltipBody: "A small mood set keeps the choice quick and manageable.",
-            requirementBadges: ["Flexible Timing"],
-            suggestedAction: "Select one mood bead.",
-            designValue: "The user can record a feeling without writing a full explanation."
+            id: "jar-2",
+            screenshot: "jar-calendar-popup.png",
+            target: "Private calendar grid",
+            hotspot: { x: 50, y: 58 },
+            spotlight: { x: 50, y: 58, w: 66, h: 38 },
+            title: "Review moods through a private calendar",
+            body: "The calendar popup makes mood history feel private while still supporting easy revisit across different dates.",
+            requirementBadge: "Flexible Timing",
+            mockAction: "Open 'See calendar' and scan the current month's recorded candies.",
+            expectedEffect: "A private monthly calendar appears with date-based revisit."
           },
           {
-            stepId: "function2-step3",
-            screenshot: "function2_02_interaction.png",
-            stateLabel: "Sharing threshold",
-            stateHint: "Visibility is decided before anything leaves the private view.",
-            position: { x: "50%", y: "92%", width: "78%", height: "17%" },
-            tooltipTitle: "Choose a sharing level",
-            tooltipBody: "Private, Soft Share, and Full Share set clear mood boundaries.",
-            requirementBadges: ["Flexible Timing"],
-            suggestedAction: "Pick a sharing level.",
-            designValue: "Private reflection and family visibility stay clearly separated."
+            id: "jar-3",
+            screenshot: "jar-mood-editor.png",
+            target: "Share mode choices",
+            hotspot: { x: 50, y: 73 },
+            spotlight: { x: 50, y: 73, w: 74, h: 34 },
+            title: "Set visibility before saving",
+            body: "Private, Soft Share, and Full Share keep visibility choices explicit before the mood candy is saved.",
+            requirementBadge: "Low Reply Pressure",
+            mockAction: "Choose a mood, optionally add one sentence, then compare the three share modes.",
+            expectedEffect: "The user decides how much family members see before the candy drops into the jar."
           },
           {
-            stepId: "function2-step4",
-            screenshot: "function2_03_result.png",
-            stateLabel: "Shared jar",
-            stateHint: "Only filtered information reaches the family view.",
-            position: { x: "50%", y: "60%", width: "76%", height: "56%" },
-            tooltipTitle: "Review the shared view",
-            tooltipBody: "The shared jar only shows the level of awareness the user allowed.",
-            requirementBadges: ["Flexible Timing"],
-            suggestedAction: "Compare the jar with the status area below.",
-            designValue: "Family members receive a signal without seeing the full private log."
-          },
-          {
-            stepId: "function2-step5",
-            screenshot: "function2_04_feedback.png",
-            stateLabel: "Care response",
-            stateHint: "Support stays gentle and bounded.",
-            position: { x: "50%", y: "53%", width: "76%", height: "13%" },
-            tooltipTitle: "Send a care gesture",
-            tooltipBody: "Small care actions respond to the moment without demanding more disclosure.",
-            requirementBadges: ["Flexible Timing"],
-            suggestedAction: "Tap a care option.",
-            designValue: "Support stays warm without turning the moment into extra pressure."
+            id: "jar-4",
+            screenshot: "jar-care-popup.png",
+            target: "Shared-status card",
+            hotspot: { x: 50, y: 45 },
+            spotlight: { x: 50, y: 45, w: 74, h: 24 },
+            title: "Expose only shared status in care view",
+            body: "The care popup separates private mood history from the gentle status layer relatives may see.",
+            requirementBadge: "Low Reply Pressure",
+            mockAction: "Open 'Care for someone' and inspect the shared-status card for Mom.",
+            expectedEffect: "The popup shows only the shareable status layer and withholds the private calendar."
           }
         ]
       },
       {
-        functionId: "function3",
-        pageName: "Weekly Echo",
-        displayLabel: "Weekly Echo ✨",
-        functionTitle: "Weekly Echo",
-        tabSummary: "Weekly recap, keepsake reveal, and prompt support.",
-        uiPurpose: "Weekly recap, memory-making, and reflective reward.",
-        tourSteps: [
+        id: "weekly-echo",
+        name: "Weekly Echo",
+        description: "Weekly Echo now unfolds across three carousel boards and a separate keepsake reveal scene.",
+        steps: [
           {
-            stepId: "function3-step1",
-            screenshot: "function3_01_entry.png",
-            stateLabel: "Weekly recap board",
-            stateHint: "The week is gathered into one calm summary.",
-            position: { x: "49%", y: "44%", width: "82%", height: "54%" },
-            tooltipTitle: "Scan the weekly board",
-            tooltipBody: "The recap board gathers the week into one readable summary.",
-            requirementBadges: ["Easy to Start"],
-            suggestedAction: "Scan the board and metric tiles.",
-            designValue: "Recent activity becomes easier to notice and talk about."
+            id: "echo-1",
+            screenshot: "echo-summary-board.png",
+            target: "Summary stats board",
+            hotspot: { x: 50, y: 53 },
+            spotlight: { x: 50, y: 52, w: 68, h: 54 },
+            title: "Read the weekly summary board",
+            body: "The first Weekly Echo board consolidates connected days, small moments, and activity counts into one compact reading surface.",
+            requirementBadge: "Flexible Timing",
+            mockAction: "Open Echo and land on the first board without any extra navigation.",
+            expectedEffect: "The headline recap and four activity counters appear together."
           },
           {
-            stepId: "function3-step2",
-            screenshot: "function3_02_interaction.png",
-            stateLabel: "Keepsake reveal",
-            stateHint: "The next step turns activity into a reward.",
-            position: { x: "50%", y: "39%", width: "68%", height: "11%" },
-            tooltipTitle: "Reveal the keepsake",
-            tooltipBody: "The keepsake button turns weekly activity into one visible reward.",
-            requirementBadges: ["Easy to Start"],
-            suggestedAction: "Tap the reveal button.",
-            designValue: "The recap becomes more memorable by ending with a keepsake."
+            id: "echo-2",
+            screenshot: "echo-moments-board.png",
+            target: "Numbered moment list",
+            hotspot: { x: 50, y: 39 },
+            spotlight: { x: 50, y: 39, w: 62, h: 28 },
+            title: "Scan the small-moments recap",
+            body: "The second board turns totals into a short sequence of gentle weekly moments.",
+            requirementBadge: "Low Reply Pressure",
+            mockAction: "Move to the Small Moments board using the carousel controls.",
+            expectedEffect: "A numbered list retells how the week's activity traveled home."
           },
           {
-            stepId: "function3-step3",
-            screenshot: "function3_02_interaction.png",
-            stateLabel: "Pet prompts",
-            stateHint: "Reflection can continue with light prompts.",
-            position: { x: "50%", y: "69%", width: "82%", height: "20%" },
-            tooltipTitle: "Use a prompt chip",
-            tooltipBody: "Quick prompt chips continue the moment without opening a heavier flow.",
-            requirementBadges: ["Easy to Start"],
-            suggestedAction: "Use a quick prompt such as Summary or Thanks.",
-            designValue: "The user can continue the moment without composing a message from scratch."
+            id: "echo-3",
+            screenshot: "echo-keepsakes-board.png",
+            target: "Keepsake list and reveal CTA",
+            hotspot: { x: 50, y: 58 },
+            spotlight: { x: 50, y: 58, w: 66, h: 30 },
+            title: "Review what the pet kept from the week",
+            body: "The third board groups collected traces into keepsake categories and ends with a clear weekly reveal action.",
+            requirementBadge: "Flexible Timing",
+            mockAction: "Advance to the Shared Keepsakes board and inspect the weekly categories.",
+            expectedEffect: "The interface summarizes small items and presents the reveal button for this week."
           },
           {
-            stepId: "function3-step4",
-            screenshot: "function3_03_summary.png",
-            stateLabel: "Unlocked keepsake",
-            stateHint: "The final state presents a lasting family memory.",
-            position: { x: "50%", y: "49%", width: "74%", height: "56%" },
-            tooltipTitle: "View the unlocked keepsake",
-            tooltipBody: "The final card explains the keepsake earned this week.",
-            requirementBadges: ["Easy to Start"],
-            suggestedAction: "Read the unlocked keepsake card.",
-            designValue: "Weekly activity is turned into a small memory object worth revisiting."
+            id: "echo-4",
+            screenshot: "echo-gift-closed.png",
+            target: "Gift box",
+            hotspot: { x: 50, y: 58 },
+            spotlight: { x: 50, y: 58, w: 40, h: 26 },
+            title: "Open the keepsake reveal scene",
+            body: "The reveal button transitions into a separate tap-to-open gift scene, turning small care into a visible weekly outcome.",
+            requirementBadge: "Easy to Start",
+            mockAction: "Tap 'Reveal This Week's Keepsake' to enter the gift scene.",
+            expectedEffect: "A dedicated keepsake screen appears with the closed weekly gift box."
+          },
+          {
+            id: "echo-5",
+            screenshot: "echo-gift-revealed.png",
+            target: "Add to Toy Box button",
+            hotspot: { x: 50, y: 70 },
+            spotlight: { x: 50, y: 70, w: 56, h: 12 },
+            title: "Claim the unlocked keepsake",
+            body: "Once the box opens, the reward card explains what was unlocked and offers a direct add-to-inventory action.",
+            requirementBadge: "Easy to Start",
+            mockAction: "Tap the gift box, wait for the reveal, then focus the claim button.",
+            expectedEffect: "The unlocked keepsake card appears with the 'Add to Toy Box' action."
           }
         ]
       }
@@ -199,7 +203,55 @@
   }
 
   const hfScreenshotBase =
-    hfSection.getAttribute("data-hf-screenshot-base") || hfManifest.packageMeta.screenshotBase;
+    hfSection.getAttribute("data-hf-screenshot-base") ||
+    hfFallbackManifest.packageMeta.screenshotBase;
+  const hfManifestPath =
+    hfSection.getAttribute("data-hf-manifest") ||
+    "portfolio-highfi-handoff/tour-manifest.json";
+
+  const hfCaptionMap = {
+    "album-connect": [
+      "Member overview",
+      "Gallery detail",
+      "Time filter",
+      "Reaction tray",
+      "Upload entry"
+    ],
+    jar: [
+      "Entry point",
+      "Private calendar",
+      "Share-mode editor",
+      "Shared-status care"
+    ],
+    "weekly-echo": [
+      "Summary board",
+      "Moments board",
+      "Keepsakes board",
+      "Gift reveal",
+      "Reward claim"
+    ]
+  };
+
+  const hfFunctionCopy = {
+    "album-connect": {
+      emoji: "📸",
+      summary: "Member overview, gallery detail, time filter, quick reactions, upload.",
+      purpose: "Lightweight browsing, acknowledgement, and self-upload.",
+      nextLabel: "Continue to Jar 🫙 →"
+    },
+    jar: {
+      emoji: "🫙",
+      summary: "Mood candy check-ins, private calendar, share modes, care popup.",
+      purpose: "Private check-ins, timing control, and gentle family visibility.",
+      nextLabel: "Continue to Weekly Echo ✨ →"
+    },
+    "weekly-echo": {
+      emoji: "✨",
+      summary: "Weekly boards, keepsakes, gift reveal, reward claim.",
+      purpose: "Weekly recap, keepsakes, and easy follow-through.",
+      nextLabel: "Replay walkthrough ↺"
+    }
+  };
 
   const hfEls = {
     tabList: hfSection.querySelector(".hf-function-tabs"),
@@ -222,11 +274,75 @@
 
   const hfState = {
     functionIndex: 0,
-    stepIndex: 0
+    stepIndex: 0,
+    manifest: hfNormalizeManifest(hfFallbackManifest)
   };
 
+  function hfGetFunctionMeta(functionId) {
+    return (
+      hfFunctionCopy[functionId] || {
+        emoji: "",
+        summary: "",
+        purpose: "",
+        nextLabel: "Next step"
+      }
+    );
+  }
+
+  function hfNormalizeStep(step, functionId, stepIndex) {
+    const captions = hfCaptionMap[functionId] || [];
+    const requirementBadges = [];
+    if (step.requirementBadge) {
+      requirementBadges.push(step.requirementBadge);
+    }
+
+    return {
+      stepId: step.id,
+      screenshot: step.screenshot,
+      stateLabel: captions[stepIndex] || step.target,
+      stateHint: step.target,
+      hotspot: step.hotspot,
+      spotlight: step.spotlight,
+      tooltipTitle: step.title,
+      tooltipBody: step.body,
+      requirementBadges: requirementBadges,
+      suggestedAction: step.mockAction,
+      designValue: step.expectedEffect
+    };
+  }
+
+  function hfNormalizeManifest(sourceManifest) {
+    return {
+      packageMeta: {
+        screenshotBase:
+          (sourceManifest.packageMeta && sourceManifest.packageMeta.screenshotBase) ||
+          (sourceManifest.uiShell && sourceManifest.uiShell.screenshotBase) ||
+          hfFallbackManifest.packageMeta.screenshotBase
+      },
+      functions: (sourceManifest.functions || []).map(function (item, index) {
+        const functionId = item.id || "function-" + index;
+        const functionMeta = hfGetFunctionMeta(functionId);
+        const labelBase = item.name || item.navLabel || "Function " + (index + 1);
+        const displayLabel = functionMeta.emoji ? labelBase + " " + functionMeta.emoji : labelBase;
+
+        return {
+          functionId: functionId,
+          pageName: item.name || item.navLabel || labelBase,
+          displayLabel: displayLabel,
+          functionTitle: item.name || labelBase,
+          tabSummary: functionMeta.summary || item.description || "",
+          uiPurpose: functionMeta.purpose || item.description || "",
+          nextLabel: functionMeta.nextLabel || "Next step",
+          tourSteps: (item.steps || []).map(function (step, stepIndex) {
+            return hfNormalizeStep(step, functionId, stepIndex);
+          })
+        };
+      })
+    };
+  }
+
   function hfGetCurrentFunction() {
-    return hfManifest.functions[hfState.functionIndex];
+    return hfState.manifest.functions[hfState.functionIndex];
   }
 
   function hfGetCurrentStep() {
@@ -234,15 +350,16 @@
   }
 
   function hfGetNextFunction() {
-    return hfManifest.functions[hfState.functionIndex + 1] || null;
+    return hfState.manifest.functions[hfState.functionIndex + 1] || null;
   }
 
   function hfGetPreviousFunction() {
-    return hfManifest.functions[hfState.functionIndex - 1] || null;
+    return hfState.manifest.functions[hfState.functionIndex - 1] || null;
   }
 
   function hfBuildTabs() {
-    hfManifest.functions.forEach(function (item, index) {
+    hfEls.tabList.innerHTML = "";
+    hfState.manifest.functions.forEach(function (item, index) {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "hf-function-tab";
@@ -314,9 +431,10 @@
       return "Next step";
     }
 
+    const currentFunction = hfGetCurrentFunction();
     const nextFunction = hfGetNextFunction();
     if (nextFunction) {
-      return "Explore " + nextFunction.displayLabel + " →";
+      return currentFunction.nextLabel;
     }
 
     return "Replay walkthrough ↺";
@@ -335,6 +453,15 @@
     return "Previous step";
   }
 
+  function hfRenderSpotlight(step) {
+    hfEls.hotspotButton.style.setProperty("--hf-spotlight-x", step.spotlight.x + "%");
+    hfEls.hotspotButton.style.setProperty("--hf-spotlight-y", step.spotlight.y + "%");
+    hfEls.hotspotButton.style.setProperty("--hf-spotlight-width", step.spotlight.w + "%");
+    hfEls.hotspotButton.style.setProperty("--hf-spotlight-height", step.spotlight.h + "%");
+    hfEls.hotspotButton.style.setProperty("--hf-hotspot-x", step.hotspot.x + "%");
+    hfEls.hotspotButton.style.setProperty("--hf-hotspot-y", step.hotspot.y + "%");
+  }
+
   function hfRender() {
     const currentFunction = hfGetCurrentFunction();
     const step = hfGetCurrentStep();
@@ -344,6 +471,7 @@
     hfRenderTabs();
     hfRenderStepRail(currentFunction);
     hfRenderBadges(step);
+    hfRenderSpotlight(step);
 
     hfEls.screenImage.src = hfScreenshotBase + step.screenshot;
     hfEls.screenImage.alt = step.tooltipTitle + " in the " + currentFunction.pageName + " walkthrough";
@@ -354,15 +482,11 @@
       " of " + currentFunction.tourSteps.length;
     hfEls.functionName.textContent = currentFunction.displayLabel + " • " + currentFunction.uiPurpose;
     hfEls.tooltipTitle.textContent = step.tooltipTitle;
-    hfEls.tooltipBody.innerHTML = step.tooltipBody;
-    hfEls.actionText.innerHTML = step.suggestedAction;
-    hfEls.resultText.innerHTML = step.designValue;
+    hfEls.tooltipBody.textContent = step.tooltipBody;
+    hfEls.actionText.textContent = step.suggestedAction;
+    hfEls.resultText.textContent = step.designValue;
 
-    hfEls.hotspotButton.style.setProperty("--hf-x", step.position.x);
-    hfEls.hotspotButton.style.setProperty("--hf-y", step.position.y);
-    hfEls.hotspotButton.style.setProperty("--hf-width", step.position.width);
-    hfEls.hotspotButton.style.setProperty("--hf-height", step.position.height);
-    hfEls.hotspotButton.setAttribute("aria-label", step.suggestedAction.replace(/<[^>]+>/g, ""));
+    hfEls.hotspotButton.setAttribute("aria-label", step.suggestedAction);
 
     hfEls.prevButton.disabled = isFirstTourStep;
     hfEls.prevButton.textContent = hfGetPrevButtonLabel();
@@ -411,6 +535,26 @@
     hfRender();
   }
 
+  async function hfLoadManifest() {
+    try {
+      const response = await fetch(hfManifestPath, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error("Failed to fetch walkthrough manifest.");
+      }
+
+      const data = await response.json();
+      if (!data || !Array.isArray(data.functions) || !data.functions.length) {
+        throw new Error("Walkthrough manifest did not contain any functions.");
+      }
+
+      return hfNormalizeManifest(data);
+    } catch (error) {
+      console.warn("Using fallback walkthrough manifest.", error);
+      return hfNormalizeManifest(hfFallbackManifest);
+    }
+  }
+
+  hfState.manifest = await hfLoadManifest();
   hfBuildTabs();
   hfRender();
 

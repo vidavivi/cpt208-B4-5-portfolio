@@ -1,535 +1,246 @@
 {
-  "packageMeta": {
-    "name": "208design high-fi walkthrough handoff",
-    "generatedOn": "2026-05-04",
-    "projectRoot": "/Users/liduocan/Documents/GitHub/208_Design",
-    "appType": "single-page tab shell",
-    "rootRoute": "/",
-    "viewport": {
-      "width": 414,
-      "height": 769
-    },
-    "notes": [
-      "Pages 2, 3, and 4 are tab states inside the root app shell rather than standalone routes.",
-      "The portfolio implementation should use screenshots, hotspots, and guided mock transitions instead of backend-connected interactions.",
-      "The design requirement ids in this package are inferred from the frontend UI and interaction logic."
-    ]
+  "generatedAt": "2026-05-08",
+  "project": "Kinlight frontend walkthrough handoff",
+  "uiShell": {
+    "type": "tab-shell",
+    "root": "src/app/App.tsx",
+    "navComponent": "src/app/components/bottom-nav.tsx"
   },
   "functions": [
     {
-      "functionId": "function1",
-      "pageNumber": 2,
+      "id": "album-connect",
+      "name": "Album / Connect",
+      "navLabel": "Album",
       "tabKey": "album",
-      "pageName": "Album",
-      "componentFile": "src/app/pages/connect-page.tsx",
-      "componentName": "ConnectPage",
-      "route": "/",
-      "routeBehavior": "Open the root app and tap Album in the bottom navigation.",
-      "functionTitle": "Shared Album with Pet-Carried Notes",
-      "uiPurpose": "Show photo-based family updates, attach short pet notes, and support lightweight acknowledgement through reactions.",
-      "keyUiElements": [
-        "family overview cards",
-        "member-specific gallery",
-        "range filter",
-        "summary card",
-        "reaction launcher",
-        "reaction badges",
-        "upload button"
+      "component": "ConnectPage",
+      "entryFiles": [
+        "src/app/pages/connect-page.tsx",
+        "src/app/App.tsx",
+        "src/app/components/bottom-nav.tsx"
       ],
-      "keyInteractionStates": [
-        "album overview",
-        "member detail",
-        "reaction selection",
-        "reaction feedback",
-        "summary expansion"
-      ],
+      "description": "Family photo updates are entered through an album overview, then read and acknowledged inside a per-member gallery.",
       "screenshots": [
-        {
-          "filename": "function1_01_entry.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Album",
-          "preCaptureAction": "No extra action after opening the tab.",
-          "purpose": "Shows the family album overview cards as the entry state."
-        },
-        {
-          "filename": "function1_02_interaction.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Album",
-          "preCaptureAction": "Tap a member card such as Mom.",
-          "purpose": "Shows the member-specific album detail with the main image and reaction launcher."
-        },
-        {
-          "filename": "function1_03_result.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Album",
-          "preCaptureAction": "Open a member album, tap the reaction launcher, and choose an emoji.",
-          "purpose": "Shows the selected reaction and visible feedback state."
-        },
-        {
-          "filename": "function1_04_feedback.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Album",
-          "preCaptureAction": "Open Grace's album and expand the summary card.",
-          "purpose": "Shows the recap/feedback layer for multiple pet notes."
-        }
+        "album-overview.png",
+        "album-grace-gallery.png",
+        "album-range-menu.png",
+        "album-reaction-picker.png",
+        "album-upload-sheet.png"
       ],
-      "optionalScreenshots": [
+      "steps": [
         {
-          "filename": "function1_05_interaction-menu.png",
-          "captured": true,
-          "purpose": "Optional emoji-picker intermediate state."
-        }
-      ],
-      "tourSteps": [
-        {
-          "stepId": "function1-step1",
-          "screenshot": "function1_01_entry.png",
-          "target": "family member card",
-          "interactionType": "pulsing-hotspot + spotlight-highlight",
-          "position": {
-            "x": "50%",
-            "y": "31%",
-            "width": "90%",
-            "height": "58%"
-          },
-          "tooltipTitle": "Choose a family member's album",
-          "tooltipBody": "The overview uses large preview cards so each family member's recent update can be recognised before opening a detail view.",
-          "requirementBadges": [
-            "DR1",
-            "DR3"
-          ],
-          "suggestedAction": "Tap a member card",
-          "mockResult": "A member-specific album stream opens."
+          "id": "album-1",
+          "screenshot": "album-overview.png",
+          "target": "Grace member card",
+          "hotspot": { "x": 50, "y": 24 },
+          "spotlight": { "x": 50, "y": 24, "w": 80, "h": 28 },
+          "title": "Open a family member's update stream",
+          "body": "The Album tab now begins with member cards, so the walkthrough should start from choosing whose recent photo updates to open.",
+          "requirementBadge": "Easy to Start",
+          "mockAction": "Tap the Grace card from the Album overview.",
+          "expectedEffect": "The interface opens Grace's member-specific gallery detail view."
         },
         {
-          "stepId": "function1-step2",
-          "screenshot": "function1_02_interaction.png",
-          "target": "reaction launcher",
-          "interactionType": "click-hint + spotlight-highlight",
-          "position": {
-            "x": "82%",
-            "y": "61%",
-            "width": "16%",
-            "height": "11%"
-          },
-          "tooltipTitle": "Acknowledge without starting a chat",
-          "tooltipBody": "Each photo can receive a lightweight reaction, allowing family members to respond without composing a full message.",
-          "requirementBadges": [
-            "DR1",
-            "DR3"
-          ],
-          "suggestedAction": "Tap the circular reaction button",
-          "mockResult": "The image enters a reaction-selection state."
+          "id": "album-2",
+          "screenshot": "album-grace-gallery.png",
+          "target": "Latest shared photo card",
+          "hotspot": { "x": 50, "y": 48 },
+          "spotlight": { "x": 50, "y": 48, "w": 76, "h": 38 },
+          "title": "Browse one shared moment without entering chat",
+          "body": "The gallery detail keeps the update lightweight: the photo, timestamp, and note are visible together without requiring an immediate reply.",
+          "requirementBadge": "Low Reply Pressure",
+          "mockAction": "Scroll into the first photo card and read the attached note.",
+          "expectedEffect": "The user can absorb the update as a quiet family moment rather than a conversational task."
         },
         {
-          "stepId": "function1-step3",
-          "screenshot": "function1_03_result.png",
-          "target": "reaction feedback badge",
-          "interactionType": "result-feedback",
-          "position": {
-            "x": "10%",
-            "y": "72%",
-            "width": "14%",
-            "height": "10%"
-          },
-          "tooltipTitle": "Reaction feedback stays visible",
-          "tooltipBody": "After selection, the chosen emoji appears directly on the image and the reacting family member is shown below.",
-          "requirementBadges": [
-            "DR3"
-          ],
-          "suggestedAction": "Notice the reaction marker and name badge",
-          "mockResult": "The photo now carries a visible gentle response."
+          "id": "album-3",
+          "screenshot": "album-range-menu.png",
+          "target": "Time-range dropdown",
+          "hotspot": { "x": 53, "y": 24 },
+          "spotlight": { "x": 55, "y": 26, "w": 38, "h": 22 },
+          "title": "Shift the gallery time window",
+          "body": "The updated detail screen includes a compact time filter, allowing users to check only today's, last week's, last month's, or last year's posts.",
+          "requirementBadge": "Flexible Timing",
+          "mockAction": "Open the Last Week dropdown to inspect the available time ranges.",
+          "expectedEffect": "The range menu expands over the gallery and narrows the visible update set."
         },
         {
-          "stepId": "function1-step4",
-          "screenshot": "function1_04_feedback.png",
-          "target": "expanded summary card",
-          "interactionType": "tooltip-only + spotlight-highlight",
-          "position": {
-            "x": "38%",
-            "y": "32%",
-            "width": "66%",
-            "height": "24%"
-          },
-          "tooltipTitle": "Pet notes become a compact recap",
-          "tooltipBody": "The summary card turns multiple short captions into a brief narrative, helping the viewer recover context quickly.",
-          "requirementBadges": [
-            "DR1",
-            "DR4"
-          ],
-          "suggestedAction": "Notice the expanded summary card",
-          "mockResult": "Several updates are condensed into one readable recap."
+          "id": "album-4",
+          "screenshot": "album-reaction-picker.png",
+          "target": "Emoji reaction tray",
+          "hotspot": { "x": 58, "y": 44 },
+          "spotlight": { "x": 58, "y": 44, "w": 42, "h": 12 },
+          "title": "Respond with a low-pressure reaction",
+          "body": "Acknowledgement is handled through a lightweight emoji tray rather than a full message composer, which keeps the response burden intentionally small.",
+          "requirementBadge": "Low Reply Pressure",
+          "mockAction": "Tap the reaction button on the photo card to open the emoji tray.",
+          "expectedEffect": "A short row of emoji reactions appears above the card for quick acknowledgement."
+        },
+        {
+          "id": "album-5",
+          "screenshot": "album-upload-sheet.png",
+          "target": "Camera and Library chooser",
+          "hotspot": { "x": 50, "y": 86 },
+          "spotlight": { "x": 50, "y": 86, "w": 76, "h": 18 },
+          "title": "Start a self-upload in one step",
+          "body": "When the current user opens their own album, the camera button leads directly to a simple capture-source sheet instead of a complex upload flow.",
+          "requirementBadge": "Easy to Start",
+          "mockAction": "Tap the camera icon in the top-right corner of the current user's gallery.",
+          "expectedEffect": "A bottom sheet offers Camera and Library as the first upload choices."
         }
       ]
     },
     {
-      "functionId": "function2",
-      "pageNumber": 3,
+      "id": "jar",
+      "name": "Jar",
+      "navLabel": "Jar",
       "tabKey": "jar",
-      "pageName": "Jar",
-      "componentFile": "src/app/pages/jar-page.tsx",
-      "componentName": "JarPage",
-      "route": "/",
-      "routeBehavior": "Open the root app and tap Jar in the bottom navigation.",
-      "functionTitle": "Mood Jar with Graduated Sharing Controls",
-      "uiPurpose": "Support quick daily mood logging, explicit privacy control, and bounded family care responses.",
-      "keyUiElements": [
-        "pet bubble",
-        "plus button",
-        "weekly mood strip",
-        "mood editor modal",
-        "Private/Soft Share/Full Share controls",
-        "shared jar",
-        "shared status card",
-        "Hug/Tea/Pet buttons",
-        "private calendar"
+      "component": "JarPage",
+      "entryFiles": [
+        "src/app/pages/jar-page.tsx",
+        "src/app/components/mood-calendar.tsx",
+        "src/app/App.tsx",
+        "src/app/components/bottom-nav.tsx"
       ],
-      "keyInteractionStates": [
-        "default jar view",
-        "editor modal",
-        "shared visibility state",
-        "family reaction feedback",
-        "private calendar"
-      ],
+      "description": "Jar now combines a private mood-recording flow with a shared-status care view and animated candy-drop feedback.",
       "screenshots": [
-        {
-          "filename": "function2_01_entry.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Jar",
-          "preCaptureAction": "No extra action after opening the tab.",
-          "purpose": "Shows the privacy-first jar entry state."
-        },
-        {
-          "filename": "function2_02_interaction.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Jar",
-          "preCaptureAction": "Tap the plus button to open the mood editor.",
-          "purpose": "Shows the mood picker and share controls."
-        },
-        {
-          "filename": "function2_03_result.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Jar",
-          "preCaptureAction": "Switch to a family account view and scroll to the shared jar area.",
-          "purpose": "Shows the shared-result visibility layer for family members."
-        },
-        {
-          "filename": "function2_04_feedback.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Jar",
-          "preCaptureAction": "In a family account view, tap a care reaction such as Hug.",
-          "purpose": "Shows the visible family-feedback state after a care response."
-        }
+        "jar-main.png",
+        "jar-calendar-popup.png",
+        "jar-mood-editor.png",
+        "jar-care-popup.png"
       ],
-      "tourSteps": [
+      "steps": [
         {
-          "stepId": "function2-step1",
-          "screenshot": "function2_01_entry.png",
-          "target": "plus button and entry prompt",
-          "interactionType": "pulsing-hotspot + click-hint",
-          "position": {
-            "x": "18%",
-            "y": "73%",
-            "width": "28%",
-            "height": "12%"
-          },
-          "tooltipTitle": "Start with a single-tap check-in",
-          "tooltipBody": "The jar invites a quick emotional check-in rather than a long written disclosure.",
-          "requirementBadges": [
-            "DR1",
-            "DR2"
-          ],
-          "suggestedAction": "Tap the plus button",
-          "mockResult": "A mood-entry editor opens."
+          "id": "jar-1",
+          "screenshot": "jar-main.png",
+          "target": "Today's plus button",
+          "hotspot": { "x": 18, "y": 43 },
+          "spotlight": { "x": 18, "y": 43, "w": 14, "h": 12 },
+          "title": "Start today's mood check-in",
+          "body": "The updated Jar flow begins from a single plus action, framed as adding one mood candy rather than filling in a heavy diary entry.",
+          "requirementBadge": "Easy to Start",
+          "mockAction": "Tap the plus button beside the 'Add your own mood candy?' prompt.",
+          "expectedEffect": "The user moves into the day-level editor for a new mood candy entry."
         },
         {
-          "stepId": "function2-step2",
-          "screenshot": "function2_02_interaction.png",
-          "target": "mood selection list",
-          "interactionType": "spotlight-highlight + tooltip-only",
-          "position": {
-            "x": "34%",
-            "y": "42%",
-            "width": "64%",
-            "height": "43%"
-          },
-          "tooltipTitle": "Use a constrained visual mood vocabulary",
-          "tooltipBody": "A fixed set of mood beads allows the user to communicate state quickly with less cognitive load.",
-          "requirementBadges": [
-            "DR1",
-            "DR2"
-          ],
-          "suggestedAction": "Choose one mood bead",
-          "mockResult": "The selected mood becomes the day's check-in."
+          "id": "jar-2",
+          "screenshot": "jar-calendar-popup.png",
+          "target": "Private calendar grid",
+          "hotspot": { "x": 50, "y": 58 },
+          "spotlight": { "x": 50, "y": 58, "w": 66, "h": 38 },
+          "title": "Review moods through a private calendar",
+          "body": "The calendar popup makes it explicit that the full mood history belongs to the current user, while still supporting flexible return visits across different dates.",
+          "requirementBadge": "Flexible Timing",
+          "mockAction": "Open 'See calendar' and scan the current month's recorded candies.",
+          "expectedEffect": "A private monthly calendar appears, showing days with mood candies and allowing date-based revisit."
         },
         {
-          "stepId": "function2-step3",
-          "screenshot": "function2_02_interaction.png",
-          "target": "share visibility controls",
-          "interactionType": "spotlight-highlight + click-hint",
-          "position": {
-            "x": "50%",
-            "y": "90%",
-            "width": "72%",
-            "height": "18%"
-          },
-          "tooltipTitle": "Control how much family can see",
-          "tooltipBody": "Private, Soft Share, and Full Share create explicit thresholds between self-tracking and family awareness.",
-          "requirementBadges": [
-            "DR2"
-          ],
-          "suggestedAction": "Select a visibility level",
-          "mockResult": "Only the permitted level of information is shared beyond the private calendar."
+          "id": "jar-3",
+          "screenshot": "jar-mood-editor.png",
+          "target": "Share mode choices",
+          "hotspot": { "x": 50, "y": 73 },
+          "spotlight": { "x": 50, "y": 73, "w": 74, "h": 34 },
+          "title": "Set visibility before saving",
+          "body": "The editor now foregrounds privacy control through Private, Soft Share, and Full Share options before the mood candy is saved.",
+          "requirementBadge": "Low Reply Pressure",
+          "mockAction": "Choose a mood, optionally add one sentence, then compare the three share modes.",
+          "expectedEffect": "The user can decide how much family members see before the candy drops into the jar."
         },
         {
-          "stepId": "function2-step4",
-          "screenshot": "function2_03_result.png",
-          "target": "shared jar and shared-status area",
-          "interactionType": "tooltip-only + spotlight-highlight",
-          "position": {
-            "x": "49%",
-            "y": "47%",
-            "width": "63%",
-            "height": "44%"
-          },
-          "tooltipTitle": "Shared beads are filtered before they reach family",
-          "tooltipBody": "Only entries that pass the chosen share threshold appear in the shared jar and shared-status view.",
-          "requirementBadges": [
-            "DR2",
-            "DR4"
-          ],
-          "suggestedAction": "Notice the shared jar and status card",
-          "mockResult": "The viewer understands the difference between private tracking and family awareness."
-        },
-        {
-          "stepId": "function2-step5",
-          "screenshot": "function2_04_feedback.png",
-          "target": "Hug reaction button",
-          "interactionType": "click-hint + result-feedback",
-          "position": {
-            "x": "18%",
-            "y": "53%",
-            "width": "28%",
-            "height": "8%"
-          },
-          "tooltipTitle": "Family responses stay gentle and bounded",
-          "tooltipBody": "Relatives can reply with small care gestures such as a hug, tea, or pet response.",
-          "requirementBadges": [
-            "DR1",
-            "DR3"
-          ],
-          "suggestedAction": "Tap a care reaction",
-          "mockResult": "A short confirmation message appears beneath the shared-status card."
+          "id": "jar-4",
+          "screenshot": "jar-care-popup.png",
+          "target": "Shared-status card",
+          "hotspot": { "x": 50, "y": 45 },
+          "spotlight": { "x": 50, "y": 45, "w": 74, "h": 24 },
+          "title": "Expose only shared status in care view",
+          "body": "The care popup now clearly separates private mood history from what relatives may gently see, preventing over-exposure while preserving care signals.",
+          "requirementBadge": "Low Reply Pressure",
+          "mockAction": "Open 'Care for someone' and inspect the shared-status card for Mom.",
+          "expectedEffect": "The popup shows only the shareable status layer and withholds the private calendar."
         }
       ]
     },
     {
-      "functionId": "function3",
-      "pageNumber": 4,
+      "id": "weekly-echo",
+      "name": "Weekly Echo",
+      "navLabel": "Echo",
       "tabKey": "echo",
-      "pageName": "Weekly Echo",
-      "componentFile": "src/app/pages/weekly-echo-page.tsx",
-      "componentName": "WeeklyEchoPage",
-      "route": "/",
-      "routeBehavior": "Open the root app and tap Echo in the bottom navigation.",
-      "functionTitle": "Weekly Echo and Keepsake Reflection",
-      "uiPurpose": "Turn repeated small interactions into a weekly recap, a keepsake interaction, and a reflective summary state.",
-      "keyUiElements": [
-        "blackboard recap board",
-        "metric tiles",
-        "board arrows and page dots",
-        "keepsake board",
-        "Reveal This Week's Keepsake button",
-        "pet reply chips",
-        "gift reveal scene"
+      "component": "WeeklyEchoPage",
+      "entryFiles": [
+        "src/app/pages/weekly-echo-page.tsx",
+        "src/app/App.tsx",
+        "src/app/components/bottom-nav.tsx"
       ],
-      "keyInteractionStates": [
-        "entry recap board",
-        "keepsake board",
-        "summary/result board"
-      ],
+      "description": "Weekly Echo now unfolds across three carousel boards and a separate keepsake reveal scene.",
       "screenshots": [
-        {
-          "filename": "function3_01_entry.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Echo",
-          "preCaptureAction": "No extra action after opening the tab.",
-          "purpose": "Shows the recap board as the entry state."
-        },
-        {
-          "filename": "function3_02_interaction.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Echo",
-          "preCaptureAction": "Move to the keepsake board using the arrow controls.",
-          "purpose": "Shows the main interaction board before the reveal."
-        },
-        {
-          "filename": "function3_03_summary.png",
-          "captured": true,
-          "viewport": "414x769",
-          "tabToOpen": "Echo",
-          "preCaptureAction": "Capture the strongest final recap or keepsake-summary state available from the frontend-only flow.",
-          "purpose": "Provides the final reflective summary image for the walkthrough."
-        }
+        "echo-summary-board.png",
+        "echo-moments-board.png",
+        "echo-keepsakes-board.png",
+        "echo-gift-closed.png",
+        "echo-gift-revealed.png"
       ],
-      "tourSteps": [
+      "steps": [
         {
-          "stepId": "function3-step1",
-          "screenshot": "function3_01_entry.png",
-          "target": "weekly recap board",
-          "interactionType": "spotlight-highlight + tooltip-only",
-          "position": {
-            "x": "48%",
-            "y": "50%",
-            "width": "88%",
-            "height": "58%"
-          },
-          "tooltipTitle": "Review the week as a single calm recap",
-          "tooltipBody": "The recap board condenses several forms of family interaction into one readable weekly story.",
-          "requirementBadges": [
-            "DR1",
-            "DR4"
-          ],
-          "suggestedAction": "Notice the recap text and metric tiles",
-          "mockResult": "The weekly pattern is visible at a glance."
+          "id": "echo-1",
+          "screenshot": "echo-summary-board.png",
+          "target": "Summary stats board",
+          "hotspot": { "x": 50, "y": 53 },
+          "spotlight": { "x": 50, "y": 52, "w": 68, "h": 54 },
+          "title": "Read the weekly summary board",
+          "body": "The first Weekly Echo board consolidates connected days, small moments, and activity counts into one compact weekly reading surface.",
+          "requirementBadge": "Flexible Timing",
+          "mockAction": "Open Echo and land on the first board without any extra navigation.",
+          "expectedEffect": "The user sees the headline weekly recap and the four activity counters together."
         },
         {
-          "stepId": "function3-step2",
-          "screenshot": "function3_02_interaction.png",
-          "target": "Reveal This Week's Keepsake button",
-          "interactionType": "pulsing-hotspot + click-hint",
-          "position": {
-            "x": "52%",
-            "y": "36%",
-            "width": "72%",
-            "height": "8%"
-          },
-          "tooltipTitle": "Turn collected activity into a keepsake",
-          "tooltipBody": "The keepsake board reframes repeated small actions as cumulative progress and offers a clear reveal action.",
-          "requirementBadges": [
-            "DR4"
-          ],
-          "suggestedAction": "Tap the reveal button",
-          "mockResult": "The walkthrough moves to the final reward state."
+          "id": "echo-2",
+          "screenshot": "echo-moments-board.png",
+          "target": "Numbered moment list",
+          "hotspot": { "x": 50, "y": 39 },
+          "spotlight": { "x": 50, "y": 39, "w": 62, "h": 28 },
+          "title": "Scan the small-moments recap",
+          "body": "The second board shifts from totals to plain-language recap points, letting the week be reviewed as a sequence of gentle moments rather than raw records.",
+          "requirementBadge": "Low Reply Pressure",
+          "mockAction": "Move to the Small Moments board using the carousel controls.",
+          "expectedEffect": "A short numbered list explains how the week's activity traveled home."
         },
         {
-          "stepId": "function3-step3",
-          "screenshot": "function3_02_interaction.png",
-          "target": "Talk with pet reply chips",
-          "interactionType": "tooltip-only",
-          "position": {
-            "x": "50%",
-            "y": "72%",
-            "width": "84%",
-            "height": "18%"
-          },
-          "tooltipTitle": "Reflection continues through lightweight pet prompts",
-          "tooltipBody": "Short reply chips allow the user to revisit the recap conversationally without leaving the reflection surface.",
-          "requirementBadges": [
-            "DR1",
-            "DR3"
-          ],
-          "suggestedAction": "Tap Summary, More, or Thanks",
-          "mockResult": "The pet response changes to a different reflective prompt."
+          "id": "echo-3",
+          "screenshot": "echo-keepsakes-board.png",
+          "target": "Keepsake list and reveal CTA",
+          "hotspot": { "x": 50, "y": 58 },
+          "spotlight": { "x": 50, "y": 58, "w": 66, "h": 30 },
+          "title": "Review what the pet kept from the week",
+          "body": "The third board turns collected traces into categories of shared keepsakes and ends with a clear reveal action for the weekly reward.",
+          "requirementBadge": "Flexible Timing",
+          "mockAction": "Advance to the Shared Keepsakes board and inspect the weekly categories.",
+          "expectedEffect": "The interface summarizes small items and presents the reveal button for this week's keepsake."
         },
         {
-          "stepId": "function3-step4",
-          "screenshot": "function3_03_summary.png",
-          "target": "final summary/result card",
-          "interactionType": "result-feedback + spotlight-highlight",
-          "position": {
-            "x": "49%",
-            "y": "49%",
-            "width": "78%",
-            "height": "46%"
-          },
-          "tooltipTitle": "The reward is presented as a memory object",
-          "tooltipBody": "The final state names the keepsake, explains why it was unlocked, and frames it as a meaningful weekly outcome.",
-          "requirementBadges": [
-            "DR4"
-          ],
-          "suggestedAction": "Notice the final summary/reward state",
-          "mockResult": "The week's small traces are presented as a cumulative family memory."
+          "id": "echo-4",
+          "screenshot": "echo-gift-closed.png",
+          "target": "Gift box",
+          "hotspot": { "x": 50, "y": 58 },
+          "spotlight": { "x": 50, "y": 58, "w": 40, "h": 26 },
+          "title": "Open the keepsake reveal scene",
+          "body": "The reveal button now transitions into a separate scene with a tap-to-open gift box, making the weekly reward feel like the outcome of accumulated small care.",
+          "requirementBadge": "Easy to Start",
+          "mockAction": "Tap 'Reveal This Week's Keepsake' to enter the gift scene.",
+          "expectedEffect": "A dedicated keepsake screen appears with the closed weekly gift box."
+        },
+        {
+          "id": "echo-5",
+          "screenshot": "echo-gift-revealed.png",
+          "target": "Add to Toy Box button",
+          "hotspot": { "x": 50, "y": 70 },
+          "spotlight": { "x": 50, "y": 70, "w": 56, "h": 12 },
+          "title": "Claim the unlocked keepsake",
+          "body": "Once the box opens, the reward card explains what was unlocked and offers a direct add-to-inventory action without extra navigation.",
+          "requirementBadge": "Easy to Start",
+          "mockAction": "Tap the gift box, wait for the reveal, then focus the claim button.",
+          "expectedEffect": "The unlocked keepsake card appears with the 'Add to Toy Box' action."
         }
       ]
-    }
-  ],
-  "designRequirementAlignment": [
-    {
-      "id": "DR1",
-      "name": "Gentle asynchronous family connection",
-      "description": "Support low-pressure family contact through short, lightweight, asynchronous interactions.",
-      "inferred": true,
-      "supportedBy": [
-        "Album",
-        "Jar",
-        "Weekly Echo"
-      ],
-      "uiEvidence": [
-        "Album reactions and pet-note cards",
-        "quick mood check-ins in Jar",
-        "Weekly Echo recap boards and pet reply chips"
-      ],
-      "portfolioWording": "The interface prioritises gentle asynchronous family connection by turning updates into short, low-pressure touchpoints rather than demanding real-time conversation."
-    },
-    {
-      "id": "DR2",
-      "name": "Graduated privacy and user control",
-      "description": "Let the student decide what remains private and what becomes visible to family.",
-      "inferred": true,
-      "supportedBy": [
-        "Jar"
-      ],
-      "uiEvidence": [
-        "Private, Soft Share, and Full Share options",
-        "private calendar copy",
-        "shared status card visible in family view"
-      ],
-      "portfolioWording": "The mood-sharing flow separates private self-tracking from family-visible awareness through explicit share thresholds."
-    },
-    {
-      "id": "DR3",
-      "name": "Lightweight acknowledgement and care feedback",
-      "description": "Provide bounded response mechanisms that feel supportive without requiring long messages.",
-      "inferred": true,
-      "supportedBy": [
-        "Album",
-        "Jar",
-        "Weekly Echo"
-      ],
-      "uiEvidence": [
-        "Album emoji reactions",
-        "Hug, Tea, and Pet responses in Jar",
-        "Summary, More, and Thanks quick replies in Weekly Echo"
-      ],
-      "portfolioWording": "Response mechanisms are intentionally lightweight, allowing acknowledgement and care without increasing communication pressure."
-    },
-    {
-      "id": "DR4",
-      "name": "Cumulative reflection and memory-making",
-      "description": "Transform scattered daily traces into readable summaries and longer-lived keepsakes.",
-      "inferred": true,
-      "supportedBy": [
-        "Album",
-        "Jar",
-        "Weekly Echo"
-      ],
-      "uiEvidence": [
-        "Album summary card",
-        "shared jar accumulation",
-        "Weekly Echo recap board and keepsake reveal"
-      ],
-      "portfolioWording": "Small daily traces are accumulated into summaries, shared states, and keepsake rewards so that interaction produces longer-term meaning."
     }
   ]
 }
+

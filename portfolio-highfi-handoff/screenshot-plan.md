@@ -1,116 +1,99 @@
-# Screenshot Plan
+# Screenshot Capture Plan
 
-This document records the required screenshot set for the portfolio walkthrough. It should be used both as a capture checklist and as a fallback manual recapture guide if any image needs to be refreshed later.
+All screenshots listed below were successfully captured into `screenshots/`.
 
-Common settings:
+Viewport size used for all captures: `599 x 769`
 
-- App shell: root app `/`
-- Navigation method: bottom tab switch
-- Viewport size: `414 x 769`
-- Orientation: portrait mobile
+## Album / Connect
 
-## Function 1: Album
+- `album-overview.png`
+  - Route or tab state: root app shell with `activeTab = "album"` and no member selected
+  - Interaction before capture: open the `Album` tab from bottom navigation
+  - Demonstrates: member overview cards and the first decision point into a family album
+  - Walkthrough step: `album-1`
 
-### `function1_01_entry.png`
+- `album-grace-gallery.png`
+  - Route or tab state: `activeTab = "album"`, `selectedMemberId = Grace`
+  - Interaction before capture: tap Grace's member card from the overview
+  - Demonstrates: per-member gallery detail with photo, timestamp, note, and reaction trigger
+  - Walkthrough step: `album-2`
 
-- Page/tab to open: `Album`
-- User action before capture: none after opening the tab
-- What to capture: the family album overview cards with image previews and pet-note snippets
-- Purpose: establish the entry state and show how the feature begins from a family overview
+- `album-range-menu.png`
+  - Route or tab state: `activeTab = "album"`, Mom gallery detail, range dropdown open
+  - Interaction before capture: open Mom's gallery, then tap the `Last Week` filter
+  - Demonstrates: the updated time-range filter states
+  - Walkthrough step: `album-3`
 
-### `function1_02_interaction.png`
+- `album-reaction-picker.png`
+  - Route or tab state: `activeTab = "album"`, Mom gallery detail, reaction tray open
+  - Interaction before capture: tap the reaction button on the first photo card
+  - Demonstrates: lightweight emoji acknowledgement without message composition
+  - Walkthrough step: `album-4`
 
-- Page/tab to open: `Album`
-- User action before capture: tap a family member card, such as `Mom`
-- What to capture: the member-specific album detail view with the large photo and reaction launcher
-- Purpose: show the main interaction surface after selecting one member
+- `album-upload-sheet.png`
+  - Route or tab state: `activeTab = "album"`, current-user gallery detail, upload sheet open
+  - Interaction before capture: open Grace's gallery, then tap the top-right camera action
+  - Demonstrates: the simplified Camera / Library upload entry sheet
+  - Walkthrough step: `album-5`
 
-### `function1_03_result.png`
+## Jar
 
-- Page/tab to open: `Album`
-- User action before capture: open a member album, tap the reaction launcher, and select an emoji
-- What to capture: the selected reaction shown on the photo and the visible reaction badge below
-- Purpose: show the clearest lightweight feedback state
+- `jar-main.png`
+  - Route or tab state: root app shell with `activeTab = "jar"` and no overlay open
+  - Interaction before capture: open the `Jar` tab from bottom navigation
+  - Demonstrates: the mood jar, today's add action, pet bubble, and quick care/calendar shortcuts
+  - Walkthrough step: `jar-1`
 
-### `function1_04_feedback.png`
+- `jar-calendar-popup.png`
+  - Route or tab state: `activeTab = "jar"`, calendar popup open
+  - Interaction before capture: tap `See calendar`
+  - Demonstrates: the private monthly mood calendar and the visibility boundary text
+  - Walkthrough step: `jar-2`
 
-- Page/tab to open: `Album`
-- User action before capture: open `Grace`'s album and expand the summary card
-- What to capture: the expanded summary card over the album stream
-- Purpose: show how multiple small updates are condensed into a readable recap
+- `jar-mood-editor.png`
+  - Route or tab state: `activeTab = "jar"`, day editor open for May 9, 2026
+  - Interaction before capture: open the calendar popup, then select an empty day
+  - Demonstrates: mood selection, note field, and the three share-mode options
+  - Walkthrough step: `jar-3`
 
-### Optional: `function1_05_interaction-menu.png`
+- `jar-care-popup.png`
+  - Route or tab state: `activeTab = "jar"`, care popup open
+  - Interaction before capture: tap `Care for someone`
+  - Demonstrates: shared-status-only care view without access to the target user's private calendar
+  - Walkthrough step: `jar-4`
 
-- Page/tab to open: `Album`
-- User action before capture: open a member album and tap the reaction launcher without choosing an emoji
-- What to capture: the emoji-picker overlay
-- Purpose: optional intermediate state for a more detailed guided tour
+## Weekly Echo
 
-## Function 2: Jar
+- `echo-summary-board.png`
+  - Route or tab state: root app shell with `activeTab = "echo"` on board index `0`
+  - Interaction before capture: open the `Echo` tab from bottom navigation
+  - Demonstrates: weekly title, narrative summary, and activity counters on the first board
+  - Walkthrough step: `echo-1`
 
-### `function2_01_entry.png`
+- `echo-moments-board.png`
+  - Route or tab state: `activeTab = "echo"` on board index `1`
+  - Interaction before capture: tap `Next board` once from the summary board
+  - Demonstrates: the numbered small-moments recap board
+  - Walkthrough step: `echo-2`
 
-- Page/tab to open: `Jar`
-- User action before capture: none after opening the tab
-- What to capture: the default jar view with the pet bubble, quick-add button, and privacy framing text
-- Purpose: establish the function before any modal is opened
+- `echo-keepsakes-board.png`
+  - Route or tab state: `activeTab = "echo"` on board index `2`
+  - Interaction before capture: tap `Next board` again from the moments board
+  - Demonstrates: weekly keepsake categories and the reveal call-to-action
+  - Walkthrough step: `echo-3`
 
-### `function2_02_interaction.png`
+- `echo-gift-closed.png`
+  - Route or tab state: `activeTab = "echo"`, `scene = "gift"`, gift box closed
+  - Interaction before capture: tap `Reveal This Week's Keepsake`
+  - Demonstrates: the separate keepsake reveal scene before the box is opened
+  - Walkthrough step: `echo-4`
 
-- Page/tab to open: `Jar`
-- User action before capture: tap the `+` button to add today's mood bead
-- What to capture: the mood editor modal with mood options and share controls
-- Purpose: show the primary input flow and the constrained mood vocabulary
+- `echo-gift-revealed.png`
+  - Route or tab state: `activeTab = "echo"`, `scene = "gift"`, reveal completed
+  - Interaction before capture: tap the gift box and wait for the reveal animation to finish
+  - Demonstrates: the unlocked reward card and `Add to Toy Box` action
+  - Walkthrough step: `echo-5`
 
-### `function2_03_result.png`
+# Manual Capture Status
 
-- Page/tab to open: `Jar`
-- User action before capture: switch to a family account view such as `Mum`, then scroll to the shared jar and shared-status area
-- What to capture: the shared jar plus the top of the family-visible status card
-- Purpose: show how private mood logging becomes filtered family awareness
-
-### `function2_04_feedback.png`
-
-- Page/tab to open: `Jar`
-- User action before capture: in a family account view, tap a care reaction such as `Hug`
-- What to capture: the shared-status card with the visible feedback message after the response
-- Purpose: show the bounded family feedback state
-
-## Function 3: Weekly Echo
-
-### `function3_01_entry.png`
-
-- Page/tab to open: `Echo`
-- User action before capture: none after opening the tab
-- What to capture: the weekly recap board with its main summary and metric tiles
-- Purpose: establish the reflection layer of the product
-
-### `function3_02_interaction.png`
-
-- Page/tab to open: `Echo`
-- User action before capture: navigate to the keepsake board using the board arrows
-- What to capture: the keepsake board with collected drops, reveal CTA, and quick pet reply area
-- Purpose: show the transition from recap to reward interaction
-
-### `function3_03_summary.png`
-
-- Page/tab to open: `Echo`
-- User action before capture: complete the keepsake reveal or capture the strongest recap/result state available from the frontend-only flow
-- What to capture: the weekly keepsake result state or the strongest summary state suitable for the portfolio
-- Purpose: provide a final reflection/reward image for the walkthrough conclusion
-
-## Manual Recapture Notes
-
-If any screenshot needs to be captured manually later:
-
-1. Run the frontend locally.
-2. Open the root app shell.
-3. Use the bottom navigation to switch to the correct tab.
-4. Follow the per-image action above exactly.
-5. Save the image using the same filename into `portfolio-highfi-handoff/screenshots/`.
-
-## Manual Capture Status
-
-This section should be updated if any image cannot be automatically generated from the local frontend.
-
-- Pending manual capture: none unless noted in the final verification summary
+- Manual capture required: none

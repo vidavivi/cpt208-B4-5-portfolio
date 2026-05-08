@@ -237,19 +237,20 @@
 
 .hf-hotspot-button {
   position: absolute;
-  top: var(--hf-y, 50%);
-  left: var(--hf-x, 50%);
-  width: var(--hf-width, 18%);
-  height: var(--hf-height, 14%);
+  top: var(--hf-spotlight-y, 50%);
+  left: var(--hf-spotlight-x, 50%);
+  width: var(--hf-spotlight-width, 18%);
+  height: var(--hf-spotlight-height, 14%);
   transform: translate(-50%, -50%);
-  border: 2px solid var(--hf-accent-strong);
+  border: 2px solid rgba(255, 244, 228, 0.96);
   border-radius: 22px;
   background:
-    linear-gradient(180deg, rgba(255, 248, 239, 0.12), rgba(199, 138, 82, 0.1));
+    linear-gradient(180deg, rgba(255, 248, 239, 0.14), rgba(199, 138, 82, 0.12));
   box-shadow:
     0 0 0 999px rgba(16, 22, 26, 0.38),
-    inset 0 0 0 1px rgba(255, 248, 239, 0.18),
-    0 0 0 4px rgba(255, 244, 228, 0.18),
+    inset 0 0 0 1px rgba(255, 248, 239, 0.2),
+    0 0 0 4px rgba(255, 244, 228, 0.22),
+    0 0 32px rgba(199, 138, 82, 0.34),
     0 16px 38px rgba(9, 14, 17, 0.18);
   cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
@@ -258,11 +259,12 @@
 
 .hf-hotspot-button:hover,
 .hf-hotspot-button:focus-visible {
-  border-color: rgba(255, 233, 207, 0.96);
+  border-color: rgba(255, 248, 239, 1);
   box-shadow:
-    0 0 0 999px rgba(16, 22, 26, 0.32),
-    inset 0 0 0 1px rgba(255, 248, 239, 0.18),
-    0 0 0 5px rgba(255, 244, 228, 0.22),
+    0 0 0 999px rgba(16, 22, 26, 0.3),
+    inset 0 0 0 1px rgba(255, 248, 239, 0.2),
+    0 0 0 6px rgba(255, 244, 228, 0.26),
+    0 0 40px rgba(199, 138, 82, 0.4),
     0 18px 40px rgba(9, 14, 17, 0.22);
   outline: none;
 }
@@ -271,34 +273,35 @@
 .hf-hotspot-ring,
 .hf-hotspot-glow {
   position: absolute;
-  inset: 50% auto auto 50%;
+  top: var(--hf-hotspot-y, 50%);
+  left: var(--hf-hotspot-x, 50%);
   transform: translate(-50%, -50%);
   border-radius: 999px;
   pointer-events: none;
 }
 
 .hf-hotspot-pulse {
-  width: 1.15rem;
-  height: 1.15rem;
-  background: radial-gradient(circle at 35% 35%, #fff7ef 0%, #f4cf9c 34%, var(--hf-accent) 72%, var(--hf-accent-deep) 100%);
+  width: 1.2rem;
+  height: 1.2rem;
+  background: radial-gradient(circle at 35% 35%, #fff9f2 0%, #ffd9aa 34%, var(--hf-accent) 72%, var(--hf-accent-deep) 100%);
   box-shadow:
-    0 0 0 10px rgba(255, 242, 224, 0.16),
-    0 0 18px rgba(199, 138, 82, 0.6);
-  animation: hfPulse 1.55s ease-in-out infinite;
+    0 0 0 12px rgba(255, 239, 214, 0.18),
+    0 0 24px rgba(199, 138, 82, 0.72);
+  animation: hfPulse 1.45s ease-in-out infinite;
 }
 
 .hf-hotspot-ring {
-  width: 3rem;
-  height: 3rem;
-  border: 2px solid rgba(255, 240, 219, 0.95);
-  animation: hfRing 1.8s ease-out infinite;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 2px solid rgba(255, 240, 219, 0.98);
+  animation: hfRing 1.75s ease-out infinite;
 }
 
 .hf-hotspot-glow {
-  width: 4.4rem;
-  height: 4.4rem;
-  background: radial-gradient(circle, rgba(199, 138, 82, 0.28) 0%, rgba(199, 138, 82, 0.14) 38%, rgba(199, 138, 82, 0) 72%);
-  animation: hfGlow 1.8s ease-in-out infinite;
+  width: 4.8rem;
+  height: 4.8rem;
+  background: radial-gradient(circle, rgba(199, 138, 82, 0.34) 0%, rgba(199, 138, 82, 0.16) 40%, rgba(199, 138, 82, 0) 74%);
+  animation: hfGlow 1.75s ease-in-out infinite;
 }
 
 .hf-screen-meta {
