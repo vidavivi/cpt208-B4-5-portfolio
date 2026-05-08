@@ -2129,7 +2129,7 @@
         <div class="section-heading">
           <p class="phase-label">Prototype / Technical Implementation</p>
           <h2>Prototype &amp; Technical Implementation</h2>
-          <p>This section documents how Kinlight is implemented as a local full-stack system, how data moves through the web app, and how the team divided technical work across the final submission.</p>
+          <p>This section documents Kinlight’s local full-stack implementation, data flow, technology stack, and AI-assisted development reflection.</p>
         </div>
 
         <article class="content-card wide-card technical-overview-card">
@@ -2138,9 +2138,8 @@
               <p class="eyebrow">1. Technical Overview</p>
               <h3>Local Full-Stack Implementation</h3>
             </div>
-            <p>Source code is hosted on GitHub. The full-stack system currently runs locally, and both front-end and back-end deployment are planned for a later stage.</p>
           </div>
-          <p>Kinlight is implemented as a locally runnable full-stack web application. The front end uses React, TypeScript, and Vite to implement the mobile-oriented interaction flows for Album, Jar, and Weekly Echo. The back end uses Node.js and Express to provide REST-style API routes for user state, family members, posts, moods, uploads, daily drops, items, and Weekly Echo. MySQL is used as the relational database layer, connected through mysql2/promise.</p>
+          <p>Kinlight is implemented as a locally runnable full-stack web application. The front end uses React, TypeScript, and Vite to implement the mobile-oriented Album, Jar, and Weekly Echo flows. The back end uses Node.js and Express to provide REST-style API routes for user state, family members, posts, moods, uploads, daily drops, items, and Weekly Echo. MySQL is used as the relational database layer through MySQL2 (<code>mysql2/promise</code>).</p>
           <div class="technical-overview-tags" aria-label="Implementation highlights">
             <span class="technical-tag">Mobile-oriented interface</span>
             <span class="technical-tag">Album, Jar, Weekly Echo flows</span>
@@ -2286,7 +2285,7 @@
                   </tr>
                   <tr>
                     <td>DB connector</td>
-                    <td>mysql2/promise</td>
+                    <td>MySQL2 (<code>mysql2/promise</code>)</td>
                     <td>Provides the MySQL connection pool used by the backend.</td>
                   </tr>
                   <tr>
@@ -2386,7 +2385,7 @@
               <h3>Current Access Status</h3>
             </div>
           </div>
-          <p>Source code is hosted on GitHub. The full-stack system currently runs locally, and both front-end and back-end deployment are planned for a later stage. The front end and back end can be launched together using the provided npm script, while the MySQL database is initialized with the Kinlight SQL schema.</p>
+          <p>Current status: the source code is hosted on GitHub, and the full-stack system is locally runnable. Public deployment is planned for a later stage.</p>
           <dl class="technical-meta-list">
             <div>
               <dt>Source code repository</dt>
@@ -2564,45 +2563,61 @@
             </div>
             <p>This section documents how AI tools supported implementation and portfolio production while core HCI decisions remained team-owned.</p>
           </div>
-          <p>AI tools were used as support tools during the Kinlight project, mainly for code generation, debugging, CSS refinement, portfolio wording, and visual generation. However, the user research, design requirements, final design logic, function selection, and evaluation decisions were defined and reviewed by the team.</p>
+          <p>AI tools supported implementation, debugging, layout refinement, wording revision, and visual-content drafting. However, the project motivation, user research interpretation, 3 key design requirements, final function selection, and evaluation decisions were defined and reviewed by the team. The table below documents how AI-assisted work was prompted, verified, and risk-controlled.</p>
 
           <div class="contribution-table-wrap technical-table-wrap">
             <table class="contribution-table technical-table ai-use-table">
               <thead>
                 <tr>
-                  <th>Tool</th>
-                  <th>Used for</th>
+                  <th>AI-assisted task</th>
+                  <th>Example prompt category</th>
                   <th>Human verification</th>
+                  <th>Risk controlled</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>ChatGPT</td>
-                  <td>Portfolio wording, structure refinement, persona and user journey map generation support, and image-generation assistance.</td>
-                  <td>The team checked AI-assisted outputs against interview findings, user requirements, and project evidence before including them in the portfolio.</td>
+                  <td>Portfolio wording and structure refinement</td>
+                  <td>Ask AI to identify redundant portfolio text, reorganise section hierarchy, and turn long paragraphs into clearer process-portfolio wording.</td>
+                  <td>The team checked all rewritten text against interview evidence, tutor feedback, project requirements, and actual design decisions before adding it to the portfolio.</td>
+                  <td>Avoided unsupported claims, AI-style over-explanation, and wording that could imply AI defined the design logic.</td>
                 </tr>
                 <tr>
-                  <td>Codex</td>
-                  <td>Code generation, debugging, CSS adjustment, and portfolio implementation support.</td>
-                  <td>The team reviewed generated code, tested interface behaviour, and checked whether the implementation matched the intended interaction logic.</td>
+                  <td>CSS layout and visual refinement</td>
+                  <td>Ask AI to adjust spacing, card alignment, responsive layout, table readability, and high-fi walkthrough styling.</td>
+                  <td>The team reviewed the rendered webpage, checked whether sections remained readable, and ensured visual changes did not hide required evidence.</td>
+                  <td>Controlled readability, accessibility, layout breakage, and excessive visual decoration.</td>
                 </tr>
                 <tr>
-                  <td>Figma AI</td>
-                  <td>Visual ideation and AI-assisted image generation.</td>
-                  <td>The team selected, edited, and integrated visual outputs to match Kinlight&rsquo;s design style and project context.</td>
+                  <td>Code debugging and implementation support</td>
+                  <td>Ask AI to inspect frontend/backend errors, suggest fixes for API logic, database connection issues, and local running problems.</td>
+                  <td>The team tested the local system, checked browser behaviour, reviewed API responses, and verified whether Album, Jar, and Weekly Echo still matched the intended interaction logic.</td>
+                  <td>Reduced the risk of untested AI-generated code, broken data flow, and mismatch between implementation and user requirements.</td>
                 </tr>
                 <tr>
-                  <td>Team-owned decisions</td>
-                  <td>User research, design requirements, final function selection, design rationale, and evaluation design.</td>
-                  <td>These were defined by the team and were not delegated to AI tools.</td>
+                  <td>High-fi walkthrough scripting</td>
+                  <td>Ask AI to structure the interactive walkthrough steps, hotspot explanations, and requirement badges for Album, Jar, and Weekly Echo.</td>
+                  <td>The team compared each walkthrough step with the actual prototype screenshots and the 3 key design requirements.</td>
+                  <td>Prevented inaccurate feature descriptions, misleading interaction claims, and weak mapping between prototype screens and requirements.</td>
+                </tr>
+                <tr>
+                  <td>AI-assisted visual and content drafting</td>
+                  <td>Ask AI to help draft or refine visual-support content such as persona/journey-map wording and illustrative assets.</td>
+                  <td>The team reviewed, edited, and contextualised AI-assisted visuals using its own interview findings and project framing.</td>
+                  <td>Prevented AI-generated visuals or wording from replacing primary user research or inventing unsupported user needs.</td>
+                </tr>
+                <tr>
+                  <td>Team-owned HCI decisions</td>
+                  <td>Not delegated to AI.</td>
+                  <td>User research interpretation, 3 key design requirements, final function selection, design rationale, and evaluation decisions were made and reviewed by the team.</td>
+                  <td>Ensured the project motivation, human-centred justification, and core design logic remained team-owned.</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div class="ai-note-stack">
-            <p>To reduce the risk of unsupported or misleading AI-generated content, the team treated AI outputs as drafts rather than final evidence. User research findings, design requirements, and evaluation decisions were based on the team&rsquo;s own interview data, analysis, and design discussions. AI-assisted visual materials are labelled with captions, and AI tools are listed in the References section.</p>
-            <p>Instead of a separate AI-log folder, AI use is summarized in this Technical Reflection section and cited in the References section.</p>
+            <p>AI outputs were treated as drafts or implementation support, not as final design evidence. The team verified AI-assisted code and wording against user research findings, the three key design requirements, prototype behaviour, and coursework requirements. AI-assisted visuals are labelled in captions, and AI tools are cited in the References section.</p>
           </div>
         </article>
       </div>
