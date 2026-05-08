@@ -2288,6 +2288,21 @@ img {
   color: var(--text-soft);
 }
 
+.member-role-summary {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 0.85rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(23, 75, 79, 0.14);
+  border-radius: 999px;
+  background: rgba(216, 231, 225, 0.62);
+  color: var(--primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
 .member-card ul {
   margin: 0.7rem 0 0;
   padding-left: 1.1rem;
@@ -2319,6 +2334,19 @@ img {
   display: block;
   object-fit: cover;
   object-position: center 28%;
+}
+
+.team-contributions-block {
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.team-contributions-block .section-heading {
+  max-width: none;
+}
+
+.team-contributions-block .section-heading p:last-child {
+  max-width: 72ch;
 }
 
 .persona-card {
