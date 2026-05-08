@@ -2288,6 +2288,22 @@ img {
   color: var(--text-soft);
 }
 
+.member-card ul {
+  margin: 0.7rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--text-soft);
+  display: grid;
+  gap: 0.2rem;
+}
+
+.member-card li {
+  line-height: 1.45;
+}
+
+.member-card li::marker {
+  color: var(--secondary);
+}
+
 .member-photo-frame {
   margin: 0;
   overflow: hidden;
