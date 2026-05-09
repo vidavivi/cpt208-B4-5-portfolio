@@ -789,57 +789,75 @@
           <article class="content-card evidence-of-life-card">
             <h3>User Research Evidence</h3>
             <p class="section-intro">We conducted remote semi-structured interviews with target users. The screenshots document interview sessions, transcripts, and evidence collection. Personal details should remain anonymised where visible.</p>
-            <div class="evidence-gallery" aria-label="User Research Evidence gallery">
-              <figure class="evidence-item image-figure">
-                <div class="evidence-image-frame">
-                  <img
-                    class="process-image evidence-image"
-                    src="figure/evidence1.png"
-                    alt="Screenshot of Xintong Wang&rsquo;s user interview transcript evidence"
-                  >
+            <div class="carousel-shell evidence-carousel-shell" data-carousel>
+              <div class="carousel-nav">
+                <button class="carousel-button" type="button" data-carousel-prev aria-label="Show previous user research evidence slide">
+                  <span aria-hidden="true">&#8592;</span>
+                </button>
+                <div class="carousel-progress" aria-live="polite">
+                  <span data-carousel-current>1</span>
+                  <span>/</span>
+                  <span data-carousel-total>5</span>
                 </div>
-                <figcaption>Interview transcript evidence collected by Xintong Wang.</figcaption>
-              </figure>
-              <figure class="evidence-item image-figure">
-                <div class="evidence-image-frame">
-                  <img
-                    class="process-image evidence-image"
-                    src="figure/evidence2.png"
-                    alt="Second screenshot of Xintong Wang&rsquo;s user interview transcript evidence"
-                  >
-                </div>
-                <figcaption>Additional interview transcript evidence collected by Xintong Wang.</figcaption>
-              </figure>
-              <figure class="evidence-item image-figure">
-                <div class="evidence-image-frame">
-                  <img
-                    class="process-image evidence-image"
-                    src="figure/evidence3.png"
-                    alt="Screenshot of Duocan Li&rsquo;s online user interview session"
-                  >
-                </div>
-                <figcaption>Online user interview session conducted by Duocan Li.</figcaption>
-              </figure>
-              <figure class="evidence-item image-figure">
-                <div class="evidence-image-frame">
-                  <img
-                    class="process-image evidence-image"
-                    src="figure/evidence4.png"
-                    alt="Screenshot of Chengcheng Hu&rsquo;s online user interview session"
-                  >
-                </div>
-                <figcaption>Online user interview session conducted by Chengcheng Hu.</figcaption>
-              </figure>
-              <figure class="evidence-item image-figure">
-                <div class="evidence-image-frame">
-                  <img
-                    class="process-image evidence-image"
-                    src="figure/evidence5.png"
-                    alt="Screenshot of Leyi Liu&rsquo;s online user interview session"
-                  >
-                </div>
-                <figcaption>Online user interview session conducted by Leyi Liu.</figcaption>
-              </figure>
+                <button class="carousel-button" type="button" data-carousel-next aria-label="Show next user research evidence slide">
+                  <span aria-hidden="true">&#8594;</span>
+                </button>
+              </div>
+
+              <div class="carousel-track evidence-gallery" data-carousel-track tabindex="0" aria-label="User Research Evidence gallery">
+                <figure class="evidence-item image-figure carousel-slide">
+                  <div class="evidence-image-frame">
+                    <img
+                      class="process-image evidence-image"
+                      src="figure/evidence1.png"
+                      alt="Screenshot of Xintong Wang&rsquo;s user interview transcript evidence"
+                    >
+                  </div>
+                  <figcaption>Interview transcript evidence collected by Xintong Wang.</figcaption>
+                </figure>
+                <figure class="evidence-item image-figure carousel-slide">
+                  <div class="evidence-image-frame">
+                    <img
+                      class="process-image evidence-image"
+                      src="figure/evidence2.png"
+                      alt="Second screenshot of Xintong Wang&rsquo;s user interview transcript evidence"
+                    >
+                  </div>
+                  <figcaption>Additional interview transcript evidence collected by Xintong Wang.</figcaption>
+                </figure>
+                <figure class="evidence-item image-figure carousel-slide">
+                  <div class="evidence-image-frame">
+                    <img
+                      class="process-image evidence-image"
+                      src="figure/evidence3.png"
+                      alt="Screenshot of Duocan Li&rsquo;s online user interview session"
+                    >
+                  </div>
+                  <figcaption>Online user interview session conducted by Duocan Li.</figcaption>
+                </figure>
+                <figure class="evidence-item image-figure carousel-slide">
+                  <div class="evidence-image-frame">
+                    <img
+                      class="process-image evidence-image"
+                      src="figure/evidence4.png"
+                      alt="Screenshot of Chengcheng Hu&rsquo;s online user interview session"
+                    >
+                  </div>
+                  <figcaption>Online user interview session conducted by Chengcheng Hu.</figcaption>
+                </figure>
+                <figure class="evidence-item image-figure carousel-slide">
+                  <div class="evidence-image-frame">
+                    <img
+                      class="process-image evidence-image"
+                      src="figure/evidence5.png"
+                      alt="Screenshot of Leyi Liu&rsquo;s online user interview session"
+                    >
+                  </div>
+                  <figcaption>Online user interview session conducted by Leyi Liu.</figcaption>
+                </figure>
+              </div>
+
+              <div class="carousel-dots" data-carousel-dots aria-label="User research evidence slide navigation"></div>
             </div>
           </article>
         </div>
@@ -2154,18 +2172,18 @@
         <div class="section-heading">
           <p class="phase-label">Final Prototype / Guided Walkthrough</p>
           <h2>Interactive High-Fi Walkthrough</h2>
-          <p>A screenshot-based walkthrough of the latest frontend, showing how Album / Connect, Jar, and Weekly Echo support the three official design requirements.</p>
+          <p>A screenshot-based walkthrough of the latest frontend, showing how Album, Jar, and Weekly Echo support the three official design requirements.</p>
         </div>
 
         <article class="content-card wide-card hf-overview-card">
           <div class="hf-overview-copy">
             <p class="eyebrow">Walkthrough Scope</p>
             <h3>Follow the Final High-Fi Journey</h3>
-            <p>Frontend capture states and guided hotspots trace the latest Album / Connect, Jar, and Weekly Echo flow.</p>
+            <p>Frontend capture states and guided hotspots trace the latest Album, Jar, and Weekly Echo flow.</p>
           </div>
           <div class="hf-overview-sequence" aria-label="Walkthrough sequence">
             <span class="hf-overview-sequence-label">Guided path</span>
-            <p><strong>Album / Connect 📸</strong> → <strong>Jar 🫙</strong> → <strong>Weekly Echo ✨</strong></p>
+            <p><strong>Album 📸</strong> → <strong>Jar 🫙</strong> → <strong>Weekly Echo ✨</strong></p>
           </div>
         </article>
 
@@ -2193,11 +2211,8 @@
                 <div class="hf-screen-shell">
                   <img class="hf-screen-image" alt="">
                   <div class="hf-overlay-layer">
-                    <button class="hf-hotspot-button" type="button">
-                      <span class="hf-hotspot-pulse" aria-hidden="true"></span>
-                      <span class="hf-hotspot-ring" aria-hidden="true"></span>
-                      <span class="hf-hotspot-glow" aria-hidden="true"></span>
-                    </button>
+                    <button class="hf-hotspot-button" type="button"></button>
+                    <span class="hf-hotspot-pulse" aria-hidden="true"></span>
                   </div>
                 </div>
               </div>

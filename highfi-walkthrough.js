@@ -7,68 +7,68 @@
     functions: [
       {
         id: "album-connect",
-        name: "Album / Connect",
+        name: "Album",
         description: "Family photo updates are entered through an album overview, then read and acknowledged inside a per-member gallery.",
         steps: [
           {
             id: "album-1",
             screenshot: "album-overview.png",
             target: "Grace member card",
-            hotspot: { x: 50, y: 24 },
-            spotlight: { x: 50, y: 24, w: 80, h: 28 },
-            title: "Open a family member's update stream",
-            body: "The Album tab now begins with member cards, so the walkthrough starts by choosing whose recent photo updates to open.",
+            hotspot: { x: 50, y: 30 },
+            spotlight: { x: 50, y: 30, w: 57, h: 54 },
+            title: "Open Grace's album",
+            body: "Choose whose family updates to view from the Album overview.",
             requirementBadge: "Easy to Start",
             mockAction: "Tap the Grace card from the Album overview.",
-            expectedEffect: "Grace's member-specific gallery opens as the next screen."
+            expectedEffect: "Opens Grace's member-specific update stream."
           },
           {
             id: "album-2",
             screenshot: "album-grace-gallery.png",
             target: "Latest shared photo card",
-            hotspot: { x: 50, y: 48 },
-            spotlight: { x: 50, y: 48, w: 76, h: 38 },
-            title: "Browse one shared moment without entering chat",
-            body: "The gallery keeps the photo, time, and note together so the update can be read as a lightweight family moment.",
+            hotspot: { x: 50, y: 42 },
+            spotlight: { x: 50, y: 46, w: 58, h: 57 },
+            title: "Read one shared photo",
+            body: "Photo, date, and note stay together as one lightweight update.",
             requirementBadge: "Low Reply Pressure",
-            mockAction: "Scroll into the first photo card and read the attached note.",
-            expectedEffect: "The update feels readable without turning into an immediate conversation task."
+            mockAction: "Read the first photo card in Grace's gallery.",
+            expectedEffect: "Supports awareness without starting chat."
           },
           {
             id: "album-3",
             screenshot: "album-range-menu.png",
             target: "Time-range dropdown",
-            hotspot: { x: 53, y: 24 },
-            spotlight: { x: 55, y: 26, w: 38, h: 22 },
-            title: "Shift the gallery time window",
-            body: "A compact time filter lets users focus on today's, last week's, last month's, or last year's posts.",
+            hotspot: { x: 54, y: 16 },
+            spotlight: { x: 56, y: 24, w: 31, h: 24 },
+            title: "Filter by time range",
+            body: "The gallery can switch between today, week, month, and year ranges.",
             requirementBadge: "Flexible Timing",
             mockAction: "Open the Last Week dropdown to inspect the available time ranges.",
-            expectedEffect: "The range menu expands over the gallery and narrows the visible update set."
+            expectedEffect: "Narrows which updates stay on screen."
           },
           {
             id: "album-4",
             screenshot: "album-reaction-picker.png",
             target: "Emoji reaction tray",
-            hotspot: { x: 58, y: 44 },
-            spotlight: { x: 58, y: 44, w: 42, h: 12 },
-            title: "Respond with a low-pressure reaction",
-            body: "Acknowledgement happens through a short emoji tray instead of a full message composer.",
+            hotspot: { x: 71, y: 53 },
+            spotlight: { x: 51, y: 46, w: 43, h: 13 },
+            title: "Send a quick reaction",
+            body: "Emoji reactions let users acknowledge a moment with almost no pressure.",
             requirementBadge: "Low Reply Pressure",
-            mockAction: "Tap the reaction button on the photo card to open the emoji tray.",
-            expectedEffect: "A quick reaction row appears above the card for light acknowledgement."
+            mockAction: "Tap the smile button on the photo card.",
+            expectedEffect: "Opens a lightweight reaction tray."
           },
           {
             id: "album-5",
             screenshot: "album-upload-sheet.png",
             target: "Camera and Library chooser",
-            hotspot: { x: 50, y: 86 },
-            spotlight: { x: 50, y: 86, w: 76, h: 18 },
-            title: "Start a self-upload in one step",
-            body: "Opening your own album leads directly to a simple Camera-or-Library chooser instead of a heavier upload flow.",
+            hotspot: { x: 73, y: 17 },
+            spotlight: { x: 50, y: 87, w: 49, h: 22 },
+            title: "Start a self-upload",
+            body: "The camera entry opens a simple source choice for sharing.",
             requirementBadge: "Easy to Start",
-            mockAction: "Tap the camera icon in the top-right corner of the current user's gallery.",
-            expectedEffect: "A bottom sheet offers Camera and Library as the first upload choices."
+            mockAction: "Tap the top-right camera action.",
+            expectedEffect: "Shows Camera and Library options."
           }
         ]
       },
@@ -81,49 +81,49 @@
             id: "jar-1",
             screenshot: "jar-main.png",
             target: "Today's plus button",
-            hotspot: { x: 18, y: 43 },
-            spotlight: { x: 18, y: 43, w: 14, h: 12 },
-            title: "Start today's mood check-in",
-            body: "The updated Jar flow begins from one plus action, framed as adding a mood candy rather than filling in a heavy diary entry.",
+            hotspot: { x: 28, y: 45 },
+            spotlight: { x: 28, y: 45, w: 10, h: 8 },
+            title: "Start a mood check-in",
+            body: "Adding one mood candy keeps the check-in light and fast.",
             requirementBadge: "Easy to Start",
-            mockAction: "Tap the plus button beside the 'Add your own mood candy?' prompt.",
-            expectedEffect: "The day-level editor opens for a new mood candy entry."
+            mockAction: "Tap the plus button.",
+            expectedEffect: "Opens today's mood editor."
           },
           {
             id: "jar-2",
             screenshot: "jar-calendar-popup.png",
             target: "Private calendar grid",
-            hotspot: { x: 50, y: 58 },
-            spotlight: { x: 50, y: 58, w: 66, h: 38 },
-            title: "Review moods through a private calendar",
-            body: "The calendar popup makes mood history feel private while still supporting easy revisit across different dates.",
+            hotspot: { x: 50, y: 55 },
+            spotlight: { x: 50, y: 60, w: 48, h: 41 },
+            title: "Review the private calendar",
+            body: "Mood history stays date-based and visible only to the current user.",
             requirementBadge: "Flexible Timing",
-            mockAction: "Open 'See calendar' and scan the current month's recorded candies.",
-            expectedEffect: "A private monthly calendar appears with date-based revisit."
+            mockAction: "Tap See calendar.",
+            expectedEffect: "Opens the private month view."
           },
           {
             id: "jar-3",
             screenshot: "jar-mood-editor.png",
             target: "Share mode choices",
-            hotspot: { x: 50, y: 73 },
-            spotlight: { x: 50, y: 73, w: 74, h: 34 },
-            title: "Set visibility before saving",
-            body: "Private, Soft Share, and Full Share keep visibility choices explicit before the mood candy is saved.",
+            hotspot: { x: 50, y: 81 },
+            spotlight: { x: 50, y: 74, w: 48, h: 29 },
+            title: "Choose a share mode",
+            body: "Private, Soft Share, and Full Share define visibility before saving.",
             requirementBadge: "Low Reply Pressure",
-            mockAction: "Choose a mood, optionally add one sentence, then compare the three share modes.",
-            expectedEffect: "The user decides how much family members see before the candy drops into the jar."
+            mockAction: "Compare the three sharing options.",
+            expectedEffect: "Makes privacy boundaries explicit."
           },
           {
             id: "jar-4",
             screenshot: "jar-care-popup.png",
             target: "Shared-status card",
-            hotspot: { x: 50, y: 45 },
-            spotlight: { x: 50, y: 45, w: 74, h: 24 },
-            title: "Expose only shared status in care view",
-            body: "The care popup separates private mood history from the gentle status layer relatives may see.",
+            hotspot: { x: 50, y: 46 },
+            spotlight: { x: 50, y: 43, w: 48, h: 25 },
+            title: "Open the care view",
+            body: "Family members see only the shared status layer in this popup.",
             requirementBadge: "Low Reply Pressure",
-            mockAction: "Open 'Care for someone' and inspect the shared-status card for Mom.",
-            expectedEffect: "The popup shows only the shareable status layer and withholds the private calendar."
+            mockAction: "Tap Care for someone.",
+            expectedEffect: "Hides the private calendar from relatives."
           }
         ]
       },
@@ -136,61 +136,61 @@
             id: "echo-1",
             screenshot: "echo-summary-board.png",
             target: "Summary stats board",
-            hotspot: { x: 50, y: 53 },
-            spotlight: { x: 50, y: 52, w: 68, h: 54 },
-            title: "Read the weekly summary board",
-            body: "The first Weekly Echo board consolidates connected days, small moments, and activity counts into one compact reading surface.",
+            hotspot: { x: 50, y: 47 },
+            spotlight: { x: 50, y: 47, w: 54, h: 58 },
+            title: "Read the summary board",
+            body: "The first board gathers weekly totals and the headline recap together.",
             requirementBadge: "Flexible Timing",
-            mockAction: "Open Echo and land on the first board without any extra navigation.",
-            expectedEffect: "The headline recap and four activity counters appear together."
+            mockAction: "Open Echo.",
+            expectedEffect: "Gives a compact weekly overview."
           },
           {
             id: "echo-2",
             screenshot: "echo-moments-board.png",
             target: "Numbered moment list",
-            hotspot: { x: 50, y: 39 },
-            spotlight: { x: 50, y: 39, w: 62, h: 28 },
-            title: "Scan the small-moments recap",
-            body: "The second board turns totals into a short sequence of gentle weekly moments.",
+            hotspot: { x: 49, y: 44 },
+            spotlight: { x: 49, y: 44, w: 42, h: 25 },
+            title: "Scan the moments board",
+            body: "The second board turns activity into a short family story.",
             requirementBadge: "Low Reply Pressure",
-            mockAction: "Move to the Small Moments board using the carousel controls.",
-            expectedEffect: "A numbered list retells how the week's activity traveled home."
+            mockAction: "Move to the next board.",
+            expectedEffect: "Makes the week easier to remember."
           },
           {
             id: "echo-3",
             screenshot: "echo-keepsakes-board.png",
             target: "Keepsake list and reveal CTA",
-            hotspot: { x: 50, y: 58 },
-            spotlight: { x: 50, y: 58, w: 66, h: 30 },
-            title: "Review what the pet kept from the week",
-            body: "The third board groups collected traces into keepsake categories and ends with a clear weekly reveal action.",
+            hotspot: { x: 50, y: 69 },
+            spotlight: { x: 50, y: 54, w: 46, h: 33 },
+            title: "Review shared keepsakes",
+            body: "The third board groups traces into weekly keepsake categories.",
             requirementBadge: "Flexible Timing",
-            mockAction: "Advance to the Shared Keepsakes board and inspect the weekly categories.",
-            expectedEffect: "The interface summarizes small items and presents the reveal button for this week."
+            mockAction: "Open the Shared Keepsakes board.",
+            expectedEffect: "Shows what can be revealed this week."
           },
           {
             id: "echo-4",
             screenshot: "echo-gift-closed.png",
             target: "Gift box",
-            hotspot: { x: 50, y: 58 },
-            spotlight: { x: 50, y: 58, w: 40, h: 26 },
-            title: "Open the keepsake reveal scene",
-            body: "The reveal button transitions into a separate tap-to-open gift scene, turning small care into a visible weekly outcome.",
+            hotspot: { x: 50, y: 56 },
+            spotlight: { x: 50, y: 59, w: 30, h: 23 },
+            title: "Open the gift scene",
+            body: "The reveal CTA moves into a separate gift-opening screen.",
             requirementBadge: "Easy to Start",
             mockAction: "Tap 'Reveal This Week's Keepsake' to enter the gift scene.",
-            expectedEffect: "A dedicated keepsake screen appears with the closed weekly gift box."
+            expectedEffect: "Shows the closed weekly gift box."
           },
           {
             id: "echo-5",
             screenshot: "echo-gift-revealed.png",
             target: "Add to Toy Box button",
             hotspot: { x: 50, y: 70 },
-            spotlight: { x: 50, y: 70, w: 56, h: 12 },
-            title: "Claim the unlocked keepsake",
-            body: "Once the box opens, the reward card explains what was unlocked and offers a direct add-to-inventory action.",
+            spotlight: { x: 50, y: 70, w: 41, h: 9 },
+            title: "Claim the keepsake",
+            body: "The unlocked card explains the reward and offers a direct claim action.",
             requirementBadge: "Easy to Start",
-            mockAction: "Tap the gift box, wait for the reveal, then focus the claim button.",
-            expectedEffect: "The unlocked keepsake card appears with the 'Add to Toy Box' action."
+            mockAction: "Tap Add to Toy Box.",
+            expectedEffect: "Adds the keepsake to inventory."
           }
         ]
       }
@@ -211,52 +211,55 @@
 
   const hfCaptionMap = {
     "album-connect": [
-      "Member overview",
-      "Gallery detail",
-      "Time filter",
+      "Overview",
+      "Grace gallery",
+      "Range menu",
       "Reaction tray",
-      "Upload entry"
+      "Upload sheet"
     ],
     jar: [
-      "Entry point",
+      "Jar home",
       "Private calendar",
-      "Share-mode editor",
-      "Shared-status care"
+      "Mood editor",
+      "Care popup"
     ],
     "weekly-echo": [
       "Summary board",
       "Moments board",
       "Keepsakes board",
-      "Gift reveal",
-      "Reward claim"
+      "Gift scene",
+      "Reward card"
     ]
   };
 
   const hfFunctionCopy = {
     "album-connect": {
       emoji: "📸",
-      summary: "Member overview, gallery detail, time filter, quick reactions, upload.",
-      purpose: "Lightweight browsing, acknowledgement, and self-upload.",
+      summary: "Overview, gallery, filter, reaction, upload.",
+      purpose: "Member updates, quick reactions, and self-upload.",
       nextLabel: "Continue to Jar 🫙 →"
     },
     jar: {
       emoji: "🫙",
-      summary: "Mood candy check-ins, private calendar, share modes, care popup.",
-      purpose: "Private check-ins, timing control, and gentle family visibility.",
+      summary: "Check-in, calendar, share modes, care popup.",
+      purpose: "Private mood logging with controlled sharing.",
       nextLabel: "Continue to Weekly Echo ✨ →"
     },
     "weekly-echo": {
       emoji: "✨",
-      summary: "Weekly boards, keepsakes, gift reveal, reward claim.",
-      purpose: "Weekly recap, keepsakes, and easy follow-through.",
+      summary: "Summary, moments, keepsakes, reveal.",
+      purpose: "Weekly recap, keepsakes, and reward follow-through.",
       nextLabel: "Replay walkthrough ↺"
     }
   };
 
   const hfEls = {
     tabList: hfSection.querySelector(".hf-function-tabs"),
+    overlayLayer: hfSection.querySelector(".hf-overlay-layer"),
+    screenShell: hfSection.querySelector(".hf-screen-shell"),
     screenImage: hfSection.querySelector(".hf-screen-image"),
     hotspotButton: hfSection.querySelector(".hf-hotspot-button"),
+    tooltipCard: hfSection.querySelector(".hf-tooltip-card"),
     screenName: hfSection.querySelector(".hf-screen-name"),
     screenPurpose: hfSection.querySelector(".hf-screen-purpose"),
     stepProgress: hfSection.querySelector(".hf-step-progress"),
@@ -273,13 +276,12 @@
   };
 
   const hfMotionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const hfDesktopMedia = window.matchMedia("(min-width: 981px)");
   const hfState = {
     functionIndex: 0,
     stepIndex: 0,
     manifest: hfNormalizeManifest(hfFallbackManifest),
     activeFunctionId: null,
-    stepObserver: null
+    transitionTimer: null
   };
 
   function hfEscapeHtml(value) {
@@ -389,7 +391,7 @@
       button.addEventListener("click", function () {
         hfState.functionIndex = index;
         hfState.stepIndex = 0;
-        hfRender({ rebuildRail: true, syncScroll: true });
+        hfRender({ rebuildRail: true, syncRail: true, animate: true });
       });
 
       hfEls.tabList.appendChild(button);
@@ -422,22 +424,17 @@
       button.innerHTML = [
         '<span class="hf-steprail-progress">Step ' + (index + 1) + " of " + currentFunction.tourSteps.length + "</span>",
         '<span class="hf-steprail-title">' + hfEscapeHtml(step.tooltipTitle) + "</span>",
-        '<span class="hf-steprail-caption">' + hfEscapeHtml(step.stateLabel) + " · " + hfEscapeHtml(step.stateHint) + "</span>",
-        badgeMarkup ? '<span class="hf-steprail-tag-row">' + badgeMarkup + "</span>" : "",
-        '<span class="hf-steprail-copy">' + hfEscapeHtml(step.tooltipBody) + "</span>",
-        '<span class="hf-steprail-meta"><strong>Action:</strong> ' + hfEscapeHtml(step.suggestedAction) + "</span>",
-        '<span class="hf-steprail-meta"><strong>Outcome:</strong> ' + hfEscapeHtml(step.designValue) + "</span>"
+        '<span class="hf-steprail-caption">' + hfEscapeHtml(step.stateLabel) + "</span>",
+        badgeMarkup ? '<span class="hf-steprail-tag-row">' + badgeMarkup + "</span>" : ""
       ].join("");
 
       button.addEventListener("click", function () {
         hfState.stepIndex = index;
-        hfRender({ syncScroll: true });
+        hfRender({ syncRail: true, animate: true });
       });
 
       hfEls.stepRail.appendChild(button);
     });
-
-    hfBindStepObserver();
   }
 
   function hfRenderTabs() {
@@ -489,59 +486,57 @@
     hfEls.hotspotButton.style.setProperty("--hf-spotlight-y", step.spotlight.y + "%");
     hfEls.hotspotButton.style.setProperty("--hf-spotlight-width", step.spotlight.w + "%");
     hfEls.hotspotButton.style.setProperty("--hf-spotlight-height", step.spotlight.h + "%");
-    hfEls.hotspotButton.style.setProperty("--hf-hotspot-x", step.hotspot.x + "%");
-    hfEls.hotspotButton.style.setProperty("--hf-hotspot-y", step.hotspot.y + "%");
+    hfEls.overlayLayer.style.setProperty("--hf-hotspot-x", step.hotspot.x + "%");
+    hfEls.overlayLayer.style.setProperty("--hf-hotspot-y", step.hotspot.y + "%");
   }
 
-  function hfScrollStepIntoView() {
+  function hfScrollStepRailToActive() {
+    const rail = hfEls.stepRail;
     const activeStep = hfEls.stepRail.querySelector('[data-step-index="' + hfState.stepIndex + '"]');
-    if (!activeStep) {
+    if (!rail || !activeStep) {
       return;
     }
 
-    activeStep.scrollIntoView({
-      behavior: hfMotionReduced ? "auto" : "smooth",
-      block: hfDesktopMedia.matches ? "center" : "nearest",
-      inline: "nearest"
-    });
+    const gap = 12;
+    const nextTop = activeStep.offsetTop - gap;
+    const nextBottom = activeStep.offsetTop + activeStep.offsetHeight + gap;
+    const visibleTop = rail.scrollTop;
+    const visibleBottom = visibleTop + rail.clientHeight;
+
+    if (nextTop < visibleTop) {
+      rail.scrollTo({
+        top: Math.max(nextTop, 0),
+        behavior: "auto"
+      });
+      return;
+    }
+
+    if (nextBottom > visibleBottom) {
+      rail.scrollTo({
+        top: nextBottom - rail.clientHeight,
+        behavior: "auto"
+      });
+    }
   }
 
-  function hfBindStepObserver() {
-    if (hfState.stepObserver) {
-      hfState.stepObserver.disconnect();
-      hfState.stepObserver = null;
-    }
-
-    const stepButtons = Array.from(hfEls.stepRail.querySelectorAll(".hf-steprail-button"));
-    if (!stepButtons.length || !("IntersectionObserver" in window)) {
+  function hfAnimateStepPanels() {
+    if (hfMotionReduced) {
       return;
     }
 
-    hfState.stepObserver = new IntersectionObserver(function (entries) {
-      const visibleEntries = entries
-        .filter(function (entry) { return entry.isIntersecting; })
-        .sort(function (entryA, entryB) { return entryB.intersectionRatio - entryA.intersectionRatio; });
-
-      if (!visibleEntries.length) {
-        return;
+    window.clearTimeout(hfState.transitionTimer);
+    [hfEls.screenShell, hfEls.tooltipCard].forEach(function (node) {
+      if (node) {
+        node.classList.add("is-transitioning");
       }
-
-      const nextIndex = Number(visibleEntries[0].target.dataset.stepIndex || 0);
-      if (nextIndex === hfState.stepIndex) {
-        return;
-      }
-
-      hfState.stepIndex = nextIndex;
-      hfRender({ rebuildRail: false, syncScroll: false });
-    }, {
-      root: null,
-      rootMargin: hfDesktopMedia.matches ? "-22% 0px -46% 0px" : "-10% 0px -68% 0px",
-      threshold: [0.35, 0.55, 0.75]
     });
-
-    stepButtons.forEach(function (button) {
-      hfState.stepObserver.observe(button);
-    });
+    hfState.transitionTimer = window.setTimeout(function () {
+      [hfEls.screenShell, hfEls.tooltipCard].forEach(function (node) {
+        if (node) {
+          node.classList.remove("is-transitioning");
+        }
+      });
+    }, 180);
   }
 
   function hfRender(options) {
@@ -581,15 +576,19 @@
     hfEls.nextButton.disabled = false;
     hfEls.nextButton.textContent = hfGetNextButtonLabel(isLastStep);
 
-    if (renderOptions.syncScroll) {
-      window.requestAnimationFrame(hfScrollStepIntoView);
+    if (renderOptions.syncRail) {
+      window.requestAnimationFrame(hfScrollStepRailToActive);
+    }
+
+    if (renderOptions.animate) {
+      hfAnimateStepPanels();
     }
   }
 
   function hfGoToPreviousStep() {
     if (hfState.stepIndex > 0) {
       hfState.stepIndex -= 1;
-      hfRender({ syncScroll: true });
+      hfRender({ syncRail: true, animate: true });
       return;
     }
 
@@ -597,7 +596,7 @@
     if (previousFunction) {
       hfState.functionIndex -= 1;
       hfState.stepIndex = previousFunction.tourSteps.length - 1;
-      hfRender({ rebuildRail: true, syncScroll: true });
+      hfRender({ rebuildRail: true, syncRail: true, animate: true });
     }
   }
 
@@ -605,7 +604,7 @@
     const currentFunction = hfGetCurrentFunction();
     if (hfState.stepIndex < currentFunction.tourSteps.length - 1) {
       hfState.stepIndex += 1;
-      hfRender({ syncScroll: true });
+      hfRender({ syncRail: true, animate: true });
       return;
     }
 
@@ -613,18 +612,18 @@
     if (nextFunction) {
       hfState.functionIndex += 1;
       hfState.stepIndex = 0;
-      hfRender({ rebuildRail: true, syncScroll: true });
+      hfRender({ rebuildRail: true, syncRail: true, animate: true });
       return;
     }
 
     hfState.functionIndex = 0;
     hfState.stepIndex = 0;
-    hfRender({ rebuildRail: true, syncScroll: true });
+    hfRender({ rebuildRail: true, syncRail: true, animate: true });
   }
 
   function hfReplayCurrentFunction() {
     hfState.stepIndex = 0;
-    hfRender({ syncScroll: true });
+    hfRender({ syncRail: true, animate: true });
   }
 
   async function hfLoadManifest() {
@@ -654,5 +653,4 @@
   hfEls.prevButton.addEventListener("click", hfGoToPreviousStep);
   hfEls.nextButton.addEventListener("click", hfGoToNextTarget);
   hfEls.replayButton.addEventListener("click", hfReplayCurrentFunction);
-  hfDesktopMedia.addEventListener("change", hfBindStepObserver);
 })();
