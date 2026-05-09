@@ -258,6 +258,7 @@
     overlayLayer: hfSection.querySelector(".hf-overlay-layer"),
     screenShell: hfSection.querySelector(".hf-screen-shell"),
     screenImage: hfSection.querySelector(".hf-screen-image"),
+    firstUseHint: hfSection.querySelector(".hf-first-use-hint"),
     hotspotButton: hfSection.querySelector(".hf-hotspot-button"),
     hotspotPulse: hfSection.querySelector(".hf-hotspot-pulse"),
     tooltipCard: hfSection.querySelector(".hf-tooltip-card"),
@@ -282,8 +283,18 @@
     stepIndex: 0,
     manifest: hfNormalizeManifest(hfFallbackManifest),
     activeFunctionId: null,
-    transitionTimer: null
+    transitionTimer: null,
+    hasClickedHotspot: false
   };
+
+  function hfSetFirstUseHintVisibility(isVisible) {
+    if (!hfEls.firstUseHint) {
+      return;
+    }
+
+    hfEls.firstUseHint.classList.toggle("is-hidden", !isVisible);
+    hfEls.firstUseHint.setAttribute("aria-hidden", isVisible ? "false" : "true");
+  }
 
   function hfEscapeHtml(value) {
     return String(value)
@@ -625,6 +636,8 @@
   }
 
   function hfReplayCurrentFunction() {
+    hfState.hasClickedHotspot = false;
+    hfSetFirstUseHintVisibility(true);
     hfState.stepIndex = 0;
     hfRender({ syncRail: true, animate: true });
   }
@@ -650,9 +663,17 @@
 
   hfState.manifest = await hfLoadManifest();
   hfBuildTabs();
+  hfSetFirstUseHintVisibility(true);
   hfRender({ rebuildRail: true });
 
-  hfEls.hotspotButton.addEventListener("click", hfGoToNextTarget);
+  hfEls.hotspotButton.addEventListener("click", function () {
+    if (!hfState.hasClickedHotspot) {
+      hfState.hasClickedHotspot = true;
+      hfSetFirstUseHintVisibility(false);
+    }
+
+    hfGoToNextTarget();
+  });
   hfEls.prevButton.addEventListener("click", hfGoToPreviousStep);
   hfEls.nextButton.addEventListener("click", hfGoToNextTarget);
   hfEls.replayButton.addEventListener("click", hfReplayCurrentFunction);
