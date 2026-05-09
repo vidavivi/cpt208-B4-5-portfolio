@@ -79,12 +79,12 @@
           "id": "album-5",
           "screenshot": "album-upload-sheet.png",
           "target": "Camera and Library chooser",
-          "hotspot": { "x": 73, "y": 17 },
+          "hotspot": { "x": 50, "y": 84 },
           "spotlight": { "x": 50, "y": 87, "w": 49, "h": 22 },
           "title": "Start a self-upload",
           "body": "The camera entry opens a simple source choice for sharing.",
           "requirementBadge": "Easy to Start",
-          "mockAction": "Tap the top-right camera action.",
+          "mockAction": "Tap Camera or Library from the upload sheet.",
           "expectedEffect": "Shows Camera and Library options."
         }
       ]

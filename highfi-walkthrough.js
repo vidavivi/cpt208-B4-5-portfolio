@@ -62,12 +62,12 @@
             id: "album-5",
             screenshot: "album-upload-sheet.png",
             target: "Camera and Library chooser",
-            hotspot: { x: 73, y: 17 },
+            hotspot: { x: 50, y: 84 },
             spotlight: { x: 50, y: 87, w: 49, h: 22 },
             title: "Start a self-upload",
             body: "The camera entry opens a simple source choice for sharing.",
             requirementBadge: "Easy to Start",
-            mockAction: "Tap the top-right camera action.",
+            mockAction: "Tap Camera or Library from the upload sheet.",
             expectedEffect: "Shows Camera and Library options."
           }
         ]
@@ -259,6 +259,7 @@
     screenShell: hfSection.querySelector(".hf-screen-shell"),
     screenImage: hfSection.querySelector(".hf-screen-image"),
     hotspotButton: hfSection.querySelector(".hf-hotspot-button"),
+    hotspotPulse: hfSection.querySelector(".hf-hotspot-pulse"),
     tooltipCard: hfSection.querySelector(".hf-tooltip-card"),
     screenName: hfSection.querySelector(".hf-screen-name"),
     screenPurpose: hfSection.querySelector(".hf-screen-purpose"),
@@ -488,6 +489,8 @@
     hfEls.hotspotButton.style.setProperty("--hf-spotlight-height", step.spotlight.h + "%");
     hfEls.overlayLayer.style.setProperty("--hf-hotspot-x", step.hotspot.x + "%");
     hfEls.overlayLayer.style.setProperty("--hf-hotspot-y", step.hotspot.y + "%");
+    hfEls.hotspotPulse.style.setProperty("--hf-hotspot-x", step.hotspot.x + "%");
+    hfEls.hotspotPulse.style.setProperty("--hf-hotspot-y", step.hotspot.y + "%");
   }
 
   function hfScrollStepRailToActive() {

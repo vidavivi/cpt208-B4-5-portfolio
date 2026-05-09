@@ -303,6 +303,7 @@
     registerGroup(".final-map-requirements", ":scope > .requirement-map-card", "up");
     registerGroup(".final-map-connectors", ":scope > .final-map-connector", "draw");
     registerGroup(".final-map-functions", ":scope > .final-function-card", "up");
+    registerGroup(".evaluation-metric-grid", ":scope > .evaluation-metric-card", "up");
     registerGroup(".ba-stack", ":scope > .ba-card", "up");
     registerGroup(".iteration-chain", ":scope > .iteration-link-card", "up");
 
