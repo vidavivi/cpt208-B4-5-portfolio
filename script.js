@@ -349,9 +349,103 @@
     });
   }
 
+  function initCornerPetCompanion() {
+    const petCompanion = document.querySelector(".corner-pet-companion");
+    const petImage = petCompanion && petCompanion.querySelector(".corner-pet-image");
+
+    if (!petCompanion || !petImage) {
+      return;
+    }
+
+    const fallbackPetSrc = "figure/dog1.png";
+    const petStages = [
+      "figure/cat1.png",
+      "figure/cat2.png",
+      "figure/dog1.png",
+      "figure/dog2.png"
+    ];
+
+    let currentPetIndex = -1;
+    let switchTimeoutId = null;
+    let rafId = null;
+
+    function getPetIndex(progress) {
+      if (progress < 0.25) return 0;
+      if (progress < 0.5) return 1;
+      if (progress < 0.75) return 2;
+      return 3;
+    }
+
+    function getScrollProgress() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      return scrollable > 0 ? window.scrollY / scrollable : 0;
+    }
+
+    function setPetImage(src) {
+      petImage.dataset.fallbackAttempted = "false";
+      petImage.src = src;
+    }
+
+    function switchPet(nextIndex) {
+      currentPetIndex = nextIndex;
+
+      if (prefersReducedMotion) {
+        setPetImage(petStages[nextIndex]);
+        return;
+      }
+
+      petCompanion.classList.add("is-switching");
+
+      if (switchTimeoutId) {
+        window.clearTimeout(switchTimeoutId);
+      }
+
+      switchTimeoutId = window.setTimeout(() => {
+        setPetImage(petStages[nextIndex]);
+        window.requestAnimationFrame(() => {
+          petCompanion.classList.remove("is-switching");
+        });
+      }, 150);
+    }
+
+    function updatePetByScroll() {
+      const nextIndex = getPetIndex(getScrollProgress());
+      if (nextIndex === currentPetIndex) {
+        return;
+      }
+      switchPet(nextIndex);
+    }
+
+    function requestPetUpdate() {
+      if (rafId !== null) {
+        return;
+      }
+
+      rafId = window.requestAnimationFrame(() => {
+        rafId = null;
+        updatePetByScroll();
+      });
+    }
+
+    petImage.addEventListener("error", () => {
+      if (petImage.dataset.fallbackAttempted === "true" || petImage.src.endsWith(fallbackPetSrc)) {
+        return;
+      }
+
+      petImage.dataset.fallbackAttempted = "true";
+      petImage.src = fallbackPetSrc;
+    });
+
+    updatePetByScroll();
+    window.addEventListener("scroll", requestPetUpdate, { passive: true });
+    window.addEventListener("resize", requestPetUpdate);
+    window.addEventListener("load", requestPetUpdate, { once: true });
+  }
+
   initCarousels();
   initPrototypeGalleries();
   initScrollProgressAndNav();
   initRevealSystem();
   initRequirementFunctionHover();
+  initCornerPetCompanion();
 })();

@@ -20,8 +20,8 @@
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
-  <div class="corner-dog-companion" aria-hidden="true">
-    <img src="figure/dog1.png" alt="">
+  <div class="corner-pet-companion" aria-hidden="true">
+    <img class="corner-pet-image" src="figure/cat1.png" alt="">
   </div>
 
   <header class="site-header" id="top">
@@ -2276,278 +2276,135 @@
     <section class="content-section" id="technical">
       <div class="container">
         <div class="section-heading">
-          <p class="phase-label">Prototype / Technical Implementation</p>
-          <h2>Prototype &amp; Technical Implementation</h2>
-          <p>This section documents Kinlight’s local full-stack implementation, data flow, technology stack, and AI-assisted development reflection.</p>
+          <p class="phase-label">Prototype / Technical Implementation &amp; Deployment</p>
+          <h2>Technical Implementation &amp; Deployment Status</h2>
+          <p>A compact summary of Kinlight’s confirmed final implementation status, system flow, and access routes.</p>
         </div>
 
-        <article class="content-card wide-card technical-overview-card">
+        <article class="content-card wide-card technical-module-card">
           <div class="split-heading technical-split-heading">
             <div>
-              <p class="eyebrow">1. Technical Overview</p>
-              <h3>Local Full-Stack Implementation</h3>
+              <p class="eyebrow">A. Completion Status</p>
+              <h3>Confirmed Final Build Status</h3>
             </div>
+            <p>Kinlight has completed full-stack development across the deployed frontend, implemented backend, and MySQL data layer.</p>
           </div>
-          <p>Kinlight is implemented as a locally runnable full-stack web application. The front end uses React, TypeScript, and Vite to implement the mobile-oriented Album, Jar, and Weekly Echo flows. The back end uses Node.js and Express to provide REST-style API routes for user state, family members, posts, moods, uploads, daily drops, items, and Weekly Echo. MySQL is used as the relational database layer through MySQL2 (<code>mysql2/promise</code>).</p>
-          <div class="technical-overview-tags" aria-label="Implementation highlights">
-            <span class="technical-tag">Mobile-oriented interface</span>
-            <span class="technical-tag">Album, Jar, Weekly Echo flows</span>
-            <span class="technical-tag">REST-style API communication</span>
-            <span class="technical-tag">MySQL-backed data handling</span>
+          <div class="technical-status-grid" aria-label="Kinlight completion status">
+            <article class="technical-status-card">
+              <p class="status-chip">Frontend</p>
+              <h4>Completed and deployed on Vercel</h4>
+              <p>Public React / Vite interface available for the final demonstration build.</p>
+            </article>
+            <article class="technical-status-card">
+              <p class="status-chip">Backend</p>
+              <h4>Completed and locally runnable</h4>
+              <p>Express API and feature logic are implemented in the submitted source code.</p>
+            </article>
+            <article class="technical-status-card">
+              <p class="status-chip">Database</p>
+              <h4>MySQL implemented with <code>kinlight_db</code></h4>
+              <p>Persistent data supports family posts, moods, items, rewards, and weekly summaries.</p>
+            </article>
+            <article class="technical-status-card">
+              <p class="status-chip">Repository</p>
+              <h4>Source code available</h4>
+              <p>Repository is available now; setup documentation remains lightweight rather than fully expanded.</p>
+            </article>
           </div>
         </article>
 
-        <article class="content-card wide-card architecture-diagram-card">
+        <article class="content-card wide-card technical-module-card">
           <div class="split-heading technical-split-heading">
             <div>
-              <p class="eyebrow">2. System Architecture Diagram</p>
-              <h3>How Kinlight Handles Data</h3>
+              <p class="eyebrow">B. System Architecture</p>
+              <h3>How Interaction Data Moves Through the App</h3>
             </div>
-            <p>The diagram below shows the local full-stack data flow from the browser interface to API routes, route modules, and the MySQL database.</p>
+            <p>A simplified full-stack flow showing how user input becomes stored data and visible UI feedback.</p>
           </div>
 
-          <div class="architecture-diagram" aria-label="Kinlight system architecture diagram">
-            <div class="architecture-node architecture-node-top">
-              <h4>User / Browser</h4>
-              <p>Students and parents interact through the mobile-oriented web interface.</p>
+          <div class="architecture-flow" aria-label="Kinlight system architecture flow">
+            <div class="architecture-flow-step">
+              <strong>User Action</strong>
+              <span>Posts, moods, item actions, and weekly recap interactions start in the interface.</span>
             </div>
-
-            <div class="architecture-arrow" aria-hidden="true">↓</div>
-
-            <div class="architecture-node">
-              <h4>React + TypeScript + Vite Front End</h4>
-              <p>Implements Album, Jar, Weekly Echo, interaction states, visual feedback, and API communication.</p>
+            <span class="architecture-flow-arrow" aria-hidden="true">→</span>
+            <div class="architecture-flow-step">
+              <strong>React / Vite Frontend</strong>
+              <span>Captures input, manages interaction states, and requests updated content.</span>
             </div>
-
-            <div class="architecture-arrow" aria-hidden="true">↓</div>
-
-            <div class="architecture-node architecture-request-node">
-              <h4>REST API Requests</h4>
-              <div class="route-chip-list">
-                <span class="route-chip">/api/me</span>
-                <span class="route-chip">/api/family-members</span>
-                <span class="route-chip">/api/posts</span>
-                <span class="route-chip">/api/moods</span>
-                <span class="route-chip">/api/uploads</span>
-                <span class="route-chip">/api/daily-drop</span>
-                <span class="route-chip">/api/weekly-echo</span>
-              </div>
+            <span class="architecture-flow-arrow" aria-hidden="true">→</span>
+            <div class="architecture-flow-step">
+              <strong>Express API</strong>
+              <span>Processes feature requests and coordinates application logic for shared family features.</span>
             </div>
-
-            <div class="architecture-arrow" aria-hidden="true">↓</div>
-
-            <div class="architecture-node">
-              <h4>Node.js + Express Backend</h4>
-              <p>Uses Express JSON middleware, CORS, Multer for uploads, and REST-style routing in <code>backend/server.js</code>, <code>backend/db.js</code>, and <code>backend/routes/</code>.</p>
+            <span class="architecture-flow-arrow" aria-hidden="true">→</span>
+            <div class="architecture-flow-step">
+              <strong>MySQL Database (<code>kinlight_db</code>)</strong>
+              <span>Stores posts, moods, inventory, rewards, and weekly summary records.</span>
             </div>
-
-            <div class="architecture-arrow" aria-hidden="true">↓</div>
-
-            <div class="architecture-node architecture-route-node">
-              <h4>Route Modules</h4>
-              <p>Handle user context, family data, posts, moods, uploads, items, daily drops, and Weekly Echo summary generation.</p>
+            <span class="architecture-flow-arrow" aria-hidden="true">→</span>
+            <div class="architecture-flow-step">
+              <strong>UI Feedback</strong>
+              <span>Album, jar, item, and weekly views refresh to show the latest shared state.</span>
             </div>
+          </div>
+          <p class="architecture-caption">User input moves through the frontend and backend into <code>kinlight_db</code>, then returns as updated shared moments, mood records, rewards, and recap feedback.</p>
+        </article>
 
-            <div class="architecture-arrow" aria-hidden="true">↓</div>
-
-            <div class="architecture-node architecture-db-node">
-              <h4>MySQL Database</h4>
-              <div class="db-group-grid">
-                <div class="db-group">
-                  <h5>Users &amp; families</h5>
-                  <p><code>users</code>, <code>families</code>, <code>family_members</code></p>
-                </div>
-                <div class="db-group">
-                  <h5>Album data</h5>
-                  <p><code>posts</code></p>
-                </div>
-                <div class="db-group">
-                  <h5>Mood data</h5>
-                  <p><code>moods</code></p>
-                </div>
-                <div class="db-group">
-                  <h5>Daily drop / inventory</h5>
-                  <p><code>items</code>, <code>my_items</code>, <code>daily_drops</code></p>
-                </div>
-              </div>
+        <article class="content-card wide-card technical-module-card">
+          <div class="split-heading technical-split-heading">
+            <div>
+              <p class="eyebrow">C. Core Feature Data Handling</p>
+              <h3>Evidence of Stored Interaction and UI Update</h3>
             </div>
+            <p><span class="technical-inline-tag">Account / Family Context</span> User identity and family membership provide the shared context for these feature flows.</p>
+          </div>
+          <div class="technical-feature-grid" aria-label="Core feature data handling cards">
+            <article class="technical-feature-card">
+              <h4>Family Album</h4>
+              <p>User uploads posts or reacts to family updates. The backend stores post and reaction data, then the album refreshes with shared family moments.</p>
+            </article>
+            <article class="technical-feature-card">
+              <h4>Mood Jar</h4>
+              <p>User records a mood and optional note with a visibility setting. Stored mood entries then reappear through the jar and calendar as private or family-visible emotional records.</p>
+            </article>
+            <article class="technical-feature-card">
+              <h4>Daily Drop / Items</h4>
+              <p>User claims or uses playful items. The backend updates daily drop and inventory state so the interface can show rewards, inventory changes, and room or pet feedback.</p>
+            </article>
+            <article class="technical-feature-card">
+              <h4>Weekly Echo</h4>
+              <p>User views the weekly recap and claims rewards. Stored posts, moods, reactions, messages, and reward records are aggregated into a weekly summary and gift state.</p>
+            </article>
           </div>
         </article>
 
-        <div class="technical-grid">
-          <article class="content-card wide-card">
-            <div class="split-heading technical-split-heading">
-              <div>
-                <p class="eyebrow">3. Technology Stack Table</p>
-                <h3>Core Technologies</h3>
-              </div>
-            </div>
-            <div class="contribution-table-wrap technical-table-wrap">
-              <table class="contribution-table technical-table">
-                <thead>
-                  <tr>
-                    <th>Layer</th>
-                    <th>Technology</th>
-                    <th>Role in Kinlight</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Frontend framework</td>
-                    <td>React + TypeScript</td>
-                    <td>Builds the mobile-oriented interface and feature interactions.</td>
-                  </tr>
-                  <tr>
-                    <td>Build tool</td>
-                    <td>Vite</td>
-                    <td>Supports local development and frontend bundling.</td>
-                  </tr>
-                  <tr>
-                    <td>UI / component system</td>
-                    <td>MUI + Radix UI</td>
-                    <td>Provides reusable interface components and interaction patterns.</td>
-                  </tr>
-                  <tr>
-                    <td>Styling</td>
-                    <td>Tailwind CSS + Emotion + custom styles</td>
-                    <td>Controls layout, visual tone, and custom interface polish.</td>
-                  </tr>
-                  <tr>
-                    <td>Routing</td>
-                    <td>React Router</td>
-                    <td>Handles screen-to-screen navigation in the web app.</td>
-                  </tr>
-                  <tr>
-                    <td>Backend</td>
-                    <td>Node.js + Express</td>
-                    <td>Serves REST-style routes and application logic.</td>
-                  </tr>
-                  <tr>
-                    <td>Upload handling</td>
-                    <td>Multer</td>
-                    <td>Processes uploaded media content for posts and updates.</td>
-                  </tr>
-                  <tr>
-                    <td>Database</td>
-                    <td>MySQL</td>
-                    <td>Stores family, post, mood, item, and summary-related data.</td>
-                  </tr>
-                  <tr>
-                    <td>DB connector</td>
-                    <td>MySQL2 (<code>mysql2/promise</code>)</td>
-                    <td>Provides the MySQL connection pool used by the backend.</td>
-                  </tr>
-                  <tr>
-                    <td>Source control</td>
-                    <td>GitHub</td>
-                    <td>Hosts the project source code repository.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </article>
-        </div>
-
-        <article class="content-card wide-card">
+        <article class="content-card wide-card technical-module-card">
           <div class="split-heading technical-split-heading">
             <div>
-              <p class="eyebrow">4. Data Handling / Interaction States Table</p>
-              <h3>Feature-to-Data Mapping</h3>
+              <p class="eyebrow">D. Access &amp; Reproducibility</p>
+              <h3>How the Final Build Can Be Accessed</h3>
             </div>
-            <p>This table shows how key user actions connect to backend routes, database tables, and visible interface responses.</p>
+            <p>Public frontend access is available now, while backend and database execution remain reproducible from the submitted source code.</p>
           </div>
-          <div class="contribution-table-wrap technical-table-wrap">
-            <table class="contribution-table technical-table data-handling-table">
-              <thead>
-                <tr>
-                  <th>Feature</th>
-                  <th>User action</th>
-                  <th>Backend route / data source</th>
-                  <th>Database tables</th>
-                  <th>UI response</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Account / family context</td>
-                  <td>Load or switch current user</td>
-                  <td><code>/api/me</code>, <code>/api/family-members</code></td>
-                  <td><code>users</code>, <code>families</code>, <code>family_members</code></td>
-                  <td>User-specific family context and member list</td>
-                </tr>
-                <tr>
-                  <td>Album</td>
-                  <td>View or create family posts, react to updates</td>
-                  <td><code>/api/posts</code>, <code>/api/uploads</code></td>
-                  <td><code>posts</code></td>
-                  <td>Family album updates, media display, reaction feedback</td>
-                </tr>
-                <tr>
-                  <td>Jar</td>
-                  <td>Record mood and optional comment</td>
-                  <td><code>/api/moods</code></td>
-                  <td><code>moods</code></td>
-                  <td>Mood record display and mood-state feedback</td>
-                </tr>
-                <tr>
-                  <td>Daily Drop / items</td>
-                  <td>Claim or use playful items</td>
-                  <td>Daily-drop and item-related routes</td>
-                  <td><code>items</code>, <code>my_items</code>, <code>daily_drops</code></td>
-                  <td>Item state, inventory feedback, playful reward loop</td>
-                </tr>
-                <tr>
-                  <td>Weekly Echo</td>
-                  <td>View weekly recap</td>
-                  <td><code>/api/weekly-echo</code></td>
-                  <td><code>posts</code>, <code>moods</code>, <code>daily_drops</code></td>
-                  <td>Data-driven weekly story / album reaction summary</td>
-                </tr>
-              </tbody>
-            </table>
+          <p class="technical-access-note">Kinlight has completed full-stack development. The frontend is deployed on Vercel for public demonstration, while the backend and MySQL database are fully implemented and locally runnable from the submitted source code. Public backend deployment is not included because no external server was rented, and backend deployment was not required by the instructor.</p>
+          <div class="technical-access-grid" aria-label="Kinlight access and reproducibility cards">
+            <a class="technical-access-card" href="https://208-design.vercel.app" target="_blank" rel="noreferrer">
+              <p class="status-chip">Frontend Live Demo</p>
+              <h4>https://208-design.vercel.app</h4>
+              <p>Public Vercel deployment for the final frontend experience.</p>
+            </a>
+            <a class="technical-access-card" href="https://github.com/000ovo000/208_Design" target="_blank" rel="noreferrer">
+              <p class="status-chip">Source Code Repository</p>
+              <h4>GitHub Project Repository</h4>
+              <p>Submitted source code repository for the Kinlight project.</p>
+            </a>
+            <article class="technical-access-card">
+              <p class="status-chip">Backend &amp; Database</p>
+              <h4>Completed and locally runnable</h4>
+              <p>Backend and MySQL database <code>kinlight_db</code> can be run locally from the submitted codebase.</p>
+            </article>
           </div>
-        </article>
-
-        <article class="content-card wide-card">
-          <div class="split-heading technical-split-heading">
-            <div>
-              <p class="eyebrow">5. Local Running and Deployment Status</p>
-              <h3>Current Access Status</h3>
-            </div>
-          </div>
-          <p>Current status: the source code is hosted on GitHub, and the full-stack system is locally runnable. Public deployment is planned for a later stage.</p>
-          <dl class="technical-meta-list">
-            <div>
-              <dt>Source code repository</dt>
-              <dd><a href="https://github.com/000ovo000/208_Design">https://github.com/000ovo000/208_Design</a></dd>
-            </div>
-            <div>
-              <dt>Local run command</dt>
-              <dd><code>npm run dev:all</code></dd>
-            </div>
-            <div>
-              <dt>Database</dt>
-              <dd>MySQL database <code>kinlight</code></dd>
-            </div>
-            <div>
-              <dt>Deployment status</dt>
-              <dd>Local full-stack run only at the current stage; later deployment planned for both front end and back end.</dd>
-            </div>
-            <div>
-              <dt>Process portfolio / Kinlight system</dt>
-              <dd>Process portfolio: static coursework website. Kinlight system: locally runnable full-stack web application.</dd>
-            </div>
-          </dl>
-        </article>
-
-        <article class="content-card wide-card">
-          <div class="split-heading technical-split-heading">
-            <div>
-              <p class="eyebrow">6. Individual Contributions</p>
-              <h3>Contribution Cross-Reference</h3>
-            </div>
-          </div>
-          <p><a href="#team-contributions">Individual contributions</a> are listed in the <a href="#team-contributions">Team Members section</a> at the top of the portfolio.</p>
         </article>
       </div>
     </section>
