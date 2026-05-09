@@ -272,11 +272,24 @@
     replayButton: hfSection.querySelector(".hf-replay-button")
   };
 
+  const hfMotionReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hfDesktopMedia = window.matchMedia("(min-width: 981px)");
   const hfState = {
     functionIndex: 0,
     stepIndex: 0,
-    manifest: hfNormalizeManifest(hfFallbackManifest)
+    manifest: hfNormalizeManifest(hfFallbackManifest),
+    activeFunctionId: null,
+    stepObserver: null
   };
+
+  function hfEscapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
 
   function hfGetFunctionMeta(functionId) {
     return (
@@ -376,7 +389,7 @@
       button.addEventListener("click", function () {
         hfState.functionIndex = index;
         hfState.stepIndex = 0;
-        hfRender();
+        hfRender({ rebuildRail: true, syncScroll: true });
       });
 
       hfEls.tabList.appendChild(button);
@@ -399,22 +412,32 @@
       const button = document.createElement("button");
       button.type = "button";
       button.className = "hf-steprail-button";
+      button.dataset.stepIndex = String(index);
       if (index === hfState.stepIndex) {
         button.classList.add("is-active");
       }
+      const badgeMarkup = step.requirementBadges.map(function (badgeName) {
+        return '<span class="hf-steprail-tag">' + hfEscapeHtml(badgeName) + "</span>";
+      }).join("");
       button.innerHTML = [
-        '<span class="hf-steprail-step">Step ' + (index + 1) + "</span>",
-        '<span class="hf-steprail-title">' + step.tooltipTitle + "</span>",
-        '<span class="hf-steprail-caption">' + step.stateLabel + "</span>"
+        '<span class="hf-steprail-progress">Step ' + (index + 1) + " of " + currentFunction.tourSteps.length + "</span>",
+        '<span class="hf-steprail-title">' + hfEscapeHtml(step.tooltipTitle) + "</span>",
+        '<span class="hf-steprail-caption">' + hfEscapeHtml(step.stateLabel) + " · " + hfEscapeHtml(step.stateHint) + "</span>",
+        badgeMarkup ? '<span class="hf-steprail-tag-row">' + badgeMarkup + "</span>" : "",
+        '<span class="hf-steprail-copy">' + hfEscapeHtml(step.tooltipBody) + "</span>",
+        '<span class="hf-steprail-meta"><strong>Action:</strong> ' + hfEscapeHtml(step.suggestedAction) + "</span>",
+        '<span class="hf-steprail-meta"><strong>Outcome:</strong> ' + hfEscapeHtml(step.designValue) + "</span>"
       ].join("");
 
       button.addEventListener("click", function () {
         hfState.stepIndex = index;
-        hfRender();
+        hfRender({ syncScroll: true });
       });
 
       hfEls.stepRail.appendChild(button);
     });
+
+    hfBindStepObserver();
   }
 
   function hfRenderTabs() {
@@ -423,6 +446,14 @@
       const isActive = index === hfState.functionIndex;
       button.classList.toggle("is-active", isActive);
       button.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+  }
+
+  function hfRenderRailActiveState() {
+    Array.from(hfEls.stepRail.querySelectorAll(".hf-steprail-button")).forEach(function (button) {
+      const isActive = Number(button.dataset.stepIndex) === hfState.stepIndex;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-current", isActive ? "step" : "false");
     });
   }
 
@@ -462,14 +493,71 @@
     hfEls.hotspotButton.style.setProperty("--hf-hotspot-y", step.hotspot.y + "%");
   }
 
-  function hfRender() {
+  function hfScrollStepIntoView() {
+    const activeStep = hfEls.stepRail.querySelector('[data-step-index="' + hfState.stepIndex + '"]');
+    if (!activeStep) {
+      return;
+    }
+
+    activeStep.scrollIntoView({
+      behavior: hfMotionReduced ? "auto" : "smooth",
+      block: hfDesktopMedia.matches ? "center" : "nearest",
+      inline: "nearest"
+    });
+  }
+
+  function hfBindStepObserver() {
+    if (hfState.stepObserver) {
+      hfState.stepObserver.disconnect();
+      hfState.stepObserver = null;
+    }
+
+    const stepButtons = Array.from(hfEls.stepRail.querySelectorAll(".hf-steprail-button"));
+    if (!stepButtons.length || !("IntersectionObserver" in window)) {
+      return;
+    }
+
+    hfState.stepObserver = new IntersectionObserver(function (entries) {
+      const visibleEntries = entries
+        .filter(function (entry) { return entry.isIntersecting; })
+        .sort(function (entryA, entryB) { return entryB.intersectionRatio - entryA.intersectionRatio; });
+
+      if (!visibleEntries.length) {
+        return;
+      }
+
+      const nextIndex = Number(visibleEntries[0].target.dataset.stepIndex || 0);
+      if (nextIndex === hfState.stepIndex) {
+        return;
+      }
+
+      hfState.stepIndex = nextIndex;
+      hfRender({ rebuildRail: false, syncScroll: false });
+    }, {
+      root: null,
+      rootMargin: hfDesktopMedia.matches ? "-22% 0px -46% 0px" : "-10% 0px -68% 0px",
+      threshold: [0.35, 0.55, 0.75]
+    });
+
+    stepButtons.forEach(function (button) {
+      hfState.stepObserver.observe(button);
+    });
+  }
+
+  function hfRender(options) {
+    const renderOptions = options || {};
     const currentFunction = hfGetCurrentFunction();
     const step = hfGetCurrentStep();
     const isLastStep = hfState.stepIndex === currentFunction.tourSteps.length - 1;
     const isFirstTourStep = hfState.functionIndex === 0 && hfState.stepIndex === 0;
+    const functionChanged = hfState.activeFunctionId !== currentFunction.functionId;
 
     hfRenderTabs();
-    hfRenderStepRail(currentFunction);
+    if (functionChanged || renderOptions.rebuildRail) {
+      hfRenderStepRail(currentFunction);
+      hfState.activeFunctionId = currentFunction.functionId;
+    }
+    hfRenderRailActiveState();
     hfRenderBadges(step);
     hfRenderSpotlight(step);
 
@@ -492,12 +580,16 @@
     hfEls.prevButton.textContent = hfGetPrevButtonLabel();
     hfEls.nextButton.disabled = false;
     hfEls.nextButton.textContent = hfGetNextButtonLabel(isLastStep);
+
+    if (renderOptions.syncScroll) {
+      window.requestAnimationFrame(hfScrollStepIntoView);
+    }
   }
 
   function hfGoToPreviousStep() {
     if (hfState.stepIndex > 0) {
       hfState.stepIndex -= 1;
-      hfRender();
+      hfRender({ syncScroll: true });
       return;
     }
 
@@ -505,7 +597,7 @@
     if (previousFunction) {
       hfState.functionIndex -= 1;
       hfState.stepIndex = previousFunction.tourSteps.length - 1;
-      hfRender();
+      hfRender({ rebuildRail: true, syncScroll: true });
     }
   }
 
@@ -513,7 +605,7 @@
     const currentFunction = hfGetCurrentFunction();
     if (hfState.stepIndex < currentFunction.tourSteps.length - 1) {
       hfState.stepIndex += 1;
-      hfRender();
+      hfRender({ syncScroll: true });
       return;
     }
 
@@ -521,18 +613,18 @@
     if (nextFunction) {
       hfState.functionIndex += 1;
       hfState.stepIndex = 0;
-      hfRender();
+      hfRender({ rebuildRail: true, syncScroll: true });
       return;
     }
 
     hfState.functionIndex = 0;
     hfState.stepIndex = 0;
-    hfRender();
+    hfRender({ rebuildRail: true, syncScroll: true });
   }
 
   function hfReplayCurrentFunction() {
     hfState.stepIndex = 0;
-    hfRender();
+    hfRender({ syncScroll: true });
   }
 
   async function hfLoadManifest() {
@@ -556,10 +648,11 @@
 
   hfState.manifest = await hfLoadManifest();
   hfBuildTabs();
-  hfRender();
+  hfRender({ rebuildRail: true });
 
   hfEls.hotspotButton.addEventListener("click", hfGoToNextTarget);
   hfEls.prevButton.addEventListener("click", hfGoToPreviousStep);
   hfEls.nextButton.addEventListener("click", hfGoToNextTarget);
   hfEls.replayButton.addEventListener("click", hfReplayCurrentFunction);
+  hfDesktopMedia.addEventListener("change", hfBindStepObserver);
 })();
