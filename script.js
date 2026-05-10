@@ -382,6 +382,10 @@
     }
 
     function setPetImage(src) {
+      if (!src || petImage.getAttribute("src") === src) {
+        return;
+      }
+
       petImage.dataset.fallbackAttempted = "false";
       petImage.src = src;
     }

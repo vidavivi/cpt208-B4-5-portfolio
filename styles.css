@@ -329,18 +329,17 @@ img {
 
 .corner-pet-companion {
   position: fixed;
-  top: 0.85rem;
-  right: 4.9rem;
-  width: clamp(98px, 8.6vw, 118px);
-  height: clamp(98px, 8.6vw, 118px);
-  z-index: 9998;
+  top: 2.35rem;
+  left: clamp(260px, 28vw, 440px);
+  right: auto;
+  width: clamp(76px, 6.2vw, 104px);
+  height: clamp(76px, 6.2vw, 104px);
+  z-index: 60;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   pointer-events: none;
   overflow: visible;
-  transform: rotate(-3deg);
-  transform-origin: top center;
   will-change: transform, opacity;
 }
 
@@ -4953,12 +4952,25 @@ main figcaption a:not(.button):focus-visible {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .corner-pet-companion {
-    top: 5.1rem;
-    right: 0.35rem;
-    width: clamp(78px, 8vw, 90px);
-    height: clamp(78px, 8vw, 90px);
+    display: none;
+  }
+}
+
+@media (min-width: 1241px) and (max-width: 1400px) {
+  .corner-pet-companion {
+    left: clamp(240px, 24vw, 340px);
+    width: 76px;
+    height: 76px;
+  }
+}
+
+@media (min-width: 1401px) {
+  .corner-pet-companion {
+    left: clamp(300px, 28vw, 460px);
+    width: clamp(86px, 6vw, 108px);
+    height: clamp(86px, 6vw, 108px);
   }
 }
 
@@ -5025,12 +5037,6 @@ main figcaption a:not(.button):focus-visible {
   }
 }
 
-@media (max-width: 768px) {
-  .corner-pet-companion {
-    display: none;
-  }
-}
-
 @media (max-width: 640px) {
   .evaluation-chip-grid,
   .evaluation-metric-grid,
@@ -5089,7 +5095,6 @@ main figcaption a:not(.button):focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .corner-pet-companion,
   .corner-pet-image {
     animation: none;
     transition: none;
