@@ -1,160 +1,64 @@
-# Kinlight
+# KinLight Process Portfolio
 
-Kinlight is a CPT208 Human-Centred Computing group project that explores low-pressure, asynchronous communication between university students and their parents when living apart.
+## Overview
 
-The system is designed to support lightweight emotional expression, gentle family awareness, and easier conversation starting through three core features: Album, Jar, and Weekly Echo.
+This repository is the CPT208 KinLight process portfolio repository. It documents the research, design thinking, iteration process, and final presentation context for **KinLight**, a playful family connection web app for university students and parents living apart.
 
-## Core Features
+KinLight was developed around three design requirements:
 
-### Album
+- low reply pressure
+- flexible timing
+- easy to start
 
-A family-oriented sharing space where users can view and respond to everyday family updates through lightweight reactions and visual feedback, without needing to start a full conversation.
+The final system centers on three core functions: **Album / Connect**, **Jar**, and **Weekly Echo**.
 
-### Jar
+## Live Links
 
-A mood-recording feature that allows users to log emotional states and manage how much mood information is shared with family members.
+- Process portfolio: [Portfolio URL]
+- Live frontend demo: [https://208-design.vercel.app](https://208-design.vercel.app)
+- System/source code repository: [https://github.com/000ovo000/208_Design](https://github.com/000ovo000/208_Design)
 
-### Weekly Echo
+## Repository Purpose
 
-A weekly recap feature that reads family activity data from posts, moods, and daily drops to generate a lightweight family summary and support easier conversation starting.
+This repository is for the **process portfolio**, not the main implementation codebase. It helps reviewers understand the design rationale, development journey, and final project positioning without duplicating the full system repository documentation.
 
-## Technology Stack
+## Final System Status
 
-### Front End
+- Frontend: completed and deployed as a multi-page React/Vite course-demo application with **Home**, **Album**, **Jar**, **Echo**, and **Me** tabs, plus a demo-mode fallback.
+- Backend and database: fully implemented for local demonstration with an Express + MySQL architecture. The backend is not a placeholder.
+- Deployment note: the backend is **not cloud-deployed**, but this does **not** mean it is unfinished. It is locally runnable and demoable as part of the final system.
 
-- React
-- TypeScript
-- Vite
-- MUI
-- Radix UI
-- Tailwind CSS
-- Emotion
-- React Router
-- Custom styles and interaction logic
+## Core Functions
 
-### Back End
+- **Album / Connect**: family album browsing, member filtering, time filtering, image upload, post creation and deletion, emoji reactions, pet-message relay, and care-message flows.
+- **Jar**: mood check-ins with private, soft, and full visibility, including family-visible mood sharing rules and care interactions.
+- **Weekly Echo**: weekly statistics aggregation, report generation and regeneration, current report retrieval, keepsake summary, and reward claiming into inventory.
 
-- Node.js
-- Express
-- CORS
-- Multer
-- `mysql2/promise`
-- REST-style API routes
+## Technology Summary
 
-### Database
+- Frontend: React 18, TypeScript, Vite 6, Tailwind CSS 4, Radix UI primitives, Motion, Lucide React
+- Backend: Node.js, Express 5, MySQL, `mysql2`, Multer, CORS, dotenv
+- Database: `kinlight_db`
+- SQL files: `kinlight_db.sql`, `seed_db.sql`
+- Backend coverage includes routes for posts, uploads, moods, inventory, daily drop, weekly echo, family members, pet messages, and care messages
 
-- MySQL
-- Database name: `kinlight`
-- Initialization file: `backend/init_mysql.sql`
+## AI Use and Disclosure
 
-## Current Deployment Status
+AI was used for coding assistance, debugging, layout refinement, documentation support, and limited visual asset generation where applicable.
 
-The source code is hosted on GitHub. At the current submission stage, the full-stack system runs locally.
+Core design logic, user research, design requirements, and evaluation interpretation were produced by the team.
 
-Both front-end and back-end deployment are planned for a later stage. Therefore, this repository currently documents the local full-stack implementation rather than a public deployed service.
+For primary coding prompt records, please refer to the system repository's [`/ai-logs`](https://github.com/000ovo000/208_Design/tree/main/ai-logs).
 
-Repository: [https://github.com/000ovo000/208_Design](https://github.com/000ovo000/208_Design)
-
-## How to Run Locally
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/000ovo000/208_Design.git
-cd 208_Design
-```
-
-### 2. Install front-end dependencies
-
-```bash
-npm install
-```
-
-### 3. Install back-end dependencies
-
-```bash
-cd backend
-npm install
-cd ..
-```
-
-### 4. Initialize the MySQL database
-
-```bash
-mysql -u root -p < backend/init_mysql.sql
-```
-
-The database name should be `kinlight`. Before running the backend, configure the local MySQL connection in `backend/db.js` if needed. Do not expose or commit real database passwords in public documentation.
-
-### 5. Start the full-stack system
-
-```bash
-npm run dev:all
-```
-
-## Repository Structure
-
-```text
-208_Design/
-├── backend/
-│   ├── routes/
-│   ├── uploads/
-│   ├── db.js
-│   ├── server.js
-│   ├── init_mysql.sql
-│   └── package.json
-├── public/
-│   └── images/
-├── src/
-│   ├── app/
-│   ├── styles/
-│   ├── main.tsx
-│   └── routes.tsx
-├── package.json
-├── vite.config.ts
-└── README.md
-```
-
-## Main API Areas
-
-```text
-/api/me
-/api/family-members
-/api/moods
-/api/posts
-/api/uploads
-/api/weekly-echo
-```
-
-The backend also includes daily-drop and item-related routes for playful item use and daily interaction handling.
-
-## Data Handling Overview
-
-| Feature | Main user action | Backend / data source | Database tables |
-| --- | --- | --- | --- |
-| Album | View or create family posts | `/api/posts`, `/api/uploads` | `posts` |
-| Jar | Record mood state | `/api/moods` | `moods` |
-| Weekly Echo | View weekly recap | `/api/weekly-echo` | `posts`, `moods`, `daily_drops` |
-| Family context | Load current user and family members | `/api/me`, `/api/family-members` | `users`, `families`, `family_members` |
-| Daily Drop / Items | Claim or use playful items | daily-drop and item routes | `items`, `my_items`, `daily_drops` |
-
-## Team Contributions
+## Team / Contributions
 
 | Member | Main contributions |
 | --- | --- |
-| Duocan Li | Constructed and optimized the overall process portfolio; organized and analyzed user research data; investigated and analyzed relevant academic papers and commercial products; conducted user interviews; designed the poster. |
-| Chengcheng Hu | Conducted user interviews; implemented the Album front-end feature; contributed to backend implementation; designed the poster. |
-| Leyi Liu | Conducted user interviews; implemented the Jar front-end feature; contributed to backend implementation; designed the poster. |
-| Xintong Wang | Conducted user interviews; implemented the Weekly Echo front-end feature; contributed to backend implementation; designed the poster. |
+| Duocan Li | Constructed and optimized the process portfolio; organized and analyzed user research data; investigated relevant academic and commercial references; conducted user interviews; designed the poster. |
+| Chengcheng Hu | Conducted user interviews; implemented Album-related front-end work; contributed to backend implementation; designed the poster. |
+| Leyi Liu | Conducted user interviews; implemented Jar-related front-end work; contributed to backend implementation; designed the poster. |
+| Xintong Wang | Conducted user interviews; implemented Weekly Echo-related front-end work; contributed to backend implementation; designed the poster. |
 
-## AI Use Disclosure
+## Notes for Assessment
 
-ChatGPT, Codex, and Figma AI were used as support tools during the project for code generation, debugging, CSS refinement, portfolio wording, and visual generation.
-
-User research, design requirements, final design logic, function selection, and evaluation decisions were defined and reviewed by the team.
-
-AI-assisted outputs were treated as drafts or implementation support and were checked against project requirements, user research findings, and the intended interaction logic before being included in the final work.
-
-## Notes
-
-This README is intended for coursework review and local project setup. It documents the current locally runnable full-stack implementation and does not describe a public deployed version of the system.
+This README is intentionally concise. It is designed to help teachers quickly understand what this repository is for, how it relates to the final KinLight system, and where to find the live demo, source code, and AI disclosure records.

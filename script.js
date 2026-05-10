@@ -350,8 +350,8 @@
   }
 
   function initCornerPetCompanion() {
-    const petCompanion = document.querySelector(".corner-pet-companion");
-    const petImage = petCompanion && petCompanion.querySelector(".corner-pet-image");
+    const petCompanion = document.querySelector("[data-pet-companion]");
+    const petImage = document.querySelector("[data-pet-image]");
 
     if (!petCompanion || !petImage) {
       return;
