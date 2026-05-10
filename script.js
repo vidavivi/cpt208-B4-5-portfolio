@@ -359,15 +359,17 @@
 
     const fallbackPetSrc = "figure/dog1.png";
     const petStages = [
-      "figure/cat1.png",
-      "figure/cat2.png",
       "figure/dog1.png",
-      "figure/dog2.png"
+      "figure/dog2.png",
+      "figure/cat1.png",
+      "figure/cat2.png"
     ];
 
     let currentPetIndex = -1;
-    let switchTimeoutId = null;
     let rafId = null;
+    let switchTimeoutId = null;
+    let floatTimeoutId = null;
+    let isCleanedUp = false;
 
     function getPetIndex(progress) {
       if (progress < 0.25) return 0;
@@ -378,7 +380,16 @@
 
     function getScrollProgress() {
       const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      return scrollable > 0 ? window.scrollY / scrollable : 0;
+      if (scrollable <= 0) {
+        return 0;
+      }
+
+      const progress = window.scrollY / scrollable;
+      if (!Number.isFinite(progress)) {
+        return 0;
+      }
+
+      return Math.min(1, Math.max(0, progress));
     }
 
     function setPetImage(src) {
@@ -390,26 +401,44 @@
       petImage.src = src;
     }
 
-    function switchPet(nextIndex) {
-      currentPetIndex = nextIndex;
-
+    function triggerFloatAnimation() {
       if (prefersReducedMotion) {
-        setPetImage(petStages[nextIndex]);
         return;
       }
 
+      petCompanion.classList.remove("is-floating");
+      void petCompanion.offsetWidth;
+      petCompanion.classList.add("is-floating");
+
+      if (floatTimeoutId !== null) {
+        window.clearTimeout(floatTimeoutId);
+      }
+
+      floatTimeoutId = window.setTimeout(() => {
+        petCompanion.classList.remove("is-floating");
+        floatTimeoutId = null;
+      }, 560);
+    }
+
+    function switchPet(src) {
+      if (prefersReducedMotion) {
+        setPetImage(src);
+        return;
+      }
+
+      petCompanion.classList.remove("is-floating");
       petCompanion.classList.add("is-switching");
 
-      if (switchTimeoutId) {
+      if (switchTimeoutId !== null) {
         window.clearTimeout(switchTimeoutId);
       }
 
       switchTimeoutId = window.setTimeout(() => {
-        setPetImage(petStages[nextIndex]);
-        window.requestAnimationFrame(() => {
-          petCompanion.classList.remove("is-switching");
-        });
-      }, 150);
+        setPetImage(src);
+        petCompanion.classList.remove("is-switching");
+        triggerFloatAnimation();
+        switchTimeoutId = null;
+      }, 140);
     }
 
     function updatePetByScroll() {
@@ -417,10 +446,16 @@
       if (nextIndex === currentPetIndex) {
         return;
       }
-      switchPet(nextIndex);
+
+      currentPetIndex = nextIndex;
+      switchPet(petStages[nextIndex]);
     }
 
     function requestPetUpdate() {
+      if (isCleanedUp) {
+        return;
+      }
+
       if (rafId !== null) {
         return;
       }
@@ -431,19 +466,51 @@
       });
     }
 
-    petImage.addEventListener("error", () => {
+    function handlePetImageError() {
       if (petImage.dataset.fallbackAttempted === "true" || petImage.src.endsWith(fallbackPetSrc)) {
         return;
       }
 
       petImage.dataset.fallbackAttempted = "true";
       petImage.src = fallbackPetSrc;
-    });
+    }
+
+    function cleanupPetListeners() {
+      if (isCleanedUp) {
+        return;
+      }
+
+      isCleanedUp = true;
+
+      if (rafId !== null) {
+        window.cancelAnimationFrame(rafId);
+        rafId = null;
+      }
+
+      if (switchTimeoutId !== null) {
+        window.clearTimeout(switchTimeoutId);
+        switchTimeoutId = null;
+      }
+
+      if (floatTimeoutId !== null) {
+        window.clearTimeout(floatTimeoutId);
+        floatTimeoutId = null;
+      }
+
+      petImage.removeEventListener("error", handlePetImageError);
+      window.removeEventListener("scroll", requestPetUpdate);
+      window.removeEventListener("resize", requestPetUpdate);
+      window.removeEventListener("load", requestPetUpdate);
+      petCompanion.classList.remove("is-switching", "is-floating");
+    }
+
+    petImage.addEventListener("error", handlePetImageError);
 
     updatePetByScroll();
     window.addEventListener("scroll", requestPetUpdate, { passive: true });
     window.addEventListener("resize", requestPetUpdate);
     window.addEventListener("load", requestPetUpdate, { once: true });
+    window.addEventListener("pagehide", cleanupPetListeners, { once: true });
   }
 
   initCarousels();

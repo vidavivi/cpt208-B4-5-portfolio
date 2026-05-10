@@ -374,6 +374,24 @@ img {
   filter: drop-shadow(0 6px 12px rgba(74, 51, 38, 0.14));
 }
 
+.corner-pet-companion.is-floating .corner-pet-image {
+  animation: pet-float 560ms ease-out;
+}
+
+@keyframes pet-float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  45% {
+    transform: translateY(-5px) scale(1.02);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
 .hero-panel {
   display: flex;
   flex-direction: column;
