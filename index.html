@@ -2725,7 +2725,49 @@
               <h3>Technical Reflection &amp; AI Use</h3>
             </div>
           </div>
-          <p>We checked responsive layout, semantic HTML, alt text, readable links, table headers, visible interaction feedback, and credential safety to ensure the portfolio and prototype meet basic usability and accessibility expectations.</p>
+          <p class="ai-reflection-intro">AI was used as a support tool for visual asset generation and front-end implementation. It did not define our user research findings, design requirements, or final design logic. All AI-assisted outputs were reviewed by the team and checked against Kinlight&rsquo;s intended interaction goals.</p>
+
+          <div class="ai-reflection-grid">
+            <article class="ai-reflection-example-card">
+              <h4>AI-generated pixel pet images</h4>
+
+              <div class="poa-block">
+                <p class="poa-label">P &mdash; Prompt</p>
+                <p class="poa-quote">&ldquo;Generate a cute Maine Coon cat in a lying pose, in pixel-art style.&rdquo;</p>
+                <p>The context was that we had already created a white cat asset, so the new pet image needed to match the same visual style, posture, and warm tone used in the Kinlight interface.</p>
+              </div>
+
+              <div class="poa-block">
+                <p class="poa-label">O &mdash; Outcome</p>
+                <p>The AI generated a usable pixel-style cat image. The pose and visual mood were close to the existing asset, but the output still needed human checking for consistency, transparency, and whether it fitted the interface without distracting from the portfolio content.</p>
+              </div>
+
+              <div class="poa-block">
+                <p class="poa-label">A &mdash; Action</p>
+                <p>We reviewed the image manually, exported suitable versions as PNG assets, and reused similar prompt patterns to generate other pet images. Assets that did not match the UI style were discarded or regenerated. The images were used only as decorative interface assets, not as sources for design requirements.</p>
+              </div>
+            </article>
+
+            <article class="ai-reflection-example-card">
+              <h4>AI-assisted UI interaction modification</h4>
+
+              <div class="poa-block">
+                <p class="poa-label">P &mdash; Prompt</p>
+                <p class="poa-quote">&ldquo;Please help me modify the page effect after clicking the &lsquo;Care for Someone&rsquo; button. The background should become blurred to highlight the feature card.&rdquo;</p>
+                <p>The context was that the Jar page needed a clearer focus state when users opened the shared care view.</p>
+              </div>
+
+              <div class="poa-block">
+                <p class="poa-label">O &mdash; Outcome</p>
+                <p>The AI suggested a blur-overlay interaction and related front-end code changes. The proposal matched our intended interaction direction because it visually separated the active card from the background and made the care popup easier to notice.</p>
+              </div>
+
+              <div class="poa-block">
+                <p class="poa-label">A &mdash; Action</p>
+                <p>We adapted the suggested code into the front-end implementation, tested the click behaviour, and checked whether the blurred background still preserved readability and clear interaction feedback. After verification, we reused the same interaction pattern for other similar buttons to keep the interface consistent.</p>
+              </div>
+            </article>
+          </div>
         </article>
       </div>
     </section>
